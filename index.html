@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MKTR Exam Sim — Simulacro Marketing Research</title>
+<style>
+  :root{
+    --bg: #e9edf3;
+    --bg-2: #dfe5ed;
+    --surface: #ffffff;
+    --surface-2: #f4f6fa;
+    --ink: #1a2333;
+    --ink-soft: #4c5a70;
+    --ink-faint: #8592a6;
+    --border: #c7d0dd;
+    --border-soft: #d8dfe9;
+    --teal: #0f766e;
+    --teal-dark: #0b5a54;
+    --teal-light: #14b8a6;
+    --teal-tint: #e1f3f1;
+    --gold: #b8862c;
+    --gold-tint: #faf1dd;
+    --good: #157a3c;
+    --good-tint: #dcf3e3;
+    --bad: #b0332a;
+    --bad-tint: #fbe4e1;
+    --blank: #5b6577;
+    --blank-tint: #e7eaf0;
+    --font-serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, 'SFMono-Regular', Consolas, 'Courier New', monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --radius: 10px;
+    --shadow: 0 1px 2px rgba(20,30,50,.06), 0 4px 14px rgba(20,30,50,.06);
+    color-scheme: light;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    color:var(--ink);
+    font-family:var(--font-sans);
+    line-height:1.5;
+    min-height:100vh;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      linear-gradient(var(--border-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity:.35;
+    pointer-events:none;
+    z-index:0;
+  }
+  #app{position:relative; z-index:1; max-width:920px; margin:0 auto; padding:0 20px 80px;}
+
+  .topbar{
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding:28px 4px 18px;
+    border-bottom:2px solid var(--ink);
+    margin-bottom:28px;
+    flex-wrap:wrap; gap:8px;
+  }
+  .brand{display:flex; flex-direction:column; gap:2px;}
+  .brand .mark{
+    font-family:var(--font-serif); font-size:1.5rem; font-weight:700; letter-spacing:.01em;
+    color:var(--ink);
+  }
+  .brand .mark em{ color:var(--teal); font-style:normal; }
+  .brand .sub{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); }
+  .topbar .meta{ font-family:var(--font-mono); font-size:.78rem; color:var(--ink-soft); text-align:right; }
+
+  .screen{ display:none; }
+  .screen.active{ display:block; animation:fade .25s ease; }
+  @keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px;
+  }
+  h1,h2,h3{ font-family:var(--font-serif); font-weight:700; color:var(--ink); margin:0 0 12px; }
+  h1{ font-size:1.7rem; }
+  h2{ font-size:1.25rem; }
+  h3{ font-size:1.05rem; }
+  p{ margin:0 0 12px; color:var(--ink-soft); }
+  .lede{ font-size:1rem; }
+
+  .btn{
+    font-family:var(--font-sans);
+    font-size:.92rem;
+    font-weight:600;
+    padding:12px 22px;
+    border-radius:8px;
+    border:1px solid var(--teal);
+    background:var(--teal);
+    color:#fff;
+    cursor:pointer;
+    transition:transform .08s ease, box-shadow .15s ease, background .15s ease;
+    box-shadow:0 1px 0 rgba(0,0,0,.05);
+  }
+  .btn:hover{ background:var(--teal-dark); border-color:var(--teal-dark); }
+  .btn:active{ transform:translateY(1px); }
+  .btn.secondary{
+    background:transparent; color:var(--teal-dark); border:1px solid var(--teal);
+  }
+  .btn.secondary:hover{ background:var(--teal-tint); }
+  .btn.ghost{
+    background:transparent; color:var(--ink-soft); border:1px solid var(--border);
+  }
+  .btn.ghost:hover{ background:var(--surface-2); color:var(--ink); }
+  .btn.danger{
+    background:transparent; color:var(--bad); border:1px solid var(--bad);
+  }
+  .btn.danger:hover{ background:var(--bad-tint); }
+  .btn:disabled{ opacity:.45; cursor:not-allowed; }
+  .btn-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+
+  .format-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0 6px;
+  }
+  .format-item{
+    background:var(--surface-2); border:1px solid var(--border-soft); border-radius:8px;
+    padding:14px; text-align:center;
+  }
+  .format-item .num{ font-family:var(--font-mono); font-size:1.4rem; font-weight:700; }
+  .format-item .lbl{ font-size:.72rem; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.05em; margin-top:4px; }
+  .format-item.plus .num{ color:var(--good); }
+  .format-item.minus .num{ color:var(--bad); }
+  .format-item.zero .num{ color:var(--blank); }
+
+  .section-title{
+    font-family:var(--font-serif); font-size:.95rem; font-weight:700; color:var(--ink);
+    margin:32px 0 12px; display:flex; align-items:center; gap:10px;
+  }
+  .section-title::after{ content:""; flex:1; height:1px; background:var(--border); }
+
+  .dash-stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; }
+  .dash-stat-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:16px; text-align:center;
+  }
+  .dash-stat-card .n{ font-family:var(--font-mono); font-size:1.5rem; font-weight:700; color:var(--ink); }
+  .dash-stat-card .l{ font-size:.66rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); margin-top:5px; }
+  .dash-stat-card.hi-strong .n{ color:var(--good); }
+  .dash-stat-card.hi-weak .n{ color:var(--bad); }
+
+  .dash-weak-caption{ font-size:.82rem; margin-bottom:14px; }
+  .dash-weak-caption .block-name{ color:var(--bad); font-weight:700; }
+
+  .dash-block-row{ display:grid; grid-template-columns:190px 1fr 46px; gap:12px; align-items:center; padding:9px 0; }
+  .dash-block-row + .dash-block-row{ border-top:1px solid var(--border-soft); }
+  .dash-block-row .bname{ font-size:.82rem; font-weight:600; color:var(--ink); }
+  .dash-block-row .bar-track{ height:10px; background:var(--surface-2); border:1px solid var(--border-soft); border-radius:5px; overflow:hidden; }
+  .dash-block-row .bar-fill{ height:100%; background:var(--teal); }
+  .dash-block-row .bar-fill.weak{ background:var(--bad); }
+  .dash-block-row .pct{ font-family:var(--font-mono); font-size:.8rem; font-weight:700; color:var(--ink-soft); text-align:right; }
+
+  .history-list{ display:flex; flex-direction:column; gap:8px; }
+  .history-row{
+    display:grid; grid-template-columns:auto 1fr auto auto; gap:14px; align-items:center;
+    background:var(--surface-2); border:1px solid var(--border-soft); border-radius:8px;
+    padding:10px 14px;
+  }
+  .history-row .date{ font-family:var(--font-mono); font-size:.78rem; color:var(--ink-soft); white-space:nowrap; }
+  .history-row .bar{ height:8px; border-radius:4px; background:var(--border-soft); overflow:hidden; position:relative; }
+  .history-row .bar-fill{ height:100%; border-radius:4px; background:var(--teal); }
+  .history-row .bar-fill.fail{ background:var(--bad); }
+  .history-row .score{ font-family:var(--font-mono); font-weight:700; font-size:.9rem; white-space:nowrap; }
+  .history-row .blanks{ font-size:.72rem; color:var(--ink-faint); white-space:nowrap; }
+
+  .evo-chart{ display:flex; align-items:flex-end; gap:6px; height:110px; padding:10px 4px 0; }
+  .evo-bar{ flex:1; min-width:6px; background:var(--teal-light); border-radius:3px 3px 0 0; position:relative; }
+  .evo-bar.fail{ background:var(--bad); opacity:.75; }
+  .evo-bar .tip{
+    position:absolute; bottom:100%; left:50%; transform:translateX(-50%);
+    font-family:var(--font-mono); font-size:.62rem; color:var(--ink-faint); margin-bottom:2px; white-space:nowrap;
+  }
+  .evo-empty{ color:var(--ink-faint); font-size:.85rem; font-style:italic; }
+
+  .clear-history-row{ margin-top:16px; text-align:right; }
+  .clear-history-row button{
+    background:none; border:none; color:var(--ink-faint); font-size:.75rem; text-decoration:underline; cursor:pointer;
+  }
+  .clear-history-row button:hover{ color:var(--bad); }
+
+  /* Exam screen */
+  .exam-header{
+    position:sticky; top:0; z-index:5; background:var(--bg); padding:14px 0 12px;
+    border-bottom:1px solid var(--border); margin-bottom:20px;
+  }
+  .exam-header-inner{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .progress-wrap{ flex:1; min-width:180px; }
+  .progress-track{ height:10px; background:var(--surface-2); border:1px solid var(--border-soft); border-radius:5px; overflow:hidden; }
+  .progress-fill{ height:100%; background:linear-gradient(90deg, var(--teal-light), var(--teal)); transition:width .2s ease; }
+  .progress-label{ font-family:var(--font-mono); font-size:.75rem; color:var(--ink-soft); margin-top:5px; }
+  .timer{ font-family:var(--font-mono); font-size:1rem; font-weight:700; color:var(--ink); background:var(--surface); border:1px solid var(--border); padding:6px 12px; border-radius:6px; }
+
+  .qcard{ margin-bottom:16px; padding:20px; }
+  .qcard .qhead{ display:flex; gap:10px; align-items:baseline; margin-bottom:10px; }
+  .qnum{ font-family:var(--font-mono); font-weight:700; color:var(--teal-dark); font-size:.85rem; flex-shrink:0; }
+  .qblock{ font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); }
+  .qtext{ font-size:1rem; color:var(--ink); margin-bottom:14px; font-weight:600; }
+  .options{ display:flex; flex-direction:column; gap:8px; }
+  .option{
+    display:flex; align-items:flex-start; gap:10px; padding:11px 14px; border:1px solid var(--border-soft);
+    border-radius:8px; cursor:pointer; background:var(--surface-2); transition:border-color .12s ease, background .12s ease;
+  }
+  .option:hover{ border-color:var(--teal-light); }
+  .option.selected{ border-color:var(--teal); background:var(--teal-tint); }
+  .option input{ margin-top:3px; accent-color:var(--teal); flex-shrink:0; }
+  .option .opt-letter{ font-family:var(--font-mono); font-weight:700; color:var(--ink-faint); flex-shrink:0; }
+  .option.selected .opt-letter{ color:var(--teal-dark); }
+  .option .opt-text{ font-size:.92rem; color:var(--ink); }
+
+  .submit-bar{
+    position:sticky; bottom:0; background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:14px 18px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
+    box-shadow:0 -4px 14px rgba(20,30,50,.08); margin-top:20px;
+  }
+  .submit-bar .hint{ font-size:.8rem; color:var(--ink-faint); }
+
+  /* Results */
+  .score-banner{ text-align:center; padding:28px 20px; }
+  .score-banner .big-score{ font-family:var(--font-mono); font-size:3.2rem; font-weight:700; line-height:1; }
+  .score-banner .big-score.pass{ color:var(--good); }
+  .score-banner .big-score.fail{ color:var(--bad); }
+  .score-banner .out-of{ font-size:1.1rem; color:var(--ink-faint); }
+  .score-banner .verdict{
+    display:inline-block; margin-top:10px; padding:5px 14px; border-radius:20px; font-size:.78rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:.06em;
+  }
+  .verdict.pass{ background:var(--good-tint); color:var(--good); }
+  .verdict.fail{ background:var(--bad-tint); color:var(--bad); }
+
+  .ci-wrap{ margin:26px auto 6px; max-width:620px; }
+  .ci-label-row{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:.7rem; color:var(--ink-faint); margin-bottom:4px; }
+  .ci-track{ position:relative; height:34px; }
+  .ci-axis{ position:absolute; top:16px; left:0; right:0; height:2px; background:var(--border); }
+  .ci-band{ position:absolute; top:12px; height:10px; background:var(--gold-tint); border:1px solid var(--gold); border-radius:5px; opacity:.85; }
+  .ci-pass-line{ position:absolute; top:4px; bottom:4px; width:2px; background:var(--ink-faint); }
+  .ci-pass-line::after{
+    content:"aprobado"; position:absolute; top:-16px; left:50%; transform:translateX(-50%);
+    font-size:.62rem; color:var(--ink-faint); white-space:nowrap; font-family:var(--font-mono);
+  }
+  .ci-marker{
+    position:absolute; top:1px; width:16px; height:16px; margin-left:-8px;
+    background:var(--teal); border:2px solid #fff; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,.3);
+  }
+  .ci-marker.fail{ background:var(--bad); }
+  .ci-caption{ text-align:center; font-size:.78rem; color:var(--ink-faint); margin-top:10px; }
+  .ci-caption strong{ color:var(--ink-soft); font-family:var(--font-mono); }
+
+  .stats-row{ display:flex; gap:10px; justify-content:center; margin-top:18px; flex-wrap:wrap; }
+  .stat-pill{ background:var(--surface-2); border:1px solid var(--border-soft); border-radius:8px; padding:8px 14px; text-align:center; min-width:76px; }
+  .stat-pill .n{ font-family:var(--font-mono); font-weight:700; font-size:1.1rem; }
+  .stat-pill .l{ font-size:.65rem; text-transform:uppercase; color:var(--ink-faint); letter-spacing:.04em; }
+  .stat-pill.correct .n{ color:var(--good); }
+  .stat-pill.incorrect .n{ color:var(--bad); }
+  .stat-pill.blank .n{ color:var(--blank); }
+
+  .block-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-top:14px; }
+  .block-card{ background:var(--surface-2); border:1px solid var(--border-soft); border-radius:8px; padding:14px 16px; }
+  .block-card .bname{ font-weight:700; font-size:.88rem; margin-bottom:8px; color:var(--ink); }
+  .block-bar-track{ height:8px; background:var(--border-soft); border-radius:4px; overflow:hidden; margin-bottom:6px; }
+  .block-bar-fill{ height:100%; background:var(--teal); }
+  .block-stats{ display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:.75rem; color:var(--ink-soft); }
+  .block-stats .pts{ font-weight:700; }
+  .block-stats .pts.neg{ color:var(--bad); }
+  .block-stats .pts.pos{ color:var(--good); }
+
+  .filter-row{ display:flex; gap:8px; margin:26px 0 14px; flex-wrap:wrap; }
+  .filter-btn{
+    font-family:var(--font-sans); font-size:.8rem; font-weight:600; padding:7px 14px; border-radius:20px;
+    border:1px solid var(--border); background:var(--surface); color:var(--ink-soft); cursor:pointer;
+  }
+  .filter-btn.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
+
+  .review-item{ margin-bottom:14px; padding:20px; }
+  .review-item.hidden-by-filter{ display:none; }
+  .review-head{ display:flex; align-items:flex-start; gap:10px; margin-bottom:12px; }
+  .review-badge{
+    flex-shrink:0; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:.95rem; font-weight:700;
+  }
+  .review-badge.correct{ background:var(--good-tint); color:var(--good); }
+  .review-badge.incorrect{ background:var(--bad-tint); color:var(--bad); }
+  .review-badge.blank{ background:var(--blank-tint); color:var(--blank); }
+  .review-qmeta{ font-family:var(--font-mono); font-size:.72rem; color:var(--ink-faint); margin-bottom:2px; }
+  .review-qtext{ font-weight:600; color:var(--ink); }
+  .review-options{ display:flex; flex-direction:column; gap:8px; }
+  .review-option{ border:1px solid var(--border-soft); border-radius:8px; padding:10px 14px; background:var(--surface-2); }
+  .review-option.is-correct{ border-color:var(--good); background:var(--good-tint); }
+  .review-option.is-user-wrong{ border-color:var(--bad); background:var(--bad-tint); }
+  .review-option .opt-row{ display:flex; gap:8px; align-items:baseline; font-size:.9rem; margin-bottom:3px; }
+  .review-option .opt-letter{ font-family:var(--font-mono); font-weight:700; color:var(--ink-faint); }
+  .review-option .opt-tags{ margin-left:auto; display:flex; gap:5px; }
+  .tag{ font-size:.62rem; font-weight:700; text-transform:uppercase; padding:2px 7px; border-radius:10px; letter-spacing:.03em; }
+  .tag.correct{ background:var(--good); color:#fff; }
+  .tag.your-answer{ background:var(--ink); color:#fff; }
+  .review-option .expl{ font-size:.82rem; color:var(--ink-soft); margin-left:22px; }
+
+  .confirm-modal{
+    position:fixed; inset:0; background:rgba(20,30,50,.5); display:flex; align-items:center; justify-content:center;
+    padding:20px; z-index:50;
+  }
+  .confirm-modal.hidden{ display:none; }
+  .confirm-box{ background:var(--surface); border-radius:12px; padding:26px; max-width:440px; box-shadow:0 10px 40px rgba(0,0,0,.3); }
+  .confirm-box h3{ color:var(--bad); }
+  .confirm-box p{ font-size:.9rem; }
+
+  footer{ text-align:center; padding:40px 0 10px; color:var(--ink-faint); font-size:.72rem; }
+
+  @media (max-width:640px){
+    .format-grid{ grid-template-columns:1fr 1fr; }
+    .score-banner .big-score{ font-size:2.4rem; }
+    .exam-header-inner{ flex-direction:column; align-items:stretch; }
+    .timer{ align-self:flex-start; }
+    .block-grid{ grid-template-columns:1fr; }
+    .qcard{ padding:16px; }
+    .card{ padding:18px; }
+    .dash-block-row{
+      grid-template-columns:1fr auto; grid-template-areas:"name pct" "bar bar"; row-gap:6px;
+    }
+    .dash-block-row .bname{ grid-area:name; }
+    .dash-block-row .pct{ grid-area:pct; }
+    .dash-block-row .bar-track{ grid-area:bar; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark">MKTR<em>·</em>SIM</div>
+      <div class="sub">Marketing Research — Simulacro de examen</div>
+    </div>
+    <div class="meta" id="topbar-meta"></div>
+  </div>
+
+  <!-- START SCREEN -->
+  <section id="screen-start" class="screen active">
+    <div class="card">
+      <h1>Simulacro de recuperación</h1>
+      <p class="lede">30 preguntas tipo test, 4 opciones cada una, seleccionadas al azar de un banco de 150 (5 por cada uno de los 6 bloques temáticos). Puntuación:</p>
+      <div class="format-grid">
+        <div class="format-item plus"><div class="num">+1</div><div class="lbl">Acierto</div></div>
+        <div class="format-item minus"><div class="num">−0.25</div><div class="lbl">Fallo</div></div>
+        <div class="format-item zero"><div class="num">0</div><div class="lbl">En blanco</div></div>
+      </div>
+      <p style="font-size:.82rem; margin-top:14px;">Aprobado ≈ 15/30 (50%). Cada intento baraja tanto las preguntas elegidas como el orden de sus 4 opciones.</p>
+      <div class="btn-row">
+        <button class="btn" id="btn-start-exam">Empezar examen →</button>
+      </div>
+    </div>
+
+    <div id="dashboard-section" style="display:none;">
+      <div class="section-title">Tu dashboard</div>
+      <div class="dash-stats-grid" id="dash-stats-grid"></div>
+
+      <div class="section-title">Rendimiento histórico por bloque</div>
+      <div class="card">
+        <p id="dash-weak-caption" class="dash-weak-caption"></p>
+        <div id="dash-block-bars"></div>
+      </div>
+
+      <div class="section-title">Evolución de tus notas</div>
+      <div class="card">
+        <div class="evo-chart" id="evo-chart"></div>
+      </div>
+
+      <div class="section-title">Historial de intentos</div>
+      <div class="history-list" id="history-list"></div>
+      <div class="clear-history-row">
+        <button id="btn-clear-history">Borrar historial</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAM SCREEN -->
+  <section id="screen-exam" class="screen">
+    <div class="exam-header">
+      <div class="exam-header-inner">
+        <div class="progress-wrap">
+          <div class="progress-track"><div class="progress-fill" id="exam-progress-fill" style="width:0%"></div></div>
+          <div class="progress-label" id="exam-progress-label">0 / 30 contestadas</div>
+        </div>
+        <div class="timer" id="exam-timer">00:00</div>
+      </div>
+    </div>
+
+    <div id="exam-questions"></div>
+
+    <div class="submit-bar">
+      <div class="hint">Revisa tus respuestas antes de enviar.</div>
+      <button class="btn" id="btn-submit-exam">Enviar examen</button>
+    </div>
+  </section>
+
+  <!-- RESULTS SCREEN -->
+  <section id="screen-results" class="screen">
+    <div class="card score-banner">
+      <div class="out-of">TU NOTA</div>
+      <div class="big-score" id="result-score">0.00</div>
+      <div class="out-of">sobre 30</div>
+      <div class="verdict" id="result-verdict">—</div>
+
+      <div class="ci-wrap">
+        <div class="ci-label-row"><span>-7.5</span><span>0</span><span>15</span><span>30</span></div>
+        <div class="ci-track" id="ci-track">
+          <div class="ci-axis"></div>
+          <div class="ci-band" id="ci-band"></div>
+          <div class="ci-pass-line" id="ci-pass-line"></div>
+          <div class="ci-marker" id="ci-marker"></div>
+        </div>
+        <div class="ci-caption" id="ci-caption"></div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-pill correct"><div class="n" id="stat-correct">0</div><div class="l">Aciertos</div></div>
+        <div class="stat-pill incorrect"><div class="n" id="stat-incorrect">0</div><div class="l">Fallos</div></div>
+        <div class="stat-pill blank"><div class="n" id="stat-blank">0</div><div class="l">En blanco</div></div>
+        <div class="stat-pill"><div class="n" id="stat-time">0:00</div><div class="l">Tiempo</div></div>
+      </div>
+    </div>
+
+    <div class="section-title">Desglose por bloque</div>
+    <div class="block-grid" id="block-grid"></div>
+
+    <div class="section-title">Revisión pregunta por pregunta</div>
+    <div class="filter-row" id="filter-row">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="incorrect">Falladas</button>
+      <button class="filter-btn" data-filter="blank">En blanco</button>
+      <button class="filter-btn" data-filter="correct">Acertadas</button>
+    </div>
+    <div id="review-list"></div>
+
+    <div class="btn-row">
+      <button class="btn" id="btn-retry">Repetir con 30 nuevas →</button>
+      <button class="btn ghost" id="btn-home">Volver al inicio</button>
+    </div>
+  </section>
+
+  <footer>Datos del banco de preguntas cargados localmente · no se envía nada a ningún servidor.</footer>
+</div>
+
+<div class="confirm-modal hidden" id="confirm-modal">
+  <div class="confirm-box">
+    <h3>Preguntas sin contestar</h3>
+    <p id="confirm-text"></p>
+    <div class="btn-row">
+      <button class="btn danger" id="btn-confirm-submit">Enviar igualmente</button>
+      <button class="btn ghost" id="btn-cancel-submit">Volver al examen</button>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="qbank-data">
+[{"id":"b1_01","block":1,"blockName":"Research Design & Data Types","question":"Which of the following is the correct order in the Marketing Research 7-step process, immediately after 'Research design'?","options":["Data analysis","Data collection method","Sampling","Report and presentation"],"correctIndex":1,"explanations":["Incorrect — Data analysis is step 6, much later in the process.","Correct — after defining the research design, the next step is choosing the data collection method (primary vs secondary, survey vs observation).","Incorrect — Sampling is step 4, it comes after the data collection method is chosen.","Incorrect — Report and presentation is the final step (step 7)."]},{"id":"b1_02","block":1,"blockName":"Research Design & Data Types","question":"A Marketing Decision Problem (MDP) is best described as:","options":["Information-oriented — what data is needed","Action-oriented — what should the decision-maker do","The same document as the Marketing Research Proposal","A type of secondary data source"],"correctIndex":1,"explanations":["Incorrect — that describes the Marketing Research Problem (MRP), not the MDP.","Correct — the MDP asks what actions the decision-maker should take (e.g. 'Should we reposition the brand?').","Incorrect — the Proposal describes HOW the research will be conducted; the MDP is about the business action.","Incorrect — MDP is not a data source, it's a business-decision framing."]},{"id":"b1_03","block":1,"blockName":"Research Design & Data Types","question":"Which research design is characterized by unstructured methodology, small samples and an evolving approach?","options":["Conclusive design","Causal design","Exploratory design","Descriptive design"],"correctIndex":2,"explanations":["Incorrect — Conclusive design is structured and uses large samples, the opposite description.","Incorrect — Causal design is a TYPE of conclusive design, also structured.","Correct — Exploratory design is unstructured, flexible and uses small samples, typically when little is known about the topic.","Incorrect — Descriptive research is a structured, conclusive design."]},{"id":"b1_04","block":1,"blockName":"Research Design & Data Types","question":"According to the golden rule of sources of information, a researcher should:","options":["Always start by collecting primary data","Always start with secondary data before considering primary data","Only use primary data if the budget allows","Use marketing intelligence instead of secondary data whenever possible"],"correctIndex":1,"explanations":["Incorrect — this reverses the rule; primary data is costly and time-consuming and should only be collected once secondary sources are exhausted.","Correct — every research project should start with secondary data; only when it proves insufficient should the researcher move to primary data collection.","Incorrect — the decision isn't purely about budget, it's about exhausting cheaper, faster secondary sources first.","Incorrect — marketing intelligence is a different, complementary source, not a substitute for the secondary-data-first rule."]},{"id":"b1_05","block":1,"blockName":"Research Design & Data Types","question":"A study on 'market share and sales forecasting trends' — even though no specific problem has been identified yet — would be classified as:","options":["Problem-solving research (reactive)","Problem-identification research (proactive)","Causal research","Longitudinal research"],"correctIndex":1,"explanations":["Incorrect — problem-solving research addresses a specific, already-identified problem (e.g. pricing, promotion).","Correct — market share and forecasting/trend research are classic examples of problem-identification (proactive) research, looking for problems not yet apparent.","Incorrect — causal research is about establishing cause-effect through experiments, not about identifying unknown problems.","Incorrect — longitudinal refers to a time-based design, not the proactive/reactive classification."]},{"id":"b1_06","block":1,"blockName":"Research Design & Data Types","question":"In the '7 C's' for productive researcher-decision maker interaction, which C refers to frankness and honesty?","options":["Confidence","Candour","Cooperation","Closeness"],"correctIndex":1,"explanations":["Incorrect — Confidence refers to mutual trust in the relationship.","Correct — Candour specifically means frankness and honesty between researcher and decision-maker.","Incorrect — Cooperation refers to active collaboration from both parties.","Incorrect — Closeness refers to proximity and accessibility between the parties."]},{"id":"b1_07","block":1,"blockName":"Research Design & Data Types","question":"Random sampling error is caused by:","options":["Errors from the interviewer or respondent","The sampling procedure itself producing a non-representative sample","Non-response from participants","Poor questionnaire wording"],"correctIndex":1,"explanations":["Incorrect — that describes a non-sampling error, not random sampling error.","Correct — random sampling error occurs specifically because the sample obtained is not representative of the population, due to the sampling procedure.","Incorrect — non-response is a non-sampling error.","Incorrect — wording issues are a non-sampling error (measurement error), unrelated to the sampling procedure itself."]},{"id":"b1_08","block":1,"blockName":"Research Design & Data Types","question":"Which of these is a genuine ADVANTAGE of secondary data (not a disadvantage)?","options":["It may not be perfectly suited to the specific problem","It helps diagnose the research problem and develop an approach to it","It may not be current","The sample used may differ from the one needed"],"correctIndex":1,"explanations":["Incorrect — this is listed as a disadvantage/limitation of secondary data.","Correct — secondary data is explicitly listed as useful for diagnosing the problem, developing an approach, and even answering some research questions directly.","Incorrect — currency (being out of date) is a classic disadvantage of secondary data.","Incorrect — a mismatched sample is a disadvantage, not an advantage."]},{"id":"b1_09","block":1,"blockName":"Research Design & Data Types","question":"Compared to cross-sectional designs, longitudinal designs are generally:","options":["Worse at detecting change over time","Better at detecting change, but collect more data and are more accurate","Cheaper and faster to execute","Only used in qualitative research"],"correctIndex":1,"explanations":["Incorrect — longitudinal designs are specifically BETTER at detecting change since the same sample is measured repeatedly.","Correct — longitudinal designs are stronger for detecting change, involve more data collection, and offer more accuracy — at the cost of representativeness and higher response bias.","Incorrect — cross-sectional designs are typically the cheaper, faster option, not longitudinal.","Incorrect — this distinction applies to quantitative descriptive research, not exclusively qualitative work."]},{"id":"b1_10","block":1,"blockName":"Research Design & Data Types","question":"The Marketing Research Brief and the Marketing Research Proposal differ in that:","options":["The Brief addresses 'how'; the Proposal addresses 'what'","The Brief addresses 'what' (client's objectives); the Proposal addresses 'how' (planned methodology)","They are two names for the exact same document","The Brief is written by the researcher; the Proposal is written by the client"],"correctIndex":1,"explanations":["Incorrect — this reverses the two definitions.","Correct — the Brief is the client's written statement of objectives and expectations (the 'what'); the Proposal is the researcher's planned layout of the study (the 'how').","Incorrect — they are distinct documents serving different purposes and are typically written by different parties.","Incorrect — it's the opposite: the Brief comes from the client/decision-maker, and the Proposal is prepared by the researcher."]},{"id":"b2_01","block":2,"blockName":"Sampling Techniques & Sample Size","question":"In stratified sampling, elements WITHIN each stratum should be ______, while elements ACROSS strata should be ______.","options":["Heterogeneous; homogeneous","Homogeneous; heterogeneous","Homogeneous; homogeneous","Heterogeneous; heterogeneous"],"correctIndex":1,"explanations":["Incorrect — this is the reverse of the correct rule.","Correct — within each stratum, elements should be as homogeneous as possible; across strata, they should be as heterogeneous as possible.","Incorrect — if everything were homogeneous, there'd be no reason to stratify at all.","Incorrect — that description fits cluster sampling more closely, not stratified sampling."]},{"id":"b2_02","block":2,"blockName":"Sampling Techniques & Sample Size","question":"Quota sampling is best described as:","options":["A one-stage probability technique","A two-stage restricted judgemental (non-probability) sampling technique","A technique that guarantees each person an equal chance of selection","Sampling based entirely on random number generation"],"correctIndex":1,"explanations":["Incorrect — quota sampling is non-probability, not probability, sampling.","Correct — quota sampling has two stages: developing control categories/quotas, then selecting elements within each quota by convenience or judgement.","Incorrect — that describes probability sampling, not quota sampling.","Incorrect — random number generation is characteristic of simple random sampling, not quota sampling."]},{"id":"b2_03","block":2,"blockName":"Sampling Techniques & Sample Size","question":"In systematic sampling, the sampling interval 'i' is calculated as:","options":["i = n/N","i = N/n","i = N×n","i = N−n"],"correctIndex":1,"explanations":["Incorrect — this formula is inverted.","Correct — the sampling interval i = N/n, rounded to the nearest integer.","Incorrect — multiplying N and n would produce an enormous, meaningless number.","Incorrect — subtraction doesn't represent 'every ith element' logic."]},{"id":"b2_04","block":2,"blockName":"Sampling Techniques & Sample Size","question":"Which of the following pairs correctly matches sampling type with its main benefit?","options":["Probability sampling → confidence intervals can be calculated","Non-probability sampling → confidence intervals can be calculated","Probability sampling → relies purely on researcher's judgement","Non-probability sampling → each element has a known, equal chance of selection"],"correctIndex":0,"explanations":["Correct — probability sampling relies on a theoretical statistical framework, which is what allows confidence intervals to be calculated.","Incorrect — non-probability sampling is subjective and does NOT allow confidence intervals to be calculated.","Incorrect — relying on judgement describes non-probability sampling, not probability sampling.","Incorrect — known, equal selection probability is the defining feature of probability sampling, not non-probability."]},{"id":"b2_05","block":2,"blockName":"Sampling Techniques & Sample Size","question":"A researcher needs to reach a hard-to-find population (e.g. rare disease patients) and asks initial participants to refer others they know with the same condition. This is:","options":["Convenience sampling","Judgemental sampling","Snowball sampling","Quota sampling"],"correctIndex":2,"explanations":["Incorrect — convenience sampling is just picking whoever is easiest to reach, without a referral chain.","Incorrect — judgemental sampling relies on the researcher's expert judgement, not participant referrals.","Correct — snowball sampling selects an initial group, then relies on referrals from those participants to reach further members of a hard-to-find population.","Incorrect — quota sampling uses pre-set demographic quotas, not a referral chain."]},{"id":"b2_06","block":2,"blockName":"Sampling Techniques & Sample Size","question":"Which of these is NOT one of the three main sampling technique decisions described in the notes?","options":["Bayesian vs. Traditional approach","Sampling with or without replacement","Probability vs. Non-probability sampling","Qualitative vs. Quantitative sampling"],"correctIndex":3,"explanations":["Incorrect — this IS one of the three main decisions.","Incorrect — this IS one of the three main decisions.","Incorrect — this IS one of the three main decisions.","Correct — 'Qualitative vs. Quantitative sampling' isn't a term used in the notes; the three real decisions are Bayesian vs. Traditional, With/Without replacement, and Probability vs. Non-probability."]},{"id":"b2_07","block":2,"blockName":"Sampling Techniques & Sample Size","question":"A sampling frame error occurs when:","options":["The sample size is too small for the desired precision","The list used to identify the population is missing elements or includes irrelevant ones","The response rate is below 50%","The questionnaire has ambiguous wording"],"correctIndex":1,"explanations":["Incorrect — that's a sample size issue, not a sampling frame issue.","Correct — sampling frame error happens when the list doesn't perfectly represent the target population.","Incorrect — that describes a non-response issue, a separate source of error.","Incorrect — that's a questionnaire design error, unrelated to the sampling frame."]},{"id":"b2_08","block":2,"blockName":"Sampling Techniques & Sample Size","question":"In the Bayesian approach to sampling (as opposed to the Traditional approach):","options":["The whole sample is selected before data collection begins","Elements are selected sequentially, and prior population information is used to calculate the cost/probability of a wrong decision","It is the most commonly used approach in Marketing Research","It only applies to non-probability sampling"],"correctIndex":1,"explanations":["Incorrect — that describes the Traditional approach, not Bayesian.","Correct — in the Bayesian approach, elements are selected sequentially and the cost/probability of a wrong decision can be calculated.","Incorrect — the Traditional approach is the one described as most commonly used.","Incorrect — Bayesian vs. Traditional is a separate decision from probability vs. non-probability sampling."]},{"id":"b2_09","block":2,"blockName":"Sampling Techniques & Sample Size","question":"The incidence rate in sample size calculation refers to:","options":["The percentage of survey questions answered correctly","The rate of occurrence — the percentage of people eligible to participate in the study","The margin of error accepted in the confidence interval","The response rate achieved after fieldwork"],"correctIndex":1,"explanations":["Incorrect — that's not related to sample size adjustment.","Correct — incidence rate is the percentage of persons who qualify/are eligible to participate, used to inflate the initial sample size needed.","Incorrect — that describes the precision level (e), a separate concept.","Incorrect — that's the completion rate, a related but distinct adjustment factor."]},{"id":"b2_10","block":2,"blockName":"Sampling Techniques & Sample Size","question":"A researcher wants a 95% confidence interval for a sample mean of €182, with population σ = €55 and n = 300. The standard error is approximately:","options":["55","3.18","18.2","1.96"],"correctIndex":1,"explanations":["Incorrect — that's the raw population standard deviation (σ), before dividing by √n.","Correct — Standard error = σ/√n = 55/√300 ≈ 55/17.32 ≈ 3.18.","Incorrect — this doesn't match the correct division of σ by √n.","Incorrect — 1.96 is the Z-value for 95% confidence, not the standard error."]},{"id":"b3_01","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"A 7-point Likert scale ('Strongly Disagree' to 'Strongly Agree') is generally treated as which type of scale?","options":["Nominal","Ordinal","Interval","Ratio"],"correctIndex":2,"explanations":["Incorrect — nominal scales are pure labels with no order, which doesn't apply here.","Incorrect — ordinal only shows ranking without assuming equal distances; Likert scales are treated as interval.","Correct — Likert scales are treated as interval data, assuming equal distances between points but with no true zero.","Incorrect — ratio scales require a true zero point, which a Likert agreement scale does not have."]},{"id":"b3_02","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"During a 6-month experiment, a competitor unexpectedly changed the price of a competing product, distorting the results. This is an example of the extraneous variable threat known as:","options":["Maturation","History","Instrumentation","Mortality"],"correctIndex":1,"explanations":["Incorrect — Maturation is about natural changes in test units over time, not external events.","Correct — History refers to an external event occurring during the experiment that affects the outcome.","Incorrect — Instrumentation is about changes in the measuring tool or observers, not competitor actions.","Incorrect — Mortality refers to dropouts during the experiment, not external market events."]},{"id":"b3_03","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which question below is a 'double-barrelled' question, and therefore poorly designed?","options":["Do you think Coca-Cola is a tasty soft drink?","Do you think Coca-Cola is a tasty and refreshing soft drink?","How many times have you purchased Coca-Cola in the last month?","Which brand of soft drink do you prefer?"],"correctIndex":1,"explanations":["Incorrect — this is a single, well-formed question asking about one attribute only.","Correct — this combines two separate attributes (tasty AND refreshing) into one question, making the answer uninterpretable.","Incorrect — this asks for a single piece of information, not two combined attributes.","Incorrect — this is a straightforward single-attribute preference question."]},{"id":"b3_04","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"The 'funnel approach' to ordering questionnaire items means:","options":["Placing sensitive questions first to get them out of the way","Moving from general questions to more specific ones","Randomizing question order to avoid bias","Placing classification/demographic questions first"],"correctIndex":1,"explanations":["Incorrect — sensitive/difficult questions should be placed LATE in the questionnaire, not first.","Correct — the funnel approach moves from general questions down to specific ones, like a funnel narrowing.","Incorrect — randomization isn't the 'funnel' principle; the notes specify a logical, general-to-specific flow.","Incorrect — classification/personal information should come last, not first."]},{"id":"b3_05","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"In Paired Comparison Scaling, if a study compares 5 brands, how many comparisons are required?","options":["5","10","20","25"],"correctIndex":1,"explanations":["Incorrect — 5 would only be n, not n(n-1)/2.","Correct — using n(n-1)/2 with n=5: 5×4/2 = 10 comparisons.","Incorrect — this overcounts; the formula divides by 2 to avoid counting each pair twice.","Incorrect — 25 would be n², which isn't the correct formula for paired comparisons."]},{"id":"b3_06","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which method of controlling extraneous variables involves randomly assigning test units to different treatment groups?","options":["Matching","Statistical control","Randomisation","Design control"],"correctIndex":2,"explanations":["Incorrect — matching involves comparing test units on key background variables before assignment, not random assignment.","Incorrect — statistical control adjusts for extraneous variables mathematically (e.g. ANOVA), it doesn't involve assignment.","Correct — randomisation is specifically the technique of randomly assigning test units to groups, eliminating selection bias.","Incorrect — design control refers to using specific experimental designs, a broader category."]},{"id":"b3_07","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Internal validity in an experiment refers to:","options":["Whether the results can be generalised to other populations or settings","Whether the manipulation of the independent variable actually caused the observed change in the dependent variable","The sample size used in the experiment","The reliability of the measurement instrument only"],"correctIndex":1,"explanations":["Incorrect — that describes external validity, not internal validity.","Correct — internal validity asks whether the experimental manipulation genuinely caused the observed effect, requiring control of extraneous variables.","Incorrect — sample size is a separate methodological consideration.","Incorrect — this narrows internal validity down to only one possible threat (Instrumentation), not the whole concept."]},{"id":"b3_08","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"In Constant Sum Scaling, respondents typically:","options":["Rank objects from most to least preferred","Choose one object from a pair, repeated for all pairs","Allocate a fixed number of points (e.g. 100) across attributes based on importance","Rate each object independently on a 1-10 scale"],"correctIndex":2,"explanations":["Incorrect — that describes Rank Order Scaling.","Incorrect — that describes Paired Comparison Scaling.","Correct — Constant Sum Scaling asks respondents to allocate a fixed sum across attributes, providing ratio-like information.","Incorrect — that describes a non-comparative (itemised) rating scale, not Constant Sum Scaling."]},{"id":"b3_09","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which of these is NOT listed among the reasons survey response rates are declining?","options":["Excessive length of interviews","Lack of empathy of survey designers with participants' experience","Too many survey requests reaching the same individuals","Overuse of face-to-face interviews"],"correctIndex":3,"explanations":["Incorrect — this IS listed as a reason for declining response rates.","Incorrect — this IS listed as a reason for declining response rates.","Incorrect — this IS listed as a reason for declining response rates.","Correct — 'overuse of face-to-face interviews' is not mentioned; if anything, face-to-face tends to have the HIGHEST response quality."]},{"id":"b3_10","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Pilot-testing a questionnaire should typically be conducted on how many participants per wave?","options":["1-5","15-30","100-150","500+"],"correctIndex":1,"explanations":["Incorrect — this sample is too small to reveal meaningful comprehension patterns.","Correct — the notes specify piloting on 15-30 participants from the target population per wave.","Incorrect — this is far larger than needed for a pilot test.","Incorrect — 500+ participants would defeat the purpose of a small-scale pilot test."]},{"id":"b4_01","block":4,"blockName":"Quantitative Data Analysis","question":"A researcher wants to test whether 'monthly income' (quantitative) differs across 'job type' with 5 categories (qualitative). Which technique should be used?","options":["Chi-square test","Correlation","ANOVA","Cluster Analysis"],"correctIndex":2,"explanations":["Incorrect — chi-square tests the relationship between two categorical variables, not a quantitative vs. qualitative comparison.","Incorrect — correlation measures the linear relationship between two metric variables; job type isn't metric.","Correct — ANOVA tests whether a quantitative variable differs across a qualitative variable with 3+ categories.","Incorrect — cluster analysis groups similar cases together; it doesn't test this specific relationship."]},{"id":"b4_02","block":4,"blockName":"Quantitative Data Analysis","question":"Which technique would you use to test whether 'gender' (male/female) is associated with 'preferred brand' (Brand A/B/C)?","options":["Correlation","Chi-square (cross-tabulation)","Regression","Factor Analysis"],"correctIndex":1,"explanations":["Incorrect — correlation requires two metric variables; gender and brand preference are both categorical.","Correct — chi-square tests the association between two categorical/qualitative variables using a cross-tabulation.","Incorrect — regression is used for a metric dependent variable, not two categorical variables.","Incorrect — factor analysis reduces multiple correlated metric variables, unrelated here."]},{"id":"b4_03","block":4,"blockName":"Quantitative Data Analysis","question":"In a chi-square test on a cross-tabulation with 3 rows and 4 columns, the degrees of freedom equal:","options":["7","12","6","3"],"correctIndex":2,"explanations":["Incorrect — 7 would come from simply adding rows and columns, which isn't the formula.","Incorrect — 12 is r×c, not the degrees of freedom formula.","Correct — df = (r-1)×(c-1) = (3-1)×(4-1) = 2×3 = 6.","Incorrect — 3 doesn't match (r-1)(c-1) for this table."]},{"id":"b4_04","block":4,"blockName":"Quantitative Data Analysis","question":"According to the notes, regression analysis:","options":["Proves that the independent variable causes the change in the dependent variable","Describes an association between variables but does NOT imply causality","Can only be used with categorical variables","Is classified as an independence model, like Cluster Analysis"],"correctIndex":1,"explanations":["Incorrect — this is explicitly called out as a misconception; regression does NOT prove causality.","Correct — the notes explicitly state regression analysis describes association and does not imply causality.","Incorrect — regression is used with metric dependent variables, not purely categorical ones.","Incorrect — regression is a dependence model, unlike Cluster/Factor Analysis, which are independence models."]},{"id":"b4_05","block":4,"blockName":"Quantitative Data Analysis","question":"Which multivariate technique is most commonly used to create consumer segments based on questionnaire responses?","options":["Regression Analysis","Factor Analysis","Cluster Analysis","Chi-square"],"correctIndex":2,"explanations":["Incorrect — regression predicts/explains a dependent variable, it doesn't group similar consumers.","Incorrect — factor analysis reduces variables into underlying factors; it doesn't directly create consumer groups.","Correct — cluster analysis classifies consumers into homogeneous groups (segments) based on similarity.","Incorrect — chi-square tests association between two categorical variables, it does not create segments."]},{"id":"b4_06","block":4,"blockName":"Quantitative Data Analysis","question":"Regression Analysis and Cluster/Factor Analysis differ in that:","options":["Regression is a dependence model; Cluster/Factor are independence models","Regression is an independence model; Cluster/Factor are dependence models","All three are dependence models","All three are independence models"],"correctIndex":0,"explanations":["Correct — regression establishes a relationship a priori (dependence model); Cluster and Factor Analysis have no DV/IV distinction (independence models).","Incorrect — this reverses the correct classification.","Incorrect — Cluster and Factor Analysis are independence models, not dependence models.","Incorrect — Regression is specifically a dependence model."]},{"id":"b4_07","block":4,"blockName":"Quantitative Data Analysis","question":"A standardised z-score is calculated as z = (X − X̄)/S. After standardisation, the resulting distribution has:","options":["Mean = 1, SD = 0","Mean = 0, SD = 1","Mean = X̄, SD = S","Mean and SD both equal to the original values"],"correctIndex":1,"explanations":["Incorrect — this reverses mean and SD values.","Correct — standardisation always produces a distribution with mean 0 and standard deviation 1.","Incorrect — that would mean no transformation happened at all.","Incorrect — standardisation specifically changes the scale so mean and SD are no longer the original values."]},{"id":"b4_08","block":4,"blockName":"Quantitative Data Analysis","question":"Which measure of central tendency is most robust to extreme outliers?","options":["Mean","Median","Mode","Range"],"correctIndex":1,"explanations":["Incorrect — the mean is heavily affected by extreme values since it uses every data point.","Correct — the median is the middle value and is not distorted by extreme outliers.","Incorrect — mode is about frequency, useful for categorical data, but not specifically about outlier robustness.","Incorrect — range is calculated directly from the extremes, so it's the LEAST robust to outliers."]},{"id":"b4_09","block":4,"blockName":"Quantitative Data Analysis","question":"In hypothesis testing, the null hypothesis (H₀) generally:","options":["Refers to a sample statistic like X̄ or S","States that a change or difference exists that the researcher wants to prove","Refers to a specified value of a population parameter, and is not rejected unless there's sufficient evidence","Is always identical in wording to the alternative hypothesis"],"correctIndex":2,"explanations":["Incorrect — H₀ refers to population parameters (μ, σ, π), not sample statistics.","Incorrect — that describes the alternative hypothesis (H₁).","Correct — H₀ refers to a specified population parameter value; if not rejected, no changes are made.","Incorrect — H₀ and H₁ are complementary but distinct statements, not identical."]},{"id":"b4_10","block":4,"blockName":"Quantitative Data Analysis","question":"The Coefficient of Variation (CV) is useful because it:","options":["Measures the shape/skewness of a distribution","Is a unitless measure of relative variability, useful for comparing spread across different scales","Always equals the standard deviation","Can only be used with nominal data"],"correctIndex":1,"explanations":["Incorrect — skewness measures asymmetry, a different summary statistic.","Correct — CV = S/X̄ × 100 is unitless, ideal for comparing variability between variables measured in different units.","Incorrect — CV is calculated FROM the standard deviation, it isn't identical to it.","Incorrect — CV requires a meaningful mean, so it needs at least interval/ratio data."]},{"id":"b5_01","block":5,"blockName":"Qualitative Research Techniques","question":"Which in-depth interview technique uses images and photographs to uncover deep metaphors driving consumer thinking?","options":["Laddering Technique","Repertory Grid Technique","Zaltman Metaphor Elicitation Technique (ZMET)","Friendship Pair"],"correctIndex":2,"explanations":["Incorrect — Laddering uses progressive 'why' questions, not images.","Incorrect — Repertory Grid has participants compare/contrast elements verbally, not through images.","Correct — ZMET specifically uses images/photos brought by participants to uncover deep, often unconscious metaphors.","Incorrect — Friendship Pair simply interviews two friends together, unrelated to imagery."]},{"id":"b5_02","block":5,"blockName":"Qualitative Research Techniques","question":"A respondent completing a sentence like 'People who drink diet soda are ___' is an example of which projective technique?","options":["Association Technique","Completion Technique","Construction Technique","Expressive Technique"],"correctIndex":1,"explanations":["Incorrect — association techniques involve saying the first word that comes to mind, not completing sentences.","Correct — this is a sentence completion task, a classic example of a Completion Technique.","Incorrect — construction techniques require building an entire story or dialogue, not filling in a blank.","Incorrect — expressive techniques involve role-play or cartoon-style expression, not sentence completion."]},{"id":"b5_03","block":5,"blockName":"Qualitative Research Techniques","question":"A typical focus group involves how many participants, led by a skilled moderator?","options":["2-3","6-10","15-20","30+"],"correctIndex":1,"explanations":["Incorrect — 2-3 people would be closer to a friendship pair or in-depth interview, not a focus group.","Correct — the notes define a focus group as a guided discussion with 6-10 participants.","Incorrect — this is too large for the group dynamic described for focus groups.","Incorrect — 30+ would make meaningful group discussion impractical."]},{"id":"b5_04","block":5,"blockName":"Qualitative Research Techniques","question":"In-depth interviews (IDI) are generally preferred over focus groups when:","options":["The topic is simple and not sensitive","The respondents are highly homogeneous and comfortable discussing openly in groups","The topic is sensitive, or the participants are highly heterogeneous, or context/observation matters","The researcher wants faster, cheaper data collection"],"correctIndex":2,"explanations":["Incorrect — for simple, non-sensitive topics, focus groups are typically sufficient.","Incorrect — homogeneous participants who mix well are well-suited to focus groups, not a reason to prefer IDI.","Correct — IDI is preferred for sensitive topics, heterogeneous respondents, complex B2B topics, or when live observation matters.","Incorrect — IDI is generally slower and more resource-intensive than a group format."]},{"id":"b5_05","block":5,"blockName":"Qualitative Research Techniques","question":"The Laddering Technique progressively uncovers the links between:","options":["Product attributes → consequences → personal values","Signifier → signified → cultural codes","Data assembly → coding → data display","History → maturation → mortality"],"correctIndex":0,"explanations":["Correct — laddering moves step by step from concrete product attributes to consequences and finally to personal values.","Incorrect — that sequence describes semiotic concepts, unrelated to laddering.","Incorrect — that describes the stages of qualitative data analysis, not laddering.","Incorrect — those are extraneous variable threats to internal validity, unrelated to laddering."]},{"id":"b5_06","block":5,"blockName":"Qualitative Research Techniques","question":"According to Goodyear's (1996) two schools of thought, the American school of focus groups tends to be:","options":["Interpretive, meaning-oriented, with smaller exploratory groups","Pragmatic, results-oriented, with larger groups and a more directive moderator","Used exclusively for branding and strategic insight","Focused on power dynamics and social change"],"correctIndex":1,"explanations":["Incorrect — this describes the European school, not the American school.","Correct — the American school is pragmatic and results-oriented, with larger groups and a more directive moderator, mainly for advertising/product testing.","Incorrect — branding/strategic insight is the main application of the EUROPEAN school.","Incorrect — focus on power/social change describes the Critical research paradigm, unrelated here."]},{"id":"b5_07","block":5,"blockName":"Qualitative Research Techniques","question":"One of the core aims of ethnographic research is:","options":["To manipulate an independent variable in a controlled lab setting","To understand behaviour within its natural social and cultural context (contextualism)","To calculate confidence intervals for population parameters","To reduce many variables into a smaller set of underlying factors"],"correctIndex":1,"explanations":["Incorrect — that describes a controlled experiment, the opposite of ethnography's naturalistic approach.","Correct — contextualism — understanding behaviour within its social and cultural context — is a core aim of ethnography.","Incorrect — confidence intervals belong to quantitative sampling/statistics, not ethnography.","Incorrect — that describes Factor Analysis, an unrelated quantitative technique."]},{"id":"b5_08","block":5,"blockName":"Qualitative Research Techniques","question":"The key difference between Grounded Theory and Action Research is that:","options":["Grounded Theory is quantitative; Action Research is qualitative","Grounded Theory develops theory inductively from data; Action Research is a cyclical, participatory Plan-Act-Observe-Reflect process","Action Research never involves the participants directly","Grounded Theory always precedes Action Research in a study"],"correctIndex":1,"explanations":["Incorrect — both are qualitative approaches; the distinction isn't quantitative vs qualitative.","Correct — Grounded Theory lets theory 'emerge' inductively through constant comparison; Action Research is a cyclical collaboration (Plan → Act → Observe → Reflect).","Incorrect — Action Research is specifically participatory, directly involving participants.","Incorrect — there's no rule that one must always precede the other."]},{"id":"b5_09","block":5,"blockName":"Qualitative Research Techniques","question":"Content Analysis is classified in the notes as:","options":["A purely qualitative, subjective technique","A quantitative technique based on classifying and counting textual content","An experimental design used to test causality","A probability sampling technique"],"correctIndex":1,"explanations":["Incorrect — despite analysing text, Content Analysis itself is explicitly classified as quantitative.","Correct — the notes describe Content Analysis as an 'objective, systematic and quantitative description of manifest content,' based on classifying and counting.","Incorrect — Content Analysis analyses communications/text, it doesn't test cause-effect relationships.","Incorrect — Content Analysis is a data analysis method, not a sampling technique."]},{"id":"b5_10","block":5,"blockName":"Qualitative Research Techniques","question":"In Semiotics, the 'signifier' refers to:","options":["The conceptual meaning behind a sign","The material sign itself — what it physically is","A bundle of signs structuring cultural meaning","An outdated, low-energy cultural code"],"correctIndex":1,"explanations":["Incorrect — that describes the 'signified,' not the signifier.","Correct — the signifier is the material sign — the physical object/word/image itself.","Incorrect — that describes 'codes,' a broader concept combining multiple signs.","Incorrect — that describes a 'residual code,' a specific type of code."]},{"id":"b6_01","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"According to the ESOMAR definition, marketing research primarily:","options":["Makes marketing decisions on behalf of the company","Links the consumer, customer and public to the marketer through information","Guarantees the success of any marketing action taken","Replaces the need for secondary data sources"],"correctIndex":1,"explanations":["Incorrect — this is a classic misconception; research informs decisions, it does not make them.","Correct — the ESOMAR definition explicitly describes research as linking the consumer, customer and public to the marketer through information.","Incorrect — the notes explicitly state research reduces uncertainty but does NOT guarantee success.","Incorrect — research does not replace secondary data; secondary data should always be used first."]},{"id":"b6_02","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"'Sugging' refers to:","options":["A statistical technique for reducing variables","Selling under the guise of research — a prohibited unethical practice","A sampling technique using quotas","The process of assigning codes to open-ended responses"],"correctIndex":1,"explanations":["Incorrect — that describes something like Factor Analysis, unrelated to sugging.","Correct — sugging is 'Selling Under the Guise' of research, an unethical practice that is strictly prohibited.","Incorrect — that describes quota sampling, unrelated to sugging.","Incorrect — that describes coding in data preparation, unrelated to sugging."]},{"id":"b6_03","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"The very first step in the 7-step Marketing Research Process is:","options":["Sampling","Data analysis","Problem definition","Report and presentation"],"correctIndex":2,"explanations":["Incorrect — sampling is step 4, much later in the process.","Incorrect — data analysis is step 6, near the end.","Correct — problem definition is explicitly the FIRST step; the success of the whole project depends on defining it correctly.","Incorrect — report and presentation is the final step (step 7)."]},{"id":"b6_04","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"When a questionnaire is returned with unsatisfactory responses, which of these is NOT one of the three editing treatments described in the notes?","options":["Returning to the field","Assigning missing values","Discarding the respondent","Automatically correcting the answer to the most common response"],"correctIndex":3,"explanations":["Incorrect — this IS one of the three editing treatments.","Incorrect — this IS one of the three editing treatments.","Incorrect — this IS one of the three editing treatments.","Correct — 'automatically correcting to the most common response' is not a real editing treatment; it would introduce bias rather than legitimately fixing the data."]},{"id":"b6_05","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"A codebook typically contains all of the following EXCEPT:","options":["Column number","Variable name and number","Instructions for coding","The respondent's personal contact information"],"correctIndex":3,"explanations":["Incorrect — column number IS part of a codebook.","Incorrect — variable number/name IS part of a codebook.","Incorrect — coding instructions ARE part of a codebook.","Correct — a codebook documents variables and coding instructions; it does not store respondents' personal contact information."]},{"id":"b6_06","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"'Casewise deletion' as a method for treating missing data means:","options":["Substituting the mean value for missing responses","Discarding any case/participant that has ANY missing response from the entire analysis","Using only complete responses for each specific calculation, keeping other cases for other calculations","Estimating a response based on similar participants' patterns"],"correctIndex":1,"explanations":["Incorrect — that describes substituting a neutral (mean) value, a different method.","Correct — casewise deletion removes the ENTIRE case from the analysis if it has any missing response, unlike pairwise deletion.","Incorrect — that describes pairwise deletion, which is more selective.","Incorrect — that describes imputation, a different missing-data method."]},{"id":"b6_07","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"When coding open-ended (unstructured) questions, what is the recommended maximum proportion of responses that should fall into the 'other' category?","options":["50% or less","25% or less","10% or less","There is no recommended limit"],"correctIndex":2,"explanations":["Incorrect — 50% would mean the coding scheme failed to capture most of the meaningful variation.","Incorrect — 25% is still too high according to the notes.","Correct — the notes recommend that only about 10% or less of responses should fall into the 'other' category.","Incorrect — there IS an explicit recommended limit (10%) mentioned in the notes."]},{"id":"b6_08","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"Which of these is an accurate statement about marketing research, according to the 'Important Misconceptions' section?","options":["Marketing research makes the final decision for the company","Marketing research guarantees the success of any decision made","Marketing research informs decisions and reduces (but does not eliminate) uncertainty and risk","Marketing research is only useful when combined with primary data"],"correctIndex":2,"explanations":["Incorrect — this is explicitly listed as a misconception; research informs, it does not decide.","Incorrect — this is explicitly listed as a misconception; research reduces risk, it does not guarantee success.","Correct — this accurately reflects the notes: research informs decisions and reduces uncertainty/risk without eliminating it.","Incorrect — secondary data alone can be very useful and should always be explored first."]},{"id":"b6_09","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"What is the correct order of the Data Preparation Process?","options":["Coding → Editing → Checking → Cleaning → Transcribing → Adjusting","Checking → Editing → Coding → Transcribing → Cleaning → Adjusting","Cleaning → Checking → Coding → Editing → Transcribing → Adjusting","Adjusting → Cleaning → Coding → Editing → Checking → Transcribing"],"correctIndex":1,"explanations":["Incorrect — checking must come before editing and coding, not after.","Correct — the correct sequence is: Checking → Editing → Coding → Transcribing → Cleaning → Adjusting → Strategy selection.","Incorrect — cleaning happens much later, after coding and transcribing.","Incorrect — this reverses almost the entire sequence."]},{"id":"b6_10","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"According to the notes, research investment is justified when all of the following are true EXCEPT:","options":["The cost of a poor decision significantly exceeds the cost of research","There is genuine uncertainty about the market or customer behaviour","The information is not already available through secondary sources","The company has an unlimited marketing budget"],"correctIndex":3,"explanations":["Incorrect — this IS one of the justifying conditions listed in the notes.","Incorrect — this IS one of the justifying conditions listed in the notes.","Incorrect — this IS one of the justifying conditions listed in the notes.","Correct — 'unlimited budget' is not one of the criteria; justification is about decision cost, uncertainty, data availability and actionability."]},{"id":"b1_11","block":1,"blockName":"Research Design & Data Types","question":"Which of the following is NOT one of the five things ESOMAR's extended qualification says research 'does'?","options":["Specifies the information required","Manages and implements the data collection process","Sells products directly to consumers on behalf of the marketer","Communicates the findings and their implications"],"correctIndex":2,"explanations":["Incorrect — this IS one of the five things ESOMAR says research does.","Incorrect — this IS one of the five things ESOMAR says research does.","Correct — research informs and supports marketing decisions; it does not sell products directly. Selling under the guise of research is actually the unethical practice of 'sugging'.","Incorrect — this IS one of the five things ESOMAR says research does."]},{"id":"b1_12","block":1,"blockName":"Research Design & Data Types","question":"Which of these is classified as a MACROenvironmental factor (not microenvironmental) affecting the marketing system?","options":["Family","Peer groups","Technology","Opinion leaders"],"correctIndex":2,"explanations":["Incorrect — Family is a microenvironmental factor.","Incorrect — Peer groups are a microenvironmental factor.","Correct — Technology is listed as a macroenvironmental factor, alongside economy, competitors, legal/political, and social/demographic factors.","Incorrect — Opinion leaders are a microenvironmental factor."]},{"id":"b1_13","block":1,"blockName":"Research Design & Data Types","question":"Which key challenge raised by Research 2.0 / digital transformation involves ensuring research buyers understand the basis of the advice they are given?","options":["Trust","Theoretical base","Ethical base","Sampling frame error"],"correctIndex":0,"explanations":["Correct — 'Trust' is explicitly defined as ensuring research buyers understand the basis of the advice they are given.","Incorrect — Theoretical base refers to developing a body of knowledge supporting emerging techniques, a different challenge.","Incorrect — Ethical base refers to new privacy/security issues like GDPR, a different challenge.","Incorrect — sampling frame error is unrelated to Research 2.0 challenges."]},{"id":"b1_14","block":1,"blockName":"Research Design & Data Types","question":"Which digital research method specifically tracks brand mentions, sentiment, and consumer conversations in real time?","options":["Web analytics","Social media listening","Eye-tracking and biometrics","Mobile research"],"correctIndex":1,"explanations":["Incorrect — web analytics focuses on understanding user behaviour on websites, not brand mentions/sentiment.","Correct — social media listening is defined as tracking brand mentions, sentiment and consumer conversations in real time.","Incorrect — eye-tracking/biometrics measure emotional and physiological responses, not social conversations.","Incorrect — mobile research involves diary studies and geo-targeted, in-the-moment feedback, not social listening specifically."]},{"id":"b1_15","block":1,"blockName":"Research Design & Data Types","question":"Which combination of skills is explicitly listed in the notes as required for a career in marketing research?","options":["Only advanced statistics, nothing else","Marketing/psychology knowledge, statistics, qualitative methods, digital skills, and communication","Only graphic design skills","Only sales and negotiation skills"],"correctIndex":1,"explanations":["Incorrect — statistics alone is only one of several skill areas listed.","Correct — the notes list marketing/psychology/consumer behaviour knowledge, quantitative and qualitative methods, digital skills, and communication as required skills.","Incorrect — graphic design is not mentioned as a required skill.","Incorrect — sales/negotiation skills are not mentioned as required skills for this career."]},{"id":"b1_16","block":1,"blockName":"Research Design & Data Types","question":"Which of these associations is specifically the UK's Market Research Society?","options":["ESOMAR","MRS","AAPOR","CASRO"],"correctIndex":1,"explanations":["Incorrect — ESOMAR is the European Society for Opinion and Marketing Research.","Correct — MRS is The Market Research Society (UK).","Incorrect — AAPOR is the American Association for Public Opinion Research.","Incorrect — CASRO is the Council of American Survey Research Organizations."]},{"id":"b1_17","block":1,"blockName":"Research Design & Data Types","question":"Research investment is justified, according to the notes, when the cost of a poor decision:","options":["Is lower than the cost of the research","Significantly exceeds the cost of the research","Is impossible to estimate at all","Exactly equals the cost of the research"],"correctIndex":1,"explanations":["Incorrect — if the cost of a poor decision were lower than research costs, research wouldn't be worth it.","Correct — investment is justified when the cost of a poor decision significantly exceeds the cost of the research.","Incorrect — the notes don't require the cost to be unmeasurable; in fact it needs to be assessed and compared.","Incorrect — equality of costs wouldn't clearly justify the investment; the poor-decision cost must significantly exceed it."]},{"id":"b1_18","block":1,"blockName":"Research Design & Data Types","question":"Which of the following is NOT one of the key tasks involved in problem definition?","options":["Discussions with decision-makers","Interviews with industry experts","Secondary data collection and analysis","Conducting the final statistical data analysis of the study"],"correctIndex":3,"explanations":["Incorrect — this IS a key task of problem definition.","Incorrect — this IS a key task of problem definition.","Incorrect — this IS a key task of problem definition.","Correct — the final statistical data analysis happens much later in the research process (step 6), not during initial problem definition."]},{"id":"b1_19","block":1,"blockName":"Research Design & Data Types","question":"For the MDP 'Should we reposition our brand with an emphasis on raising prices?', which is the correctly matched MRP from the notes' example table?","options":["To determine consumer perceptions of the qualities and fit of a selection of celebrities","To determine the price elasticity of demand and impact on sales and profits of various levels of price changes","To determine market share evolution over the past 5 years","To decide the exact new retail price to charge next quarter"],"correctIndex":1,"explanations":["Incorrect — that MRP corresponds to the celebrity endorsement MDP example, not the pricing one.","Correct — this is the exact MRP paired with the pricing-repositioning MDP in the notes' example table.","Incorrect — market share evolution isn't the MRP matched to this specific MDP example.","Incorrect — the MRP is information-oriented (what to determine), not a specific price decision (which would be the MDP's job, not the MRP's)."]},{"id":"b1_20","block":1,"blockName":"Research Design & Data Types","question":"Which of the following is NOT one of the 6 components of a research design listed in the notes?","options":["Define the information needed","Decide whether the design is exploratory, descriptive or causal","Construct and pretest an appropriate data collection form","Hire a marketing manager to approve the project budget"],"correctIndex":3,"explanations":["Incorrect — this IS one of the 6 components.","Incorrect — this IS one of the 6 components.","Incorrect — this IS one of the 6 components.","Correct — approving a budget with a marketing manager isn't one of the 6 listed components; those focus on information needs, design type, techniques, data collection forms, sampling, and analysis planning."]},{"id":"b1_21","block":1,"blockName":"Research Design & Data Types","question":"Conclusive research is particularly appropriate when a researcher needs to:","options":["Explore vague, poorly understood concepts for the first time","Specify proportions within a population and make inferences from a sample","Address highly sensitive or unconscious topics indirectly","Reduce the number of alternatives before further research"],"correctIndex":1,"explanations":["Incorrect — exploring vague concepts is a classic use of EXPLORATORY research, not conclusive.","Correct — conclusive design is used to specify proportions within a population and make inferences about it from a sample.","Incorrect — addressing sensitive/unconscious topics is listed under exploratory research's use cases.","Incorrect — reducing the number of alternatives for further research is also an exploratory research use case."]},{"id":"b1_22","block":1,"blockName":"Research Design & Data Types","question":"Census data, the OECD Economic Outlook, and Eurostat are examples of which type of secondary data?","options":["Internal secondary data","External secondary data","Marketing intelligence","Primary data collected in-house"],"correctIndex":1,"explanations":["Incorrect — internal secondary data comes from within the organization (e.g. sales reports), not government/international bodies.","Correct — these are all examples of external secondary data, generated outside the organization.","Incorrect — marketing intelligence refers to qualified observations of the marketing environment, a different concept from these published statistical sources.","Incorrect — these are pre-existing published sources, not data collected first-hand by the researcher (which would be primary data)."]},{"id":"b1_23","block":1,"blockName":"Research Design & Data Types","question":"Considering the time lag between when data was originally collected and when it was published relates to which criterion for evaluating secondary data?","options":["Objective","Currency","Nature and dependability","Error and accuracy"],"correctIndex":1,"explanations":["Incorrect — 'Objective' asks what the original purpose of the research was, unrelated to timing.","Correct — 'Currency' specifically considers the time lag between data collection and publication.","Incorrect — 'Nature and dependability' asks whether the data can be adapted to your purpose and how it was reported.","Incorrect — 'Error and accuracy' involves comparing several sources when available, not timing specifically."]},{"id":"b1_24","block":1,"blockName":"Research Design & Data Types","question":"Discovering meaningful patterns, trends or correlations through large amounts of stored data is the definition of:","options":["A Data Warehouse","Data Mining","Marketing Intelligence","A Sampling Frame"],"correctIndex":1,"explanations":["Incorrect — a Data Warehouse simply stores data from different sources into one consistent database; it doesn't itself discover patterns.","Correct — Data Mining is specifically defined as discovering meaningful patterns, trends, or correlations through large amounts of data.","Incorrect — Marketing intelligence refers to qualified observations of the marketing environment, a different concept.","Incorrect — a sampling frame is a list used to identify a population, unrelated to pattern discovery."]},{"id":"b1_25","block":1,"blockName":"Research Design & Data Types","question":"Which type of syndicated service is primarily used for forecasting sales, market share and trends, and evaluating brand loyalty/switching?","options":["Media Panels","Purchase Panels","Audit Services","Industrial Syndicated Services"],"correctIndex":1,"explanations":["Incorrect — Media Panels are used for establishing advertising rates and viewer profiles.","Correct — Purchase Panels are used for forecasting sales/market share/trends, and evaluating brand loyalty and switching.","Incorrect — Audit Services measure consumer sales and market share by tracking distribution patterns, a related but distinct use.","Incorrect — Industrial Syndicated Services determine market potential by area and define sales territories, a different use case."]},{"id":"b2_11","block":2,"blockName":"Sampling Techniques & Sample Size","question":"A census, as defined in the notes, refers to:","options":["A subgroup of elements selected for participation in a study","A complete enumeration of all the elements of a population or study objects","A source of sampling frame error","An adjustment method for non-response"],"correctIndex":1,"explanations":["Incorrect — that describes a Sample, not a Census.","Correct — a census is a complete enumeration of the elements of a population or study objects.","Incorrect — a census is not an error source, it's a data collection approach.","Incorrect — a census is unrelated to non-response adjustment methods."]},{"id":"b2_12","block":2,"blockName":"Sampling Techniques & Sample Size","question":"What is the correct order of the sampling design process?","options":["Determine sample size → Define target population → Select technique → Execute → Validate → Determine frame","Define target population → Determine sampling frame → Select a sampling technique → Determine sample size → Execute the sampling process → Validate the sample","Validate the sample → Execute the sampling process → Determine sample size → Select technique → Determine frame → Define population","Select a sampling technique → Validate the sample → Define target population → Determine frame → Execute → Determine sample size"],"correctIndex":1,"explanations":["Incorrect — defining the target population must come first, not after determining sample size.","Correct — this is the exact 6-step sequence: define target population, determine sampling frame, select technique, determine sample size, execute, then validate.","Incorrect — this reverses almost the entire process; validation is the LAST step, not the first.","Incorrect — selecting a technique before even defining the population would be premature and out of order."]},{"id":"b2_13","block":2,"blockName":"Sampling Techniques & Sample Size","question":"Defining a target population requires specifying which four things, according to the notes?","options":["Elements, sampling units, extent, and time","Age, gender, income, and location","Mean, median, mode, and range","Nominal, ordinal, interval, and ratio"],"correctIndex":0,"explanations":["Correct — the target population should be defined in terms of elements, sampling units, extent (geographical boundaries), and time.","Incorrect — these are just example demographic variables, not the four defining components listed in the notes.","Incorrect — these are descriptive statistics measures, unrelated to defining a target population.","Incorrect — these are types of measurement scales, unrelated to defining a target population."]},{"id":"b2_14","block":2,"blockName":"Sampling Techniques & Sample Size","question":"In sampling WITH replacement, an element that has already been selected:","options":["Can only ever be included once in the sample","Remains in the sampling frame and can be included more than once","Is automatically excluded from the sampling frame","Can only be used in stratified sampling designs"],"correctIndex":1,"explanations":["Incorrect — that describes sampling WITHOUT replacement.","Correct — with replacement, the selected element remains in the sampling frame, so it can be included more than once.","Incorrect — exclusion after selection describes sampling WITHOUT replacement, the opposite case.","Incorrect — the with/without replacement decision is independent of whether stratified sampling is used."]},{"id":"b2_15","block":2,"blockName":"Sampling Techniques & Sample Size","question":"Non-probability sampling tends to be favoured over probability sampling when:","options":["The research is conclusive and needs precise population estimates","The research is exploratory and the population is relatively homogeneous","Sampling errors are much larger than non-sampling errors","Statistical and operational considerations strongly favour a rigorous design"],"correctIndex":1,"explanations":["Incorrect — conclusive research needing precise estimates actually favours probability sampling, not non-probability.","Correct — exploratory research combined with a relatively homogeneous population favours non-probability sampling.","Incorrect — probability sampling is favoured when sampling errors are the larger concern relative to non-sampling errors, not the reverse.","Incorrect — favourable statistical/operational considerations point toward probability sampling, not non-probability."]},{"id":"b2_16","block":2,"blockName":"Sampling Techniques & Sample Size","question":"Selecting expert witnesses in court, or specific purchase engineers for a B2B study, based on the researcher's own expertise, is an example of:","options":["Convenience sampling","Judgemental sampling","Snowball sampling","Cluster sampling"],"correctIndex":1,"explanations":["Incorrect — convenience sampling is about whoever is easiest to reach, without deliberate expert selection.","Correct — judgemental sampling selects elements based specifically on the researcher's judgement or expertise — exactly matching expert witnesses or purchase engineers.","Incorrect — snowball sampling relies on participant referrals, not researcher judgement alone.","Incorrect — cluster sampling is a probability technique dividing the population into clusters, unrelated to expert selection."]},{"id":"b2_17","block":2,"blockName":"Sampling Techniques & Sample Size","question":"In cluster sampling, elements WITHIN a cluster should ideally be ______, while the clusters THEMSELVES should be ______ (each representative of the population).","options":["Heterogeneous; homogeneous","Homogeneous; heterogeneous","Homogeneous; homogeneous","Heterogeneous; heterogeneous"],"correctIndex":0,"explanations":["Correct — within a cluster, elements should be heterogeneous (mirroring the population's diversity), while the clusters themselves should be homogeneous relative to each other.","Incorrect — this description actually fits stratified sampling, not cluster sampling.","Incorrect — if elements within clusters were homogeneous, each cluster wouldn't represent the full population's diversity.","Incorrect — this is the reverse of the correct rule for cluster sampling."]},{"id":"b2_18","block":2,"blockName":"Sampling Techniques & Sample Size","question":"In TWO-STAGE cluster sampling:","options":["All elements within the selected clusters are automatically included","Only a further sample of elements is drawn from each selected cluster","No clusters are ever randomly selected","It becomes mathematically identical to stratified sampling"],"correctIndex":1,"explanations":["Incorrect — that describes ONE-STAGE cluster sampling, where all elements in selected clusters are included.","Correct — in two-stage cluster sampling, after selecting clusters randomly, a further sample of elements is drawn from within each selected cluster.","Incorrect — cluster sampling always begins with randomly selecting some clusters; that's a defining feature of the technique.","Incorrect — cluster and stratified sampling remain distinct techniques with opposite homogeneity assumptions."]},{"id":"b2_19","block":2,"blockName":"Sampling Techniques & Sample Size","question":"Which of these is an example of Recruited Online Sampling (as opposed to Online Intercept Sampling)?","options":["Intercepting visitors while they browse a website","A panel of previously recruited, opt-in participants","A telephone directory used as a sampling frame","A convenience sample of students gathered in a classroom"],"correctIndex":1,"explanations":["Incorrect — that describes Online Intercept Sampling, a different online sampling type.","Correct — Recruited Online Sampling includes panels of recruited, opt-in participants (and non-panel opt-in list rentals).","Incorrect — a telephone directory is a traditional offline sampling frame, unrelated to online sampling classification.","Incorrect — a classroom convenience sample isn't an online sampling method at all."]},{"id":"b2_20","block":2,"blockName":"Sampling Techniques & Sample Size","question":"The finite population correction (fpc) is typically applied when:","options":["The sample size is less than 1% of the population","The sample size is 10% or more of the population size","The population is considered infinite","The confidence level chosen is below 90%"],"correctIndex":1,"explanations":["Incorrect — a sample under 1% of the population wouldn't typically trigger this correction; it's needed at larger relative sample sizes.","Correct — the fpc corrects for overestimation of variance when the sample size is 10% or more of the population size.","Incorrect — for an infinite (or very large) population, this correction generally isn't needed.","Incorrect — the fpc is about the sample-to-population size ratio, not the chosen confidence level."]},{"id":"b2_21","block":2,"blockName":"Sampling Techniques & Sample Size","question":"The 'precision level' in sample size determination refers to:","options":["The confidence level chosen for the study (e.g. 95%)","The maximum permissible difference between the sample statistic and the true population parameter","The number of strata used in a stratified design","The response rate achieved after fieldwork"],"correctIndex":1,"explanations":["Incorrect — the confidence level is a separate, related concept, not the precision level itself.","Correct — precision level is defined as the desired size of the estimating interval — the maximum permissible difference between the sample statistic and population parameter.","Incorrect — number of strata is a design choice unrelated to the definition of precision level.","Incorrect — response rate is a separate fieldwork outcome, not the precision level."]},{"id":"b2_22","block":2,"blockName":"Sampling Techniques & Sample Size","question":"If a researcher estimates that 64% of households own a dog (p = 0.64) for a sample size formula involving proportions, what is 'q'?","options":["0.64","1.64","0.36","0.46"],"correctIndex":2,"explanations":["Incorrect — that's the value of p itself, not q.","Incorrect — this doesn't match the formula q = 1 − p.","Correct — q = 1 − p = 1 − 0.64 = 0.36.","Incorrect — this doesn't correctly compute 1 − 0.64."]},{"id":"b2_23","block":2,"blockName":"Sampling Techniques & Sample Size","question":"If response rates are 85%, 70% and 40% for high-, medium- and low-income groups respectively, the weighting factor applied to the LOW-income group's responses (using the notes' formula) would be:","options":["100/85","100/70","100/40","40/100"],"correctIndex":2,"explanations":["Incorrect — that weight would apply to the high-income group (85% response rate).","Incorrect — that weight would apply to the medium-income group (70% response rate).","Correct — for the low-income group with a 40% response rate, the weight is 100/40, giving more weight to this under-responding group.","Incorrect — this inverts the formula; it should be 100 divided by the response rate, not the reverse."]},{"id":"b2_24","block":2,"blockName":"Sampling Techniques & Sample Size","question":"'Substitution' as a method for adjusting for non-response means:","options":["Contacting a subsample of non-participants by telephone or personal interview","Replacing non-participants with elements from an earlier, similar survey","Replacing non-participants with OTHER elements from the current sampling frame, expected to respond, drawn from internally homogeneous subgroups","Assigning differential weights to the collected data based on response rates"],"correctIndex":2,"explanations":["Incorrect — that describes 'Subsampling of non-participants', a different method.","Incorrect — that describes 'Replacement', a distinct method using an earlier survey's non-participants.","Correct — Substitution replaces non-participants with other elements from the SAME sampling frame, expected to respond, taken from internally homogeneous subgroups.","Incorrect — that describes 'Weighting', a separate non-response adjustment method."]},{"id":"b2_25","block":2,"blockName":"Sampling Techniques & Sample Size","question":"Which of these is listed as a technique used PRIOR to fieldwork (not during/after) to improve response rates?","options":["Follow-up contacts and reminders","Offering incentives after the interview is completed","Pre-notification of participants, clearly explaining the survey's purpose and legitimacy","Using mixed modes to reach non-respondents"],"correctIndex":2,"explanations":["Incorrect — follow-up contacts/reminders are listed under 'during & after fieldwork' actions.","Incorrect — incentives are also listed under 'during & after fieldwork' actions.","Correct — pre-notification and clearly explaining the survey's purpose/legitimacy are listed as 'prior to fieldwork' actions.","Incorrect — using mixed modes to reach non-respondents is a 'during & after fieldwork' action."]},{"id":"b3_11","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which survey method is described as having the HIGHEST flexibility and response quality, but also being the most expensive?","options":["Mail/postal surveys","Telephone surveys","Personal (face-to-face) surveys","Online surveys"],"correctIndex":2,"explanations":["Incorrect — mail/postal surveys are low-cost but have low response rates and are slow, not the highest quality/flexibility option.","Incorrect — telephone surveys are fast and cost-effective, but not described as the highest flexibility/quality option.","Correct — personal (face-to-face) surveys are explicitly described as having the highest flexibility and response quality, but being expensive.","Incorrect — online surveys are the dominant method today due to speed and low cost, but aren't described as the highest quality/flexibility option."]},{"id":"b3_12","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which of these is a genuine DISADVANTAGE of online surveys (not an advantage)?","options":["Speed of data collection","Low cost — no printing, postage or interviewers needed","Difficulty ensuring a representative sampling frame","Automatic validation and logic checks improving data quality"],"correctIndex":2,"explanations":["Incorrect — speed is explicitly listed as an ADVANTAGE of online surveys.","Incorrect — low cost is explicitly listed as an ADVANTAGE of online surveys.","Correct — difficulty ensuring a representative sampling frame is listed as a genuine disadvantage of online surveys.","Incorrect — automatic validation/logic checks are listed as an ADVANTAGE, contributing to high data quality."]},{"id":"b3_13","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"A key feature of mixed-mode surveys, according to the notes, is:","options":["Using only one survey mode for maximum consistency","Common core questions across all modes, feeding into a single, unified, real-time database","Never allowing respondents to switch modes mid-survey","Excluding telephone surveys from the mix entirely"],"correctIndex":1,"explanations":["Incorrect — mixed-mode surveys specifically COMBINE two or more methods, not just one.","Correct — mixed-mode surveys use common core questions across all modes, updating a single unified database in real time, with the ability to switch modes mid-survey.","Incorrect — the notes explicitly mention the ability to switch interviews between modes mid-survey.","Incorrect — telephone is one of the modes that CAN be combined in a mixed-mode design, not excluded."]},{"id":"b3_14","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Using a two-way mirror or hidden camera so that participants are unaware they are being observed is an example of:","options":["Undisguised observation","Disguised observation","Contrived observation","Trace analysis"],"correctIndex":1,"explanations":["Incorrect — undisguised observation is when participants KNOW they are being observed, the opposite case here.","Correct — disguised observation means participants are unaware they are being observed, as with two-way mirrors or hidden cameras.","Incorrect — contrived refers to an artificially constructed setting, a separate distinction from disguised/undisguised.","Incorrect — trace analysis draws conclusions from physical evidence of past behaviour, not live hidden observation."]},{"id":"b3_15","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Drawing conclusions about past behaviour from physical evidence — like tile erosion in a museum or internet cookies — is called:","options":["Personal observation","Electronic observation with participant involvement","Trace analysis","Contrived observation"],"correctIndex":2,"explanations":["Incorrect — personal observation involves a researcher directly observing and recording behaviour as it occurs.","Incorrect — electronic observation with participant involvement uses devices like eye-trackers, requiring participant presence, not physical traces.","Correct — trace analysis specifically draws conclusions from physical evidence of past behaviour.","Incorrect — contrived refers to an artificial setting, not evidence-based inference from physical traces."]},{"id":"b3_16","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which of the following is one of the three conditions required to establish causality?","options":["Concomitant variation — X and Y must vary together in the predicted direction","A minimum sample size of 300","A representative sampling frame with no error","A response rate above 70%"],"correctIndex":0,"explanations":["Correct — concomitant variation is one of the three conditions for establishing causality, alongside time order and absence of other causal factors.","Incorrect — no specific minimum sample size is one of the three causality conditions.","Incorrect — sampling frame quality is a separate methodological concern, not one of the three causality conditions.","Incorrect — response rate thresholds aren't part of the three conditions for establishing causality."]},{"id":"b3_17","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"In an experiment testing different price levels' effect on sales volume, which is the DEPENDENT variable?","options":["Price level","Sales volume","The test units (e.g. stores)","The extraneous variables"],"correctIndex":1,"explanations":["Incorrect — price level is the variable being manipulated by the researcher — the INDEPENDENT variable.","Correct — sales volume is what's being measured as the effect — the dependent variable.","Incorrect — test units are the entities being tested (e.g. stores), not the dependent variable itself.","Incorrect — extraneous variables are other variables that could affect the outcome, not the dependent variable being measured."]},{"id":"b3_18","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"External validity in an experiment refers to:","options":["Whether the treatment actually caused the observed effect","Whether results can be generalised beyond the specific experiment to other populations, settings or time periods","The number of extraneous variables successfully controlled","The reliability of the measurement scale used"],"correctIndex":1,"explanations":["Incorrect — that describes internal validity, not external validity.","Correct — external validity asks whether results can be generalised to other populations, settings, or times.","Incorrect — controlling extraneous variables relates to internal validity, not external validity.","Incorrect — scale reliability is a separate measurement concept, not the definition of external validity."]},{"id":"b3_19","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which of these is explicitly listed as a limitation of experimentation?","options":["Experiments are always cheaper than surveys","Rival companies may deliberately interfere with field experiments (competitor contamination)","Experiments never require control groups","Experiments always produce short-term, low-cost results"],"correctIndex":1,"explanations":["Incorrect — cost is actually listed as a LIMITATION (experiments can be expensive), not an advantage.","Correct — competitor contamination — rivals deliberately interfering with field experiments — is explicitly listed as a limitation.","Incorrect — control groups are often a key requirement of experimental designs, adding to their expense, not something they lack.","Incorrect — time is listed as a limitation, since measuring long-term effects can take months or years, contradicting 'always short-term'."]},{"id":"b3_20","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which scale allows counting, mode, and frequency calculations, but NOT mean or median?","options":["Nominal","Ordinal","Interval","Ratio"],"correctIndex":0,"explanations":["Correct — nominal scales only permit counting, frequency, and mode — no mean, median, or ranking-based statistics.","Incorrect — ordinal scales additionally allow median, percentile, and quartile calculations.","Incorrect — interval scales allow mean, standard deviation, and correlation as well.","Incorrect — ratio scales permit all statistical operations, including mean and median."]},{"id":"b3_21","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"A satisfaction ranking from 1st to 5th preference, without any indication of HOW MUCH better one option is over another, is measured on a(n):","options":["Nominal scale","Ordinal scale","Interval scale","Ratio scale"],"correctIndex":1,"explanations":["Incorrect — nominal scales are pure labels with no ranking at all, which doesn't match a 1st-5th ranking.","Correct — ordinal scales show ranking (more/less) but not by how much, exactly matching this scenario.","Incorrect — interval scales assume equal distances between values, which a simple 1st-5th ranking does not guarantee.","Incorrect — ratio scales require a true zero and equal distances, well beyond a simple preference ranking."]},{"id":"b3_22","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"A scale anchored by opposite adjectives at each end, such as 'Modern — Traditional', used to measure brand image, is called:","options":["Likert Scale","Semantic Differential Scale","Stapel Scale","Constant Sum Scale"],"correctIndex":1,"explanations":["Incorrect — a Likert scale uses agreement statements (Strongly Disagree to Strongly Agree), not opposite adjective pairs.","Correct — the Semantic Differential Scale is bipolar, anchored by opposite adjectives at each end, commonly used for brand image.","Incorrect — the Stapel Scale uses a single adjective (unipolar), not two opposing adjectives.","Incorrect — Constant Sum Scaling asks respondents to allocate points across attributes, unrelated to adjective pairs."]},{"id":"b3_23","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"The Stapel Scale differs from the Semantic Differential Scale in that it:","options":["Uses two opposite adjectives at each end, just like the Semantic Differential","Uses a single adjective and ranges unipolarly (e.g. −5 to +5) without a neutral midpoint label","Can only be used to measure nominal data","Always requires respondents to allocate exactly 100 points"],"correctIndex":1,"explanations":["Incorrect — that describes the Semantic Differential Scale itself, which the Stapel Scale is being contrasted against.","Correct — the Stapel Scale uses a single adjective, ranging unipolarly (e.g. −5 to +5) without a neutral midpoint label.","Incorrect — the Stapel Scale, like the Semantic Differential, is used to measure attitudes and brand image, not just nominal data.","Incorrect — allocating 100 points describes Constant Sum Scaling, a completely different technique."]},{"id":"b3_24","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Using an EVEN number of scale points (e.g. a 4- or 6-point scale) forces respondents to:","options":["Select a neutral midpoint every time","Choose a definite direction (positive or negative), since no neutral midpoint exists","Skip the question entirely","Provide an open-ended written answer instead"],"correctIndex":1,"explanations":["Incorrect — an even number of points specifically REMOVES the neutral midpoint option, the opposite of this answer.","Correct — with no neutral midpoint available, respondents are forced to lean toward a positive or negative direction.","Incorrect — forcing a direction doesn't mean respondents can skip the question; it just removes the neutral option.","Incorrect — scale points are still a closed-ended, itemised rating format, not an open-ended question."]},{"id":"b3_25","block":3,"blockName":"Questionnaire Design, Scales & Experiments","question":"Which technique is recommended to overcome a respondent's UNWILLINGNESS to answer a sensitive question?","options":["Asking it as the very first question in the survey","Placing it at the end, normalising the behaviour, or using randomised response techniques","Making the question mandatory with no 'don't know' option allowed","Repeating the same sensitive question multiple times throughout the survey"],"correctIndex":1,"explanations":["Incorrect — sensitive questions should be placed LATE in the questionnaire, not first, per the notes' question-ordering guidance.","Correct — the recommended techniques are placing sensitive questions at the end, normalising the behaviour, using third-person phrasing, or randomised response techniques.","Incorrect — forcing an answer with no 'don't know' option tends to increase refusals or dishonest answers, not overcome unwillingness constructively.","Incorrect — repeating a sensitive question isn't a recommended technique in the notes."]},{"id":"b4_11","block":4,"blockName":"Quantitative Data Analysis","question":"Descriptive statistics should typically be:","options":["The last data presented in any report, after all hypothesis tests","The first data presented in any report, summarising the main variables","Used only for qualitative, non-numeric data","Skipped entirely if the sample size is very large"],"correctIndex":1,"explanations":["Incorrect — descriptive statistics are meant to come FIRST, not last, in a report.","Correct — descriptive statistics should be the first data presented in any report, summarising the main variables of the database.","Incorrect — descriptive statistics apply to numeric (quantitative) data summaries, not only qualitative data.","Incorrect — descriptive statistics are useful regardless of sample size; they're not conditionally skipped."]},{"id":"b4_12","block":4,"blockName":"Quantitative Data Analysis","question":"A frequency distribution:","options":["Shows the joint distribution of two variables simultaneously","Counts the number of responses associated with different values of ONE variable","Is only usable with interval or ratio data","Automatically requires a chi-square test to interpret"],"correctIndex":1,"explanations":["Incorrect — that describes a cross-tabulation, which involves two or more variables, not a frequency distribution.","Correct — a frequency distribution counts responses for the different values of a single variable, often shown as percentages and cumulative percentages.","Incorrect — frequency distributions can be built from nominal data too (e.g. counting brand choices), not just interval/ratio data.","Incorrect — a frequency distribution is a descriptive summary; it doesn't automatically require a chi-square test."]},{"id":"b4_13","block":4,"blockName":"Quantitative Data Analysis","question":"Skewness and Kurtosis are measures of a distribution's:","options":["Location (central tendency)","Variability (spread)","Shape (asymmetry and peakedness)","Sample size adequacy"],"correctIndex":2,"explanations":["Incorrect — location is measured by mean, median, and mode, not skewness/kurtosis.","Incorrect — variability is measured by range, variance, standard deviation and CV, not skewness/kurtosis.","Correct — skewness measures asymmetry around the mean, and kurtosis measures the 'peakedness' of the distribution — both describe shape.","Incorrect — sample size adequacy isn't measured by skewness or kurtosis at all."]},{"id":"b4_14","block":4,"blockName":"Quantitative Data Analysis","question":"The mode is described in the notes as being particularly good for:","options":["Interval-scaled data only","Categorical variables","Calculating the standard deviation","Detecting linear relationships between variables"],"correctIndex":1,"explanations":["Incorrect — mode works well with any scale, and is specifically highlighted as good for categorical variables, not restricted to interval data.","Correct — the mode (most frequent value) is explicitly noted as good for categorical variables.","Incorrect — standard deviation is a variability measure requiring interval/ratio data, unrelated to computing the mode.","Incorrect — detecting linear relationships is the job of correlation/regression, not the mode."]},{"id":"b4_15","block":4,"blockName":"Quantitative Data Analysis","question":"The Range, as a measure of variability, is calculated as:","options":["X̄ minus S","Xlargest minus Xsmallest","Σ(Xᵢ − X̄)² divided by (n−1)","S divided by X̄, multiplied by 100"],"correctIndex":1,"explanations":["Incorrect — this formula doesn't correspond to Range; it's a nonsensical mix of mean and standard deviation.","Correct — Range = Xlargest − Xsmallest, the simplest measure of spread.","Incorrect — that formula computes the Variance (S²), not the Range.","Incorrect — that formula computes the Coefficient of Variation (CV), not the Range."]},{"id":"b4_16","block":4,"blockName":"Quantitative Data Analysis","question":"The Alternative Hypothesis (H₁) generally represents:","options":["The idea being tested that equals a specified population parameter","The idea the researcher is actually interested in — that a value is greater than, lower than, or different from the parameter","A sample statistic like X̄ or S, rather than a population parameter","A hypothesis that can never be accepted under any circumstances"],"correctIndex":1,"explanations":["Incorrect — that describes the Null Hypothesis (H₀), not H₁.","Correct — H₁ is the idea the researcher is actually interested in proving — that the value is greater, lower, or different from the parameter.","Incorrect — both H₀ and H₁ refer to population parameters, not sample statistics.","Incorrect — H₁ can be supported (accepted) when there's sufficient evidence against H₀; it's not permanently unacceptable."]},{"id":"b4_17","block":4,"blockName":"Quantitative Data Analysis","question":"Comparing average monthly spending between two customer groups (loyalty members vs. non-members) would call for:","options":["A One Mean Test","A Two Means Test","ANOVA","Chi-square"],"correctIndex":1,"explanations":["Incorrect — a One Mean Test checks a single group's mean against a specific fixed value, not two groups against each other.","Correct — comparing a quantitative variable (spending) across exactly two groups calls for a Two Means Test.","Incorrect — ANOVA is used for 3+ categories/groups, not exactly two.","Incorrect — chi-square compares two categorical (qualitative) variables, not a quantitative variable across two groups."]},{"id":"b4_18","block":4,"blockName":"Quantitative Data Analysis","question":"A cross-tabulation is best described as:","options":["A technique summarising two or more variables simultaneously in a joint distribution table","A single-variable frequency count","A measure of central tendency like the mean or median","A multivariate dependence technique like regression"],"correctIndex":0,"explanations":["Correct — cross-tabulation describes two or more variables simultaneously, presenting a summary table of their joint distribution.","Incorrect — a single-variable count describes a frequency distribution, not a cross-tabulation.","Incorrect — cross-tabulation is not a measure of central tendency; it's a table-based technique for multiple variables.","Incorrect — cross-tabulation with chi-square is an independence-type association test, not a dependence model like regression."]},{"id":"b4_19","block":4,"blockName":"Quantitative Data Analysis","question":"The Pearson correlation coefficient (r) can range between:","options":["0 and 1","−1 and 0","−1.0 and +1.0","−100 and +100"],"correctIndex":2,"explanations":["Incorrect — this range would exclude negative correlations entirely, which are perfectly valid.","Incorrect — this range would exclude positive correlations entirely, which are perfectly valid.","Correct — r varies between −1.0 (perfect negative) and +1.0 (perfect positive linear relationship).","Incorrect — this scale is far too large; correlation coefficients are bounded between −1 and +1, not −100/+100."]},{"id":"b4_20","block":4,"blockName":"Quantitative Data Analysis","question":"In a hypothesis test for correlation, the Null Hypothesis (H₀) typically states:","options":["r = 0 (no linear association between the variables)","r = 1 (a perfect linear association exists)","r ≠ 0 (a linear association exists)","r is undefined and cannot be tested"],"correctIndex":0,"explanations":["Correct — H₀ for a correlation test states r = 0, meaning no linear association exists between the two variables.","Incorrect — r = 1 would represent a very specific, extreme perfect correlation, not the standard null hypothesis.","Incorrect — r ≠ 0 describes the ALTERNATIVE hypothesis (H₁), not the null.","Incorrect — correlation is a well-defined, testable statistic; it is not 'undefined'."]},{"id":"b4_21","block":4,"blockName":"Quantitative Data Analysis","question":"In the multiple regression equation Ŷ = a + b₁X₁ + b₂X₂ + ... + bX, what does 'a' (or b₀) represent?","options":["The dependent variable itself","The intercept","The error term","A partial regression coefficient for X₁"],"correctIndex":1,"explanations":["Incorrect — Ŷ (not 'a') represents the estimated dependent variable.","Correct — 'a' (or b₀) is the intercept — the value of Ŷ when all independent variables equal zero.","Incorrect — the error term (e) is a separate component of the regression model, not the intercept.","Incorrect — b₁ (not a/b₀) is the partial regression coefficient specifically for X₁."]},{"id":"b4_22","block":4,"blockName":"Quantitative Data Analysis","question":"Which clustering method requires the researcher to pre-specify the number of clusters in advance (e.g. k-means)?","options":["Hierarchical methods","Non-hierarchical methods","Ward's procedure","Dendrogram-based methods"],"correctIndex":1,"explanations":["Incorrect — hierarchical methods build a hierarchy (dendrogram) and are good for EXPLORING how many clusters to retain, not pre-specifying the number.","Correct — non-hierarchical methods (like k-means) require the number of clusters to be pre-specified in advance, and are faster for large datasets.","Incorrect — Ward's procedure is a widely-used hierarchical method, the opposite category.","Incorrect — dendrograms are specifically a hierarchical method output, not a non-hierarchical, pre-specified-k approach."]},{"id":"b4_23","block":4,"blockName":"Quantitative Data Analysis","question":"Which factor analysis calculation method focuses on TOTAL variance and extracts components explaining the maximum variance?","options":["Common Factor Analysis","Principal Component Analysis (PCA)","Cluster Analysis","Chi-square Analysis"],"correctIndex":1,"explanations":["Incorrect — Common Factor Analysis focuses on SHARED variance (communalities) among variables, not total variance.","Correct — Principal Component Analysis (PCA) focuses on total variance, extracting components that explain the maximum variance.","Incorrect — Cluster Analysis groups objects into homogeneous clusters; it's an entirely different independence technique.","Incorrect — Chi-square tests association between categorical variables; it's unrelated to factor extraction methods."]},{"id":"b4_24","block":4,"blockName":"Quantitative Data Analysis","question":"One key use of Factor Analysis, as described in the notes, is to:","options":["Test causal relationships between a dependent and independent variable","Identify a smaller set of uncorrelated variables to replace a larger set of correlated ones","Rank sampling techniques from best to worst","Calculate confidence intervals for a population mean"],"correctIndex":1,"explanations":["Incorrect — testing causal DV/IV relationships describes regression, a dependence model, not Factor Analysis.","Correct — Factor Analysis is used to identify a smaller set of uncorrelated variables to replace a larger set of correlated original variables, useful in later analyses like regression.","Incorrect — ranking sampling techniques is unrelated to Factor Analysis, which deals with variable reduction.","Incorrect — confidence intervals are a sampling/estimation concept, unrelated to Factor Analysis."]},{"id":"b4_25","block":4,"blockName":"Quantitative Data Analysis","question":"Analysing two or more measurements of each element simultaneously is characteristic of:","options":["Univariate techniques","Multivariate techniques","Descriptive statistics exclusively","Frequency distributions exclusively"],"correctIndex":1,"explanations":["Incorrect — univariate techniques analyse a single measurement (or several measurements in isolation), not simultaneously together.","Correct — multivariate techniques are specifically used when two or more measurements per element are analysed simultaneously.","Incorrect — descriptive statistics can be univariate or part of preliminary analysis; this definition specifically describes multivariate analysis.","Incorrect — frequency distributions describe a single variable at a time, the opposite of multivariate analysis."]},{"id":"b5_11","block":5,"blockName":"Qualitative Research Techniques","question":"Which of the following is explicitly listed as a reason for using qualitative research techniques?","options":["The need for very large sample sizes to generalise findings","Uncovering subconscious feelings and unconscious consumer motivations","The ability to calculate precise confidence intervals","Testing strict causal relationships through controlled experiments"],"correctIndex":1,"explanations":["Incorrect — qualitative research typically uses SMALL samples, the opposite of this statement.","Correct — uncovering subconscious feelings and unconscious motivations is explicitly listed as a reason for using qualitative techniques.","Incorrect — confidence intervals are a quantitative/probability sampling concept, not a qualitative research strength.","Incorrect — testing causal relationships through controlled experiments is a quantitative/causal research method, not a qualitative reason."]},{"id":"b5_12","block":5,"blockName":"Qualitative Research Techniques","question":"The research paradigm that emphasises understanding subjective meaning, rather than searching for objective general laws, is the:","options":["Positivist paradigm","Interpretive / Constructivist paradigm","Critical paradigm","Causal paradigm"],"correctIndex":1,"explanations":["Incorrect — the Positivist paradigm searches for general laws and emphasises objectivity/measurement, the opposite emphasis.","Correct — the Interpretive/Constructivist paradigm emphasises understanding subjective meaning.","Incorrect — the Critical paradigm focuses on power, social change, and reflexivity, not subjective meaning per se.","Incorrect — 'Causal paradigm' isn't one of the three research paradigms listed in the notes."]},{"id":"b5_13","block":5,"blockName":"Qualitative Research Techniques","question":"The Critical research paradigm focuses primarily on:","options":["Objectivity and precise measurement","Subjective meaning-making by individuals","Power, social change, and reflexivity","Sample size calculations for confidence intervals"],"correctIndex":2,"explanations":["Incorrect — objectivity and measurement describe the Positivist paradigm, not the Critical paradigm.","Incorrect — subjective meaning-making describes the Interpretive/Constructivist paradigm, not the Critical paradigm.","Correct — the Critical paradigm focuses specifically on power, social change, and reflexivity.","Incorrect — sample size/confidence interval calculations are quantitative statistical concerns, unrelated to research paradigms."]},{"id":"b5_14","block":5,"blockName":"Qualitative Research Techniques","question":"In the context of focus group moderation, 'rapport' refers to:","options":["A statistical measure of how much the group agrees","Matching body language, eye contact, and empathy to build trust with participants","The minimum sample size needed for a valid focus group","A specific type of projective technique"],"correctIndex":1,"explanations":["Incorrect — rapport is not a statistical measure; it's a relational/interpersonal concept.","Correct — rapport means matching body language, eye contact, and empathy to build trust with participants.","Incorrect — rapport is unrelated to sample size requirements.","Incorrect — rapport is a moderator skill, not a projective technique."]},{"id":"b5_15","block":5,"blockName":"Qualitative Research Techniques","question":"'Probing' in a focus group is best defined as:","options":["A statistical test for differences between groups","A motivational technique to induce participants to explain, clarify, or expand on their answers","A method for randomly selecting focus group participants","A type of quantitative rating scale"],"correctIndex":1,"explanations":["Incorrect — probing is a qualitative moderation technique, not a statistical test.","Correct — probing is a motivational technique used to induce participants to enlarge on, explain, or clarify their answers.","Incorrect — probing happens DURING the discussion, unrelated to participant selection/sampling.","Incorrect — probing is a moderator's verbal technique, not a type of scale."]},{"id":"b5_16","block":5,"blockName":"Qualitative Research Techniques","question":"Which of these is listed as an ADVANTAGE (not a limitation) of focus groups?","options":["Results are not statistically representative","Dominant participants can bias the group's results","Group synergy generates richer data, and sessions are quick to conduct","The artificial setting can distort natural behaviour"],"correctIndex":2,"explanations":["Incorrect — lack of statistical representativeness is listed as a LIMITATION of focus groups.","Incorrect — dominant participants biasing results is listed as a LIMITATION, not an advantage.","Correct — group synergy generating richer data, plus being quick and flexible to conduct, are listed as advantages.","Incorrect — the artificial setting distorting behaviour is listed as a LIMITATION of focus groups."]},{"id":"b5_17","block":5,"blockName":"Qualitative Research Techniques","question":"In-depth interviews (IDI) are particularly suited to B2B research contexts because:","options":["B2B topics rarely require any specialised expert knowledge","Complex topics requiring expert knowledge benefit from focused, one-on-one exploration","Groups of B2B buyers always mix well together in a focus group setting","IDI is always faster and cheaper to conduct than focus groups"],"correctIndex":1,"explanations":["Incorrect — B2B topics often DO require specialised expert knowledge, which is exactly why IDI (not a group setting) is preferred.","Correct — complex topics requiring expert knowledge, common in B2B research, benefit from the focused, one-on-one exploration IDI allows.","Incorrect — the notes note that highly heterogeneous B2B respondents may NOT mix well in a group, favouring IDI instead.","Incorrect — IDI (one participant at a time) is generally slower and more resource-intensive than a group format, not faster/cheaper."]},{"id":"b5_18","block":5,"blockName":"Qualitative Research Techniques","question":"The Repertory Grid Technique works by asking participants to:","options":["Complete an incomplete sentence or story","Compare and contrast elements to reveal underlying constructs and perceptual dimensions","Role-play as if they were a brand character","Say the first word that comes to mind"],"correctIndex":1,"explanations":["Incorrect — that describes a Completion Technique (a type of projective technique), not the Repertory Grid.","Correct — the Repertory Grid Technique has participants compare and contrast elements to reveal underlying constructs and perceptual dimensions.","Incorrect — that describes an Expressive Technique (role-play), not the Repertory Grid.","Incorrect — that describes an Association Technique (word association), not the Repertory Grid."]},{"id":"b5_19","block":5,"blockName":"Qualitative Research Techniques","question":"The main benefit of using a 'Friendship Pair' interview technique is:","options":["It allows testing of very large samples quickly","It creates a more relaxed, natural atmosphere by interviewing two friends together","It completely removes the need for an interviewer","It is the only in-depth technique suitable for B2B research"],"correctIndex":1,"explanations":["Incorrect — a Friendship Pair involves just two people, the opposite of testing large samples.","Correct — interviewing two friends together creates a more relaxed, natural atmosphere for the conversation.","Incorrect — Friendship Pair interviews are still conducted by an interviewer, just with two participants together.","Incorrect — several IDI techniques (Laddering, Repertory Grid, ZMET) can also be applied in B2B contexts, not exclusively Friendship Pair."]},{"id":"b5_20","block":5,"blockName":"Qualitative Research Techniques","question":"Projective techniques are used specifically when:","options":["Direct questioning is expected to yield accurate, reliable information","Direct questioning cannot yield accurate information, due to sensitive or subconscious topics","The sample size required is very large","Only quantitative measurement is appropriate for the study"],"correctIndex":1,"explanations":["Incorrect — if direct questioning worked well, there'd be no need for indirect projective techniques.","Correct — projective techniques are used precisely when direct questioning cannot yield accurate information, often due to sensitive or subconscious topics.","Incorrect — projective techniques, like most qualitative methods, typically use small samples, not large ones.","Incorrect — projective techniques are a QUALITATIVE approach, not a quantitative measurement method."]},{"id":"b5_21","block":5,"blockName":"Qualitative Research Techniques","question":"Word association responses (an Association Technique) are typically analysed by:","options":["Regression coefficients","Frequency, response time, and non-response rate","Chi-square degrees of freedom","Confidence intervals around a population mean"],"correctIndex":1,"explanations":["Incorrect — regression coefficients are a quantitative dependence-model output, unrelated to word association analysis.","Correct — word association responses are analysed by frequency, response time, and non-response rate.","Incorrect — chi-square degrees of freedom apply to categorical cross-tabulations, not word association analysis.","Incorrect — confidence intervals are a quantitative sampling concept, unrelated to analysing projective technique responses."]},{"id":"b5_22","block":5,"blockName":"Qualitative Research Techniques","question":"Ethnography is particularly appropriate when:","options":["Behavioural processes cannot be recalled accurately through self-report","A large, representative probability sample is required for statistical inference","The researcher needs to calculate precise statistical confidence levels","The topic is simple and requires no deep immersion"],"correctIndex":0,"explanations":["Correct — ethnography is used when memory is inadequate for self-reporting, requiring direct observation instead.","Incorrect — ethnography typically involves small-scale, immersive, qualitative observation, not large probability samples.","Incorrect — confidence levels are a quantitative sampling concept, unrelated to ethnographic research's purpose.","Incorrect — ethnography is used for high-intensity situations requiring DEEP immersion, the opposite of 'simple, no immersion needed'."]},{"id":"b5_23","block":5,"blockName":"Qualitative Research Techniques","question":"In Grounded Theory, the researcher:","options":["Collects all the data first, then analyses it afterward using a pre-set theory","Collects and analyses data simultaneously, letting theory 'emerge' through constant comparison","Never analyses qualitative data, working only with quantitative data","Exclusively uses projective techniques for data collection"],"correctIndex":1,"explanations":["Incorrect — that describes a more traditional, deductive approach, the opposite of Grounded Theory's inductive process.","Correct — in Grounded Theory, the researcher collects and analyses data simultaneously, and theory 'emerges' from the data through constant comparison.","Incorrect — Grounded Theory is itself a qualitative data analysis approach.","Incorrect — Grounded Theory isn't restricted to projective techniques; it can draw on interviews, observation, and other qualitative sources."]},{"id":"b5_24","block":5,"blockName":"Qualitative Research Techniques","question":"The cyclical process in Action Research follows which sequence?","options":["Reflect → Plan → Observe → Act","Plan → Act → Observe → Reflect","Act → Reflect → Plan → Observe","Observe → Plan → Act → Reflect"],"correctIndex":1,"explanations":["Incorrect — this reorders the correct cycle, starting with Reflect instead of Plan.","Correct — Action Research follows the cyclical sequence: Plan → Act → Observe → Reflect.","Incorrect — this reorders the sequence, starting with Act instead of Plan.","Incorrect — this reorders the sequence, starting with Observe instead of Plan."]},{"id":"b5_25","block":5,"blockName":"Qualitative Research Techniques","question":"A code that is described as 'leading edge' and culturally dynamic, in semiotic analysis, is called a(n):","options":["Dominant code","Emergent code","Residual code","Signified"],"correctIndex":1,"explanations":["Incorrect — dominant codes are the everyday, mainstream codes, not leading-edge ones.","Correct — emergent codes are specifically described as leading edge and culturally dynamic.","Incorrect — residual codes are old-fashioned and lacking in energy, the opposite of 'leading edge'.","Incorrect — 'signified' refers to the conceptual meaning of a sign, a different semiotic concept entirely, not a type of code."]},{"id":"b6_11","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"'Informed consent' in marketing research ethics means:","options":["Respondents are financially compensated for participating","Respondents are made aware of how their data will be used","All research findings must be published publicly","Only adults over 18 may ever participate in any research"],"correctIndex":1,"explanations":["Incorrect — payment is a separate incentive issue, not what defines informed consent.","Correct — informed consent means respondents are made aware of how their data will be used.","Incorrect — public publication of findings isn't part of the informed consent principle; it relates more to transparency of results, a separate concept.","Incorrect — informed consent applies broadly to research ethics; it isn't specifically an age restriction rule."]},{"id":"b6_12","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"The ethical principle of 'confidentiality' in marketing research requires that:","options":["Individual responses must not be shared without permission","All research must be conducted with zero identifying information collected, ever","Findings can be adjusted to please the client if needed","Secondary data can never be used under any circumstances"],"correctIndex":0,"explanations":["Correct — confidentiality requires that individual responses are not shared without permission.","Incorrect — the notes don't require a total ban on identifying information; the key requirement is protecting and not improperly sharing responses.","Incorrect — honesty and transparency require findings to be reported accurately, without manipulation to please a client — the opposite of this statement.","Incorrect — confidentiality is unrelated to whether secondary data can be used; secondary data should generally be used first."]},{"id":"b6_13","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"Which of these is NOT one of the main marketing research associations listed in the notes?","options":["ESOMAR","MRS","NASA","AAPOR"],"correctIndex":2,"explanations":["Incorrect — ESOMAR IS one of the listed marketing research associations.","Incorrect — MRS IS one of the listed marketing research associations.","Correct — NASA is a space agency, not a marketing research association; it does not appear in the notes' list (ESOMAR, MRS, AAPOR, CASRO, PMRS).","Incorrect — AAPOR IS one of the listed marketing research associations."]},{"id":"b6_14","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"Which of the following is NOT a valid reason to reject a returned questionnaire, according to the notes?","options":["Parts of the questionnaire are incomplete","The responses show little variance (straight-lining)","The respondent answered every question thoughtfully within the survey's time limit","The questionnaire arrived after the pre-established cut-off date"],"correctIndex":2,"explanations":["Incorrect — incompleteness IS a valid reason to reject a questionnaire.","Incorrect — straight-lining (little variance) IS a valid reason to reject a questionnaire.","Correct — answering thoughtfully and on time is exactly what a valid, acceptable questionnaire should look like — this is NOT a reason for rejection.","Incorrect — arriving after the cut-off date IS a valid reason to reject a questionnaire."]},{"id":"b6_15","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"Which of these is a coding guideline specifically for STRUCTURED questions (not open-ended ones)?","options":["Category codes should be mutually exclusive and collectively exhaustive","Only 10% or less of responses should fall into an 'other' category","Fixed field codes are highly desirable, so the same data appears in the same column(s) for all participants","Codes should be assigned for critical issues even if no one has mentioned them"],"correctIndex":2,"explanations":["Incorrect — this guideline applies specifically to open-ended (unstructured) question coding.","Incorrect — this guideline applies specifically to open-ended (unstructured) question coding.","Correct — fixed field codes, ensuring consistent column positions across participants, is listed as a guideline for STRUCTURED question coding.","Incorrect — this guideline applies specifically to open-ended (unstructured) question coding."]},{"id":"b6_16","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"For open-ended (unstructured) question coding, category codes should be:","options":["Overlapping, in order to capture nuance across categories","Mutually exclusive and collectively exhaustive","Assigned only after all data collection is fully finished, with no exceptions","Limited to a strict maximum of 3 categories"],"correctIndex":1,"explanations":["Incorrect — overlapping categories would violate the guideline that codes must be mutually exclusive.","Correct — category codes for open-ended questions should be mutually exclusive and collectively exhaustive.","Incorrect — coding schemes can be developed based on expected themes and refined during the process, not strictly only after all data collection.","Incorrect — there's no fixed maximum of 3 categories mentioned; the number of categories depends on the data's complexity."]},{"id":"b6_17","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"Consistency checks during data cleaning are specifically used to identify:","options":["Which respondents should receive an incentive payment","Data that is out of range, logically inconsistent, or has extreme values","The single best sampling technique to use for the next study","The correct confidence level to report in a study"],"correctIndex":1,"explanations":["Incorrect — incentive payments are unrelated to consistency checks in data cleaning.","Correct — consistency checks identify data that is out of range, logically inconsistent, or has extreme values, which should be closely examined.","Incorrect — sampling technique selection happens earlier in the research design phase, not during data cleaning.","Incorrect — confidence level is a pre-set analytical choice, unrelated to consistency checks."]},{"id":"b6_18","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"Substituting the mean response for a missing value is a specific example of which missing-data treatment method?","options":["Casewise deletion","Pairwise deletion","Substituting a neutral value","Imputation based on similarity to other participants"],"correctIndex":2,"explanations":["Incorrect — casewise deletion discards the ENTIRE case with any missing data, rather than substituting a value.","Incorrect — pairwise deletion uses only complete responses for each specific calculation, rather than substituting a value.","Correct — substituting a neutral value (typically the mean) for missing responses is exactly this method.","Incorrect — imputation uses similarity to OTHER participants' response patterns to estimate a value, not simply the overall mean."]},{"id":"b6_19","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"In statistically adjusting data, 'weighting' is most widely used to:","options":["Remove all outliers from the dataset entirely","Make the sample data more representative of a target population on specific characteristics","Convert nominal-scale data directly into ratio-scale data","Replace all missing values automatically with the mode"],"correctIndex":1,"explanations":["Incorrect — weighting doesn't remove outliers; that's a separate data-cleaning concern.","Correct — weighting is most widely used to make sample data more representative of a target population on specific characteristics, or to emphasise certain participants.","Incorrect — weighting doesn't change the fundamental scale type of a variable (nominal, ordinal, etc.).","Incorrect — replacing missing values with the mode is a separate missing-data treatment, not what weighting does."]},{"id":"b6_20","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"To respecify a categorical variable with K categories into dummy variables, how many dummy variables are needed?","options":["K","K + 1","K − 1","2K"],"correctIndex":2,"explanations":["Incorrect — using K dummy variables would create redundancy (perfect multicollinearity).","Incorrect — K + 1 would be more dummy variables than necessary.","Correct — the general rule is that K − 1 dummy variables are needed to respecify a categorical variable with K categories.","Incorrect — 2K would be far more dummy variables than the correct, minimal number needed."]},{"id":"b6_21","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"The researcher's diary in qualitative analysis should record all of the following EXCEPT:","options":["New question areas or probes to tackle","Feelings and emotional states during observations or interviews","Limitations in existing theories or ideas","The exact home address of every participant, for future contact"],"correctIndex":3,"explanations":["Incorrect — this IS something the diary should record.","Incorrect — this IS something the diary should record.","Incorrect — this IS something the diary should record.","Correct — recording participants' exact home addresses isn't part of the diary's purpose, and would raise serious privacy/confidentiality concerns."]},{"id":"b6_22","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"What is the correct order of the four stages of qualitative data analysis described in the notes?","options":["Coding → Data assembly → Verification → Display","Data assembly → Coding data → Data display → Data verification","Verification → Display → Assembly → Coding","Display → Assembly → Verification → Coding"],"correctIndex":1,"explanations":["Incorrect — data assembly must come before coding, not after.","Correct — the correct sequence is: Data assembly → Coding data → Data display → Data verification.","Incorrect — verification is the LAST stage, not the first.","Incorrect — this scrambles the order; display comes after both assembly and coding, not before them."]},{"id":"b6_23","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"Which of these is explicitly mentioned as a form of 'data display' in qualitative analysis?","options":["Confidence intervals around a population mean","Matrices, graphs/charts, and networks/flow charts","Chi-square tables exclusively","Standardised z-scores"],"correctIndex":1,"explanations":["Incorrect — confidence intervals are a quantitative sampling concept, not a qualitative data display method.","Correct — matrices, graphs/charts, and networks/flow charts are all explicitly listed as data display alternatives to extended text.","Incorrect — chi-square tables are a quantitative technique for categorical association, not a qualitative data display format.","Incorrect — z-scores are a quantitative standardisation technique, unrelated to qualitative data display."]},{"id":"b6_24","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"Which of these is listed as a genuine CONCERN (not an advantage) of computer-assisted qualitative data analysis?","options":["Speed of sorting procedures","Rigour in searching data","Mechanistic data analysis that loses the human interpretive quality","Aids theoretical sampling across a research team"],"correctIndex":2,"explanations":["Incorrect — speed of sorting is listed as an ADVANTAGE, not a concern.","Incorrect — rigour in searching data is listed as an ADVANTAGE, not a concern.","Correct — 'mechanistic data analysis' that loses the human interpretive quality is explicitly listed as a concern.","Incorrect — aiding theoretical sampling is listed as an ADVANTAGE, not a concern."]},{"id":"b6_25","block":6,"blockName":"Intro, Ethics & Data Preparation","question":"The choice of data analysis strategy depends on all of the following EXCEPT:","options":["The nature and scale of the variables","The number of variables analysed simultaneously","The research objectives and hypotheses to be tested","The researcher's personal preference for a particular software brand"],"correctIndex":3,"explanations":["Incorrect — this IS one of the factors that determines the data analysis strategy.","Incorrect — this IS one of the factors that determines the data analysis strategy.","Incorrect — this IS one of the factors that determines the data analysis strategy.","Correct — a personal software brand preference isn't a methodological factor in choosing an analysis strategy; the choice should be driven by variable type, objectives, and assumptions, not tool preference."]}]
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  var QUESTIONS = JSON.parse(document.getElementById('qbank-data').textContent);
+  var STORAGE_KEY = 'mktrExamHistory_v1';
+  var BLOCKS_PER_EXAM = 6;
+  var Q_PER_BLOCK = 5;
+  var TOTAL_Q = BLOCKS_PER_EXAM * Q_PER_BLOCK;
+  var CORRECT_PTS = 1;
+  var INCORRECT_PTS = -0.25;
+  var PASS_SCORE = 15;
+
+  var state = {
+    exam: null,        // {questions:[...], answers:{}, startTs, timerId, elapsedSec}
+    lastResult: null,
+    filter: 'all'
+  };
+
+  // ---------- utils ----------
+  function shuffle(arr){
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function fmtTime(sec){
+    sec = Math.max(0, Math.floor(sec));
+    var m = Math.floor(sec / 60);
+    var s = sec % 60;
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function fmtScore(n){
+    return (n >= 0 ? '' : '') + n.toFixed(2);
+  }
+
+  function letters(){ return ['A','B','C','D']; }
+
+  function $(sel, root){ return (root || document).querySelector(sel); }
+  function $all(sel, root){ return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+
+  function showScreen(id){
+    $all('.screen').forEach(function(s){ s.classList.remove('active'); });
+    $('#' + id).classList.add('active');
+    window.scrollTo({top:0, behavior:'instant'});
+  }
+
+  // ---------- exam generation ----------
+  function buildExam(){
+    var byBlock = {};
+    QUESTIONS.forEach(function(q){
+      if (!byBlock[q.block]) byBlock[q.block] = [];
+      byBlock[q.block].push(q);
+    });
+
+    var picked = [];
+    Object.keys(byBlock).sort(function(a,b){ return a-b; }).forEach(function(blockKey){
+      var pool = shuffle(byBlock[blockKey]);
+      picked = picked.concat(pool.slice(0, Q_PER_BLOCK));
+    });
+
+    picked = shuffle(picked).map(function(q, idx){
+      var order = shuffle([0,1,2,3]);
+      var newOptions = order.map(function(origIdx){ return q.options[origIdx]; });
+      var newExplanations = order.map(function(origIdx){ return q.explanations[origIdx]; });
+      var newCorrectIndex = order.indexOf(q.correctIndex);
+      return {
+        id: q.id,
+        block: q.block,
+        blockName: q.blockName,
+        question: q.question,
+        options: newOptions,
+        explanations: newExplanations,
+        correctIndex: newCorrectIndex,
+        examPos: idx
+      };
+    });
+
+    return picked;
+  }
+
+  // ---------- start screen ----------
+  function loadHistory(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch(e){ return []; }
+  }
+
+  function saveHistory(list){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list.slice(0, 20))); }
+    catch(e){ /* storage unavailable, ignore */ }
+  }
+
+  function addAttemptToHistory(attempt){
+    var list = loadHistory();
+    list.unshift(attempt);
+    saveHistory(list);
+  }
+
+  function blockAggregatesFromHistory(history){
+    var map = {};
+    history.forEach(function(a){
+      (a.blockBreakdown || []).forEach(function(b){
+        if (!map[b.block]) map[b.block] = { block:b.block, blockName:b.blockName, correct:0, total:0 };
+        map[b.block].correct += b.correct;
+        map[b.block].total += b.total;
+      });
+    });
+    return Object.keys(map).sort(function(a,b){ return a-b; }).map(function(k){
+      var b = map[k];
+      var pct = b.total ? (b.correct / b.total * 100) : 0;
+      return { block:b.block, blockName:b.blockName, correct:b.correct, total:b.total, pct:pct };
+    });
+  }
+
+  function renderDashboardStats(history, blockAgg){
+    var scores = history.map(function(a){ return a.score; });
+    var avg = scores.reduce(function(s,v){ return s+v; }, 0) / scores.length;
+    var best = Math.max.apply(null, scores);
+    var last = history[0].score;
+
+    function card(n, l, cls){
+      return '<div class="dash-stat-card ' + (cls || '') + '"><div class="n">' + n + '</div><div class="l">' + l + '</div></div>';
+    }
+
+    var html =
+      card(history.length, 'Intentos') +
+      card(avg.toFixed(2), 'Nota media') +
+      card(best.toFixed(2), 'Mejor nota', best >= PASS_SCORE ? 'hi-strong' : '') +
+      card(last.toFixed(2), 'Último intento', last >= PASS_SCORE ? 'hi-strong' : 'hi-weak');
+    $('#dash-stats-grid').innerHTML = html;
+
+    var weakest = blockAgg.length ? blockAgg.slice().sort(function(a,b){ return a.pct - b.pct; })[0] : null;
+    var caption = $('#dash-weak-caption');
+    if (weakest){
+      caption.innerHTML = 'Bloque a reforzar: <span class="block-name">' + weakest.blockName + '</span> (' + Math.round(weakest.pct) + '% de aciertos acumulados)';
+    } else {
+      caption.textContent = '';
+    }
+  }
+
+  function renderDashboardBlocks(blockAgg){
+    var wrap = $('#dash-block-bars');
+    wrap.innerHTML = '';
+    blockAgg.forEach(function(b){
+      var row = document.createElement('div');
+      row.className = 'dash-block-row';
+      var weakClass = b.pct < 50 ? ' weak' : '';
+      row.innerHTML =
+        '<div class="bname">B' + b.block + ' · ' + b.blockName + '</div>' +
+        '<div class="bar-track"><div class="bar-fill' + weakClass + '" style="width:' + b.pct + '%"></div></div>' +
+        '<div class="pct">' + Math.round(b.pct) + '%</div>';
+      wrap.appendChild(row);
+    });
+  }
+
+  function renderStartScreen(){
+    $('#topbar-meta').textContent = QUESTIONS.length + ' preguntas en banco · 6 bloques';
+    var history = loadHistory();
+    var section = $('#dashboard-section');
+    if (!history.length){
+      section.style.display = 'none';
+      return;
+    }
+    section.style.display = 'block';
+
+    var blockAgg = blockAggregatesFromHistory(history);
+    renderDashboardStats(history, blockAgg);
+    renderDashboardBlocks(blockAgg);
+
+    // evolution chart (most recent 12, oldest→newest left to right)
+    var chartData = history.slice(0, 12).slice().reverse();
+    var chart = $('#evo-chart');
+    chart.innerHTML = '';
+    chartData.forEach(function(a){
+      var pct = Math.max(4, Math.min(100, (a.score / TOTAL_Q) * 100));
+      var bar = document.createElement('div');
+      bar.className = 'evo-bar' + (a.score < PASS_SCORE ? ' fail' : '');
+      bar.style.height = pct + '%';
+      var tip = document.createElement('div');
+      tip.className = 'tip';
+      tip.textContent = a.score.toFixed(2);
+      bar.appendChild(tip);
+      chart.appendChild(bar);
+    });
+
+    // list (most recent first, up to 20)
+    var list = $('#history-list');
+    list.innerHTML = '';
+    history.forEach(function(a){
+      var row = document.createElement('div');
+      row.className = 'history-row';
+      var d = new Date(a.date);
+      var dateStr = d.toLocaleDateString('es-ES', {day:'2-digit', month:'short'}) + ' ' + d.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'});
+      var pct = Math.max(0, Math.min(100, (a.score / TOTAL_Q) * 100));
+      var pass = a.score >= PASS_SCORE;
+      row.innerHTML =
+        '<div class="date">' + dateStr + '</div>' +
+        '<div class="bar"><div class="bar-fill' + (pass ? '' : ' fail') + '" style="width:' + pct + '%"></div></div>' +
+        '<div class="score" style="color:' + (pass ? 'var(--good)' : 'var(--bad)') + '">' + a.score.toFixed(2) + '/30</div>' +
+        '<div class="blanks">' + a.blankCount + ' en blanco</div>';
+      list.appendChild(row);
+    });
+  }
+
+  $('#btn-clear-history').addEventListener('click', function(){
+    if (confirm('¿Seguro que quieres borrar todo el historial de intentos? Esta acción no se puede deshacer.')){
+      localStorage.removeItem(STORAGE_KEY);
+      renderStartScreen();
+    }
+  });
+
+  // ---------- exam screen ----------
+  function startExam(){
+    var questions = buildExam();
+    state.exam = {
+      questions: questions,
+      answers: {},
+      startTs: Date.now(),
+      timerId: null,
+      elapsedSec: 0
+    };
+    renderExamScreen();
+    showScreen('screen-exam');
+    state.exam.timerId = setInterval(tickTimer, 1000);
+  }
+
+  function tickTimer(){
+    if (!state.exam) return;
+    state.exam.elapsedSec = Math.floor((Date.now() - state.exam.startTs) / 1000);
+    $('#exam-timer').textContent = fmtTime(state.exam.elapsedSec);
+  }
+
+  function renderExamScreen(){
+    var container = $('#exam-questions');
+    container.innerHTML = '';
+    state.exam.questions.forEach(function(q, idx){
+      var card = document.createElement('div');
+      card.className = 'card qcard';
+      card.dataset.qidx = idx;
+
+      var head = document.createElement('div');
+      head.className = 'qhead';
+      head.innerHTML = '<span class="qnum">P' + (idx+1) + '</span><span class="qblock">' + q.blockName + '</span>';
+      card.appendChild(head);
+
+      var qtext = document.createElement('div');
+      qtext.className = 'qtext';
+      qtext.textContent = q.question;
+      card.appendChild(qtext);
+
+      var opts = document.createElement('div');
+      opts.className = 'options';
+      q.options.forEach(function(optText, optIdx){
+        var lbl = document.createElement('label');
+        lbl.className = 'option';
+        lbl.innerHTML =
+          '<input type="radio" name="q' + idx + '" value="' + optIdx + '">' +
+          '<span class="opt-letter">' + letters()[optIdx] + '</span>' +
+          '<span class="opt-text">' + optText + '</span>';
+        lbl.addEventListener('click', function(){ selectOption(idx, optIdx); });
+        opts.appendChild(lbl);
+      });
+      card.appendChild(opts);
+      container.appendChild(card);
+    });
+    updateProgress();
+  }
+
+  function selectOption(qIdx, optIdx){
+    state.exam.answers[qIdx] = optIdx;
+    var card = $('.qcard[data-qidx="' + qIdx + '"]');
+    $all('.option', card).forEach(function(o, i){
+      o.classList.toggle('selected', i === optIdx);
+      var input = o.querySelector('input');
+      input.checked = (i === optIdx);
+    });
+    updateProgress();
+  }
+
+  function updateProgress(){
+    var answered = Object.keys(state.exam.answers).length;
+    $('#exam-progress-fill').style.width = (answered / TOTAL_Q * 100) + '%';
+    $('#exam-progress-label').textContent = answered + ' / ' + TOTAL_Q + ' contestadas';
+  }
+
+  $('#btn-start-exam').addEventListener('click', startExam);
+
+  $('#btn-submit-exam').addEventListener('click', function(){
+    var answered = Object.keys(state.exam.answers).length;
+    var blanks = TOTAL_Q - answered;
+    if (blanks > 0){
+      $('#confirm-text').textContent = 'Tienes ' + blanks + ' pregunta' + (blanks === 1 ? '' : 's') + ' sin contestar. Con esta puntuación (+1 / −0.25 / 0), adivinar siempre da mejor resultado esperado que dejarlo en blanco. ¿Seguro que quieres enviar así?';
+      $('#confirm-modal').classList.remove('hidden');
+    } else {
+      finishExam();
+    }
+  });
+
+  $('#btn-confirm-submit').addEventListener('click', function(){
+    $('#confirm-modal').classList.add('hidden');
+    finishExam();
+  });
+  $('#btn-cancel-submit').addEventListener('click', function(){
+    $('#confirm-modal').classList.add('hidden');
+  });
+
+  function finishExam(){
+    clearInterval(state.exam.timerId);
+    var elapsed = state.exam.elapsedSec;
+    var result = gradeExam(state.exam.questions, state.exam.answers, elapsed);
+    state.lastResult = result;
+    addAttemptToHistory({
+      date: new Date().toISOString(),
+      score: result.score,
+      correctCount: result.correctCount,
+      incorrectCount: result.incorrectCount,
+      blankCount: result.blankCount,
+      blockBreakdown: result.blockBreakdown,
+      timeSeconds: elapsed
+    });
+    renderResultsScreen(result);
+    showScreen('screen-results');
+    state.exam = null;
+  }
+
+  // ---------- grading ----------
+  function gradeExam(questions, answers, elapsedSec){
+    var correctCount = 0, incorrectCount = 0, blankCount = 0;
+    var blockMap = {};
+
+    var details = questions.map(function(q, idx){
+      var userAnswer = (idx in answers) ? answers[idx] : null;
+      var status;
+      if (userAnswer === null){
+        status = 'blank';
+        blankCount++;
+      } else if (userAnswer === q.correctIndex){
+        status = 'correct';
+        correctCount++;
+      } else {
+        status = 'incorrect';
+        incorrectCount++;
+      }
+
+      if (!blockMap[q.block]) blockMap[q.block] = { block:q.block, blockName:q.blockName, correct:0, incorrect:0, blank:0, total:0 };
+      blockMap[q.block].total++;
+      blockMap[q.block][status]++;
+
+      return {
+        id:q.id, block:q.block, blockName:q.blockName, question:q.question,
+        options:q.options, explanations:q.explanations, correctIndex:q.correctIndex,
+        userAnswer:userAnswer, status:status
+      };
+    });
+
+    var blockBreakdown = Object.keys(blockMap).sort(function(a,b){return a-b;}).map(function(k){
+      var b = blockMap[k];
+      var points = b.correct * CORRECT_PTS + b.incorrect * INCORRECT_PTS;
+      return { block:b.block, blockName:b.blockName, correct:b.correct, incorrect:b.incorrect, blank:b.blank, total:b.total, points:points };
+    });
+
+    var score = correctCount * CORRECT_PTS + incorrectCount * INCORRECT_PTS;
+
+    return {
+      score:score, correctCount:correctCount, incorrectCount:incorrectCount, blankCount:blankCount,
+      blockBreakdown:blockBreakdown, details:details, elapsedSec:elapsedSec
+    };
+  }
+
+  // ---------- results screen ----------
+  function renderResultsScreen(result){
+    var pass = result.score >= PASS_SCORE;
+
+    var scoreEl = $('#result-score');
+    scoreEl.textContent = fmtScore(result.score);
+    scoreEl.className = 'big-score ' + (pass ? 'pass' : 'fail');
+
+    var verdictEl = $('#result-verdict');
+    verdictEl.textContent = pass ? 'Aprobado' : 'Suspenso';
+    verdictEl.className = 'verdict ' + (pass ? 'pass' : 'fail');
+
+    $('#stat-correct').textContent = result.correctCount;
+    $('#stat-incorrect').textContent = result.incorrectCount;
+    $('#stat-blank').textContent = result.blankCount;
+    $('#stat-time').textContent = fmtTime(result.elapsedSec);
+
+    renderConfidenceViz(result);
+    renderBlockGrid(result.blockBreakdown);
+    state.filter = 'all';
+    $all('.filter-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.filter === 'all'); });
+    renderReviewList(result.details);
+  }
+
+  function renderConfidenceViz(result){
+    // axis range fixed: -7.5 (all wrong) .. 30 (all right)
+    var AXIS_MIN = -7.5, AXIS_MAX = 30;
+    function toPct(v){ return ((v - AXIS_MIN) / (AXIS_MAX - AXIS_MIN)) * 100; }
+
+    var scoreMin = result.score - (result.blankCount * 0.25); // worst case: all blanks guessed wrong
+    var scoreMax = result.score + (result.blankCount * 1);    // best case: all blanks guessed right
+
+    var band = $('#ci-band');
+    var bandLeft = toPct(scoreMin);
+    var bandWidth = toPct(scoreMax) - toPct(scoreMin);
+    band.style.left = bandLeft + '%';
+    band.style.width = Math.max(0, bandWidth) + '%';
+    band.style.display = result.blankCount > 0 ? 'block' : 'none';
+
+    $('#ci-pass-line').style.left = toPct(PASS_SCORE) + '%';
+
+    var marker = $('#ci-marker');
+    marker.style.left = toPct(result.score) + '%';
+    marker.className = 'ci-marker' + (result.score >= PASS_SCORE ? '' : ' fail');
+
+    var caption = $('#ci-caption');
+    if (result.blankCount > 0){
+      caption.innerHTML = 'Si hubieras arriesgado en las ' + result.blankCount + ' preguntas en blanco, tu nota podría haber ido de <strong>' + scoreMin.toFixed(2) + '</strong> a <strong>' + scoreMax.toFixed(2) + '</strong>.';
+    } else {
+      caption.innerHTML = 'No dejaste ninguna pregunta en blanco — tu nota es un valor fijo, sin margen de incertidumbre.';
+    }
+  }
+
+  function renderBlockGrid(breakdown){
+    var grid = $('#block-grid');
+    grid.innerHTML = '';
+    breakdown.forEach(function(b){
+      var card = document.createElement('div');
+      card.className = 'block-card';
+      var pct = b.total ? (b.correct / b.total * 100) : 0;
+      var ptsClass = b.points > 0 ? 'pos' : (b.points < 0 ? 'neg' : '');
+      card.innerHTML =
+        '<div class="bname">Bloque ' + b.block + ' · ' + b.blockName + '</div>' +
+        '<div class="block-bar-track"><div class="block-bar-fill" style="width:' + pct + '%"></div></div>' +
+        '<div class="block-stats"><span>' + b.correct + ' / ' + b.total + ' aciertos</span><span class="pts ' + ptsClass + '">' + (b.points > 0 ? '+' : '') + b.points.toFixed(2) + ' pts</span></div>';
+      grid.appendChild(card);
+    });
+  }
+
+  function renderReviewList(details){
+    var list = $('#review-list');
+    list.innerHTML = '';
+    details.forEach(function(d, idx){
+      var item = document.createElement('div');
+      item.className = 'card review-item';
+      item.dataset.status = d.status;
+
+      var badgeChar = d.status === 'correct' ? '✓' : (d.status === 'incorrect' ? '✗' : '—');
+      var head = document.createElement('div');
+      head.className = 'review-head';
+      head.innerHTML =
+        '<div class="review-badge ' + d.status + '">' + badgeChar + '</div>' +
+        '<div>' +
+          '<div class="review-qmeta">Pregunta ' + (idx+1) + ' · Bloque ' + d.block + ' · ' + d.blockName + '</div>' +
+          '<div class="review-qtext"></div>' +
+        '</div>';
+      head.querySelector('.review-qtext').textContent = d.question;
+      item.appendChild(head);
+
+      var optsWrap = document.createElement('div');
+      optsWrap.className = 'review-options';
+      d.options.forEach(function(optText, optIdx){
+        var isCorrect = optIdx === d.correctIndex;
+        var isUserChoice = optIdx === d.userAnswer;
+        var isUserWrong = isUserChoice && !isCorrect;
+
+        var opt = document.createElement('div');
+        opt.className = 'review-option' + (isCorrect ? ' is-correct' : '') + (isUserWrong ? ' is-user-wrong' : '');
+
+        var tags = '';
+        if (isCorrect) tags += '<span class="tag correct">Correcta</span>';
+        if (isUserChoice) tags += '<span class="tag your-answer">Tu respuesta</span>';
+
+        var row = document.createElement('div');
+        row.className = 'opt-row';
+        row.innerHTML =
+          '<span class="opt-letter">' + letters()[optIdx] + '</span>' +
+          '<span class="opt-text-inline"></span>' +
+          '<span class="opt-tags">' + tags + '</span>';
+        row.querySelector('.opt-text-inline').textContent = optText;
+        opt.appendChild(row);
+
+        var expl = document.createElement('div');
+        expl.className = 'expl';
+        expl.textContent = d.explanations[optIdx];
+        opt.appendChild(expl);
+
+        optsWrap.appendChild(opt);
+      });
+      item.appendChild(optsWrap);
+      list.appendChild(item);
+    });
+    applyFilter();
+  }
+
+  function applyFilter(){
+    $all('.review-item').forEach(function(item){
+      var show = state.filter === 'all' || item.dataset.status === state.filter;
+      item.classList.toggle('hidden-by-filter', !show);
+    });
+  }
+
+  $('#filter-row').addEventListener('click', function(e){
+    var btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    state.filter = btn.dataset.filter;
+    $all('.filter-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
+    applyFilter();
+  });
+
+  $('#btn-retry').addEventListener('click', startExam);
+  $('#btn-home').addEventListener('click', function(){
+    renderStartScreen();
+    showScreen('screen-start');
+  });
+
+  // ---------- init ----------
+  renderStartScreen();
+  showScreen('screen-start');
+
+})();
+</script>
+</body>
+</html>
