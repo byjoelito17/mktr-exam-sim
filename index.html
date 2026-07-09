@@ -168,6 +168,16 @@
   .worst-q-row .wq-meta{ font-family:var(--font-mono); font-size:.7rem; color:var(--ink-faint); display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; }
   .worst-q-row .wq-meta .fails{ color:var(--bad); font-weight:700; }
 
+  .sync-card p{ font-size:.85rem; margin-bottom:0; }
+  .sync-textarea{
+    width:100%; font-family:var(--font-mono); font-size:.7rem; line-height:1.4; padding:10px;
+    border:1px solid var(--border); border-radius:8px; resize:vertical; background:var(--surface-2);
+    color:var(--ink); margin:12px 0 8px; word-break:break-all;
+  }
+  .sync-status{ font-size:.8rem; margin-bottom:10px; min-height:1.2em; }
+  .sync-status.ok{ color:var(--good); }
+  .sync-status.err{ color:var(--bad); }
+
   .section-title{
     font-family:var(--font-serif); font-size:.95rem; font-weight:700; color:var(--ink);
     margin:32px 0 12px; display:flex; align-items:center; gap:10px;
@@ -396,6 +406,15 @@
       <p style="font-size:.78rem; margin-top:14px; color:var(--ink-faint);"><strong style="color:var(--ink-soft);">Simulacro</strong>: 30 preguntas, cronómetro, corrección al final — como el examen real. <strong style="color:var(--ink-soft);">Ayuda</strong>: feedback al instante en cada pregunta, sin cronómetro, eliges bloque o sorteo aleatorio.</p>
     </div>
 
+    <div class="section-title">Sincronizar entre dispositivos</div>
+    <div class="card sync-card">
+      <p>Sin cuentas ni conexión a un servidor: genera un código en un dispositivo y pégalo en el otro para combinar tu progreso (simulacros + modo ayuda). No se borra nada, solo se combina.</p>
+      <div class="btn-row">
+        <button class="btn secondary" id="btn-export-sync">Exportar código →</button>
+        <button class="btn secondary" id="btn-import-sync">Importar código →</button>
+      </div>
+    </div>
+
     <div id="dashboard-section" style="display:none;">
       <div class="section-title">Tu dashboard</div>
       <div class="dash-stats-grid" id="dash-stats-grid"></div>
@@ -551,6 +570,19 @@
     <div class="btn-row">
       <button class="btn danger" id="btn-confirm-submit">Enviar igualmente</button>
       <button class="btn ghost" id="btn-cancel-submit">Volver al examen</button>
+    </div>
+  </div>
+</div>
+
+<div class="confirm-modal hidden" id="sync-modal">
+  <div class="confirm-box" style="max-width:560px;">
+    <h3 id="sync-modal-title">Exportar progreso</h3>
+    <p id="sync-modal-desc"></p>
+    <textarea id="sync-textarea" class="sync-textarea" rows="7" placeholder="Pega aquí tu código..."></textarea>
+    <p id="sync-modal-status" class="sync-status"></p>
+    <div class="btn-row">
+      <button class="btn" id="btn-sync-action">Acción</button>
+      <button class="btn ghost" id="btn-sync-cancel">Cerrar</button>
     </div>
   </div>
 </div>
@@ -4781,6 +4813,14 @@
     aplicacion: 'Practica identificar qué técnica o concepto aplica a un caso concreto, no solo su definición en abstracto — repasa los ejemplos de tus apuntes.',
     definicion: 'Repasa las definiciones exactas de tus apuntes — en varias preguntas el detalle concreto es lo que marca la diferencia.'
   };
+  var SYNC_PREFIX = 'MKTR1:';
+
+  var QUESTIONS_BY_ID = {};
+  var BLOCK_NAMES = {};
+  QUESTIONS.forEach(function(q){
+    QUESTIONS_BY_ID[q.id] = q;
+    BLOCK_NAMES[q.block] = q.blockName;
+  });
 
   var state = {
     exam: null,        // {questions:[...], answers:{}, startTs, timerId, elapsedSec}
@@ -5604,6 +5644,172 @@
   $('#btn-home').addEventListener('click', function(){
     renderStartScreen();
     showScreen('screen-start');
+  });
+
+  // ---------- sync (manual export/import, no accounts) ----------
+  function b64EncodeUnicode(str){
+    return btoa(unescape(encodeURIComponent(str)));
+  }
+  function b64DecodeUnicode(str){
+    return decodeURIComponent(escape(atob(str)));
+  }
+
+  function buildSyncCode(){
+    var examHistory = loadHistory();
+    var helpStatsFull = loadHelpStats();
+
+    var eh = examHistory.map(function(a){
+      return {
+        date: a.date, score: a.score, correctCount: a.correctCount, incorrectCount: a.incorrectCount,
+        blankCount: a.blankCount, timeSeconds: a.timeSeconds,
+        bb: (a.blockBreakdown || []).map(function(b){ return [b.block, b.correct, b.incorrect, b.blank, b.total, b.points]; })
+      };
+    });
+
+    var hs = {};
+    Object.keys(helpStatsFull).forEach(function(id){
+      var e = helpStatsFull[id];
+      hs[id] = [e.correct, e.incorrect];
+    });
+
+    var payload = { v: 1, eh: eh, hs: hs };
+    return SYNC_PREFIX + b64EncodeUnicode(JSON.stringify(payload));
+  }
+
+  function parseSyncCode(code){
+    code = code.trim();
+    if (code.indexOf(SYNC_PREFIX) !== 0){
+      throw new Error('Código no reconocido. Asegúrate de copiarlo completo, empieza por "' + SYNC_PREFIX + '".');
+    }
+    var json;
+    try {
+      json = b64DecodeUnicode(code.slice(SYNC_PREFIX.length));
+    } catch(e){
+      throw new Error('El código está corrupto o incompleto.');
+    }
+    var payload;
+    try {
+      payload = JSON.parse(json);
+    } catch(e){
+      throw new Error('El código está corrupto o incompleto.');
+    }
+    if (!payload || payload.v !== 1) throw new Error('Código no compatible con esta versión de la app.');
+    return payload;
+  }
+
+  function mergeExamHistory(local, importedCompact){
+    var imported = (importedCompact || []).map(function(a){
+      return {
+        date: a.date, score: a.score, correctCount: a.correctCount, incorrectCount: a.incorrectCount,
+        blankCount: a.blankCount, timeSeconds: a.timeSeconds,
+        blockBreakdown: (a.bb || []).map(function(arr){
+          return { block: arr[0], blockName: BLOCK_NAMES[arr[0]] || ('Bloque ' + arr[0]), correct: arr[1], incorrect: arr[2], blank: arr[3], total: arr[4], points: arr[5] };
+        })
+      };
+    });
+    var map = {};
+    local.concat(imported).forEach(function(a){
+      var key = a.date + '|' + a.score + '|' + a.correctCount + '|' + a.blankCount;
+      map[key] = a;
+    });
+    var merged = Object.keys(map).map(function(k){ return map[k]; });
+    merged.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+    return merged.slice(0, 20);
+  }
+
+  function mergeHelpStats(localFull, importedMin){
+    var result = {};
+    Object.keys(localFull).forEach(function(id){
+      var e = localFull[id];
+      result[id] = { block:e.block, blockName:e.blockName, type:e.type, question:e.question, correct:e.correct, incorrect:e.incorrect };
+    });
+    Object.keys(importedMin || {}).forEach(function(id){
+      var pair = importedMin[id];
+      var q = QUESTIONS_BY_ID[id];
+      if (!q) return; // question no longer exists in this version of the bank, skip
+      if (!result[id]) result[id] = { block:q.block, blockName:q.blockName, type:q.type, question:q.question, correct:0, incorrect:0 };
+      result[id].correct = Math.max(result[id].correct, pair[0]);
+      result[id].incorrect = Math.max(result[id].incorrect, pair[1]);
+    });
+    return result;
+  }
+
+  var syncMode = 'export';
+
+  function openSyncModal(mode){
+    syncMode = mode;
+    var title = $('#sync-modal-title');
+    var desc = $('#sync-modal-desc');
+    var textarea = $('#sync-textarea');
+    var status = $('#sync-modal-status');
+    var actionBtn = $('#btn-sync-action');
+    status.textContent = '';
+    status.className = 'sync-status';
+
+    if (mode === 'export'){
+      title.textContent = 'Exportar progreso';
+      desc.textContent = 'Copia este código y pégalo en el otro dispositivo (botón "Importar código" allí). Incluye tu historial de simulacros y tus estadísticas de modo ayuda.';
+      textarea.value = buildSyncCode();
+      textarea.readOnly = true;
+      actionBtn.textContent = 'Copiar al portapapeles';
+    } else {
+      title.textContent = 'Importar progreso';
+      desc.textContent = 'Pega aquí el código generado en el otro dispositivo. Se combina con tu progreso actual — no se borra nada.';
+      textarea.value = '';
+      textarea.readOnly = false;
+      actionBtn.textContent = 'Importar';
+    }
+    $('#sync-modal').classList.remove('hidden');
+    if (mode === 'export'){ textarea.focus(); textarea.select(); }
+  }
+
+  $('#btn-export-sync').addEventListener('click', function(){ openSyncModal('export'); });
+  $('#btn-import-sync').addEventListener('click', function(){ openSyncModal('import'); });
+  $('#btn-sync-cancel').addEventListener('click', function(){ $('#sync-modal').classList.add('hidden'); });
+
+  $('#btn-sync-action').addEventListener('click', function(){
+    var textarea = $('#sync-textarea');
+    var status = $('#sync-modal-status');
+
+    if (syncMode === 'export'){
+      var text = textarea.value;
+      var onCopyDone = function(){
+        status.textContent = 'Copiado. Pégalo en el otro dispositivo (botón "Importar código").';
+        status.className = 'sync-status ok';
+      };
+      var onCopyFail = function(){
+        textarea.focus();
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          onCopyDone();
+        } catch(e){
+          status.textContent = 'No se pudo copiar automáticamente. Selecciona el texto y cópialo con Ctrl/Cmd+C.';
+          status.className = 'sync-status err';
+        }
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(onCopyDone).catch(onCopyFail);
+      } else {
+        onCopyFail();
+      }
+    } else {
+      try {
+        var payload = parseSyncCode(textarea.value);
+        var mergedHistory = mergeExamHistory(loadHistory(), payload.eh || []);
+        saveHistory(mergedHistory);
+
+        var mergedHelp = mergeHelpStats(loadHelpStats(), payload.hs || {});
+        saveHelpStats(mergedHelp);
+
+        status.textContent = 'Progreso importado y combinado correctamente.';
+        status.className = 'sync-status ok';
+        renderStartScreen();
+      } catch(e){
+        status.textContent = e.message || 'No se pudo importar el código.';
+        status.className = 'sync-status err';
+      }
+    }
   });
 
   // ---------- init ----------
