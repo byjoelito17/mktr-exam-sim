@@ -16,7 +16,8 @@
       "Correct — this looks for problems not necessarily apparent on the surface (like declining awareness before it shows up in sales), which is exactly Problem-Identification (proactive) research.",
       "Incorrect — causal research establishes cause-effect through experiments; the scenario describes a research CATEGORY, not a design type.",
       "Incorrect — 'Conclusive' is a research design classification (Topic 2), not the Problem-ID/Problem-Solving classification being tested here."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_02",
@@ -35,7 +36,8 @@
       "Correct — the notes explicitly list Segmentation, Product, Pricing, Promotion and Distribution Research as examples of Problem-Solving (reactive) research.",
       "Incorrect — Exploratory is a research DESIGN classification (Topic 2), a different axis from Problem-ID/Problem-Solving.",
       "Incorrect — Marketing Intelligence is a source of information, not a research category."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_03",
@@ -54,7 +56,8 @@
       "Correct — Problem-Identification is proactive (undertaken to identify problems not yet apparent or likely to arise); Problem-Solving is reactive (addresses problems already identified).",
       "Incorrect — Problem-Identification is proactive, not reactive.",
       "Incorrect — this reverses proactive/reactive and invents a qualitative/quantitative distinction not in the notes."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b1_04",
@@ -73,7 +76,8 @@
       "Correct — this is action-oriented, asking what the decision-maker SHOULD DO, which is exactly the MDP definition.",
       "Incorrect — the Brief is the client's written document of objectives/expectations, not a single decision question.",
       "Incorrect — this is not one of the 6 components of a research design; it's a decision statement."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_05",
@@ -92,7 +96,8 @@
       "Correct — this is the exact MRP the notes pair with the pricing-repositioning MDP: information-oriented, about elasticity and impact of price changes.",
       "Incorrect — deciding the exact price is itself an ACTION, so it would be an MDP, not an information-oriented MRP.",
       "Incorrect — market share evolution isn't the MRP matched to this specific pricing MDP example."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_06",
@@ -111,7 +116,8 @@
       "Incorrect — increasing ad spend is an ACTION decision management could take, making it an MDP-style statement, not an information-oriented MRP.",
       "Incorrect — closing branches is also an action decision, not information-oriented.",
       "Incorrect — launching a programme is an action, not the information-gathering focus of an MRP."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_07",
@@ -130,7 +136,8 @@
       "Correct — the Brief establishes the client's objectives (the 'what'); the Proposal lays out the planned methodology (the 'how').",
       "Incorrect — MDP is action-oriented and MRP is information-oriented, a separate distinction from Brief/Proposal's what/how framing, but this option also misrepresents Brief/Proposal.",
       "Incorrect — the Brief specifically addresses 'what', not 'how'."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b1_08",
@@ -149,7 +156,8 @@
       "Correct — research informs and supports marketing decisions; selling directly to consumers under the guise of research is the unethical practice of 'sugging', not a legitimate function of research.",
       "Incorrect — this IS one of the five things ESOMAR says research does.",
       "Incorrect — this IS one of the five things ESOMAR says research does."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_09",
@@ -168,7 +176,8 @@
       "Incorrect — this IS part of the ESOMAR definition.",
       "Correct — the notes explicitly warn that research does NOT guarantee success; it reduces uncertainty and risk but cannot eliminate it, so this is not part of the definition.",
       "Incorrect — this IS part of the ESOMAR definition."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_10",
@@ -187,7 +196,8 @@
       "Correct — step 5, 'Data collection', is the step immediately following Sampling (step 4).",
       "Incorrect — 'Data analysis' is step 6, one step further along than the one immediately after Sampling.",
       "Incorrect — 'Research design' is step 2, far earlier in the process."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_11",
@@ -206,7 +216,8 @@
       "Correct — these are exactly the four conditions: the cost of a poor decision significantly exceeds the research cost, genuine uncertainty exists, the information isn't already available, and findings can realistically be acted upon.",
       "Incorrect — this inverts several conditions (it should be the OPPOSITE of certainty and already-available information).",
       "Incorrect — these describe study quality/logistics, not the justification conditions listed in the notes."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_12",
@@ -225,7 +236,8 @@
       "Correct — Creativity is defined as the search for innovative approaches and solutions.",
       "Incorrect — Closeness refers to proximity and accessibility between the parties.",
       "Incorrect — Confidence refers to mutual trust in the relationship."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_13",
@@ -244,7 +256,8 @@
       "Incorrect — 'Available' concerns whether the data can actually be accessed, a different concern from timeliness.",
       "Correct — 'Current' is the characteristic concerned with the data being up to date and timely enough for the decision.",
       "Incorrect — 'Relevant' concerns whether the data actually applies to the problem at hand, not its timing."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b1_14",
@@ -263,7 +276,8 @@
       "Incorrect — this IS one of the 6 components.",
       "Correct — negotiating a fee is a commercial/contractual matter, not one of the 6 components of a research design listed in the notes.",
       "Incorrect — this IS one of the 6 components."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_15",
@@ -282,7 +296,8 @@
       "Incorrect — Causal design is a structured TYPE of conclusive design.",
       "Correct — this exactly matches the Exploratory design classification: unstructured, small samples, evolving approach.",
       "Incorrect — Descriptive research is a structured, conclusive design."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_16",
@@ -301,7 +316,8 @@
       "Correct — specifying proportions and making inferences about the population from a sample are explicitly listed uses of Conclusive design.",
       "Incorrect — marketing intelligence is a source of information, not a research design classification.",
       "Incorrect — Problem-Identification is a research CATEGORY (Topic 1), a different axis from the exploratory/conclusive design classification."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_17",
@@ -320,7 +336,8 @@
       "Incorrect — conclusive descriptive design requires clearly defined, structured measurement, not exploration of vague attitudes.",
       "Correct — exploratory design is specifically used when nothing is known about the topic and concepts need to be explored before further research.",
       "Incorrect — longitudinal is a TYPE of conclusive descriptive design (measuring a fixed sample repeatedly), not suited to open-ended exploration."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_18",
@@ -339,7 +356,8 @@
       "Incorrect — multiple cross-sectional uses two or more DIFFERENT samples, each measured only once, not the same fixed panel repeatedly.",
       "Incorrect — in cohort analysis, the cohort (not a literal fixed panel of the same individuals) is the unit of analysis across separate surveys.",
       "Correct — measuring a FIXED sample repeatedly on the same variables over time is the exact definition of a longitudinal design."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_19",
@@ -358,7 +376,8 @@
       "Correct — two or more DIFFERENT samples, each measured once (often at different times), is exactly the definition of multiple cross-sectional design.",
       "Incorrect — longitudinal requires the SAME fixed sample measured repeatedly, not two different samples.",
       "Incorrect — causal design requires manipulating variables through experiments, not simply comparing survey samples over time."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_20",
@@ -377,7 +396,8 @@
       "Correct — the notes' comparison table shows longitudinal designs score worse on representative sampling and response bias, while scoring better on detecting change and accuracy.",
       "Incorrect — longitudinal designs are explicitly BETTER at accuracy and detecting change, not worse.",
       "Incorrect — the notes' comparison specifically flags representative sampling and response bias as longitudinal's weak points, not just cost/speed."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b1_21",
@@ -396,7 +416,8 @@
       "Correct — the notes explicitly define Total Error as the combination of (random) sampling error and non-sampling error.",
       "Incorrect — 'Currency' and 'Objective' are criteria for evaluating secondary data, unrelated to Total Error's components.",
       "Incorrect — response bias and interviewer bias are examples WITHIN non-sampling error, not the two named top-level components of Total Error."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_22",
@@ -415,7 +436,8 @@
       "Incorrect — sampling frame error concerns the LIST used to identify the population missing or wrongly including elements, a Topic 5 concept, not what's described here.",
       "Correct — random sampling error is caused specifically by the sampling procedure producing a non-representative sample, with no other cause involved.",
       "Incorrect — 'Total error' is the combined difference between the true population value and the sample value (sampling + non-sampling error together), a broader concept than the single cause described here."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_23",
@@ -434,7 +456,8 @@
       "Correct — every project should start with secondary data; only when it is exhausted and insufficient should the researcher proceed to primary data.",
       "Incorrect — marketing intelligence is a distinct, complementary source, not a substitute for the secondary-data-first rule.",
       "Incorrect — the rule is about exhausting cheaper/faster sources first, not about budget size."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_24",
@@ -453,7 +476,8 @@
       "Correct — this is the exact definition given for Marketing Intelligence, described as different in nature and purpose from secondary data.",
       "Incorrect — primary data is originated by the researcher specifically for the problem at hand, a different definition.",
       "Incorrect — a sampling frame is a list for identifying a population, unrelated to this definition."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_25",
@@ -472,7 +496,8 @@
       "Correct — the notes list formulating an appropriate research design and developing a sampling plan among secondary data's specific advantages.",
       "Incorrect — a mismatched sample is listed as a disadvantage.",
       "Incorrect — needing credibility evaluation before use is listed as a disadvantage (added burden), not an advantage."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_26",
@@ -491,7 +516,8 @@
       "Incorrect — Error and Accuracy involves comparing several sources when available, a different check.",
       "Correct — Nature and Dependability specifically asks whether the data can be adapted to the purpose, and how/by whom it was reported.",
       "Incorrect — Objective asks what the ORIGINAL PURPOSE of the research was, a related but distinct question."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b1_27",
@@ -510,7 +536,8 @@
       "Correct — internal secondary data is collected BY the organisation itself; sales reports and expenditure records are the notes' own examples.",
       "Incorrect — marketing intelligence refers to qualified observations of the marketing environment, a distinct concept.",
       "Incorrect — this data was already collected for another purpose, so it's secondary, not primary."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_28",
@@ -529,7 +556,8 @@
       "Incorrect — Kantar is known for consumer panels.",
       "Incorrect — GfK provides general market research data.",
       "Correct — Dun & Bradstreet is listed as the provider of B2B business information."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_29",
@@ -548,7 +576,8 @@
       "Incorrect — Media Panels establish advertising rates and viewer profiles.",
       "Correct — Audit Services measure consumer sales and market share and track distribution patterns via audits, matching this scenario.",
       "Incorrect — Industrial Syndicated Services determine market potential by area and define sales territories."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b1_30",
@@ -567,7 +596,8 @@
       "Correct — Data Mining is defined as discovering meaningful patterns, trends or correlations through large amounts of data.",
       "Incorrect — Marketing intelligence refers to qualified observations of the marketing environment, unrelated to pattern discovery in stored data.",
       "Incorrect — a sampling frame is a list for identifying a population, unrelated to pattern discovery."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_31",
@@ -586,7 +616,8 @@
       "Incorrect — Theoretical base refers to developing a body of knowledge supporting emerging techniques like sentiment analysis, a different challenge.",
       "Incorrect — Ethical base refers to new privacy/security issues like GDPR, a different challenge.",
       "Incorrect — sampling frame error is a Topic 5 sampling concept, unrelated to Research 2.0 challenges."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_32",
@@ -605,7 +636,8 @@
       "Correct — social media listening is defined as tracking brand mentions, sentiment and consumer conversations in real time.",
       "Incorrect — eye-tracking/biometrics measure emotional/physiological responses, not conversational sentiment.",
       "Incorrect — Big Data analysis processes large datasets generally to uncover patterns, a broader technique not specific to real-time brand conversations."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_33",
@@ -624,7 +656,8 @@
       "Correct — MRS is The Market Research Society (UK).",
       "Incorrect — AAPOR is the American Association for Public Opinion Research.",
       "Incorrect — CASRO is the Council of American Survey Research Organizations."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_34",
@@ -643,7 +676,8 @@
       "Correct — the notes list marketing/psychology/consumer behaviour knowledge, quantitative and qualitative methods, digital skills, and communication as required skills.",
       "Incorrect — graphic design is not mentioned as a required skill.",
       "Incorrect — sales/negotiation skills are not mentioned as required skills."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b1_35",
@@ -662,7 +696,8 @@
       "Incorrect — this describes exploratory design (unstructured, evolving, small samples), not causal design.",
       "Correct — the notes state causal research's goal is to understand which variables are cause and effect, achieved through experiments, which are difficult/costly especially in Social Sciences.",
       "Incorrect — a census (measuring the entire population) is a separate concept, not what makes causal research difficult."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_01",
@@ -681,7 +716,8 @@
       "Correct — a census is a complete enumeration of all the elements of a population or study objects, exactly matching 'surveying every single student'.",
       "Incorrect — a sampling frame is a list or set of directions for IDENTIFYING the population, not the act of surveying everyone.",
       "Incorrect — a cluster is a subgroup used in cluster sampling, not a complete enumeration."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_02",
@@ -700,7 +736,8 @@
       "Correct — the exact 6-step sequence: define target population, determine sampling frame, select technique, determine sample size, execute, then validate.",
       "Incorrect — selecting a technique before defining the population would be premature and out of order.",
       "Incorrect — you cannot execute a sampling process before even defining the population; this is badly out of order."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_03",
@@ -719,7 +756,8 @@
       "Incorrect — Sampling units IS one of the four things.",
       "Incorrect — Extent (geographical boundaries) IS one of the four things.",
       "Correct — Confidence level is a Part B sample-size concept, not one of the four components (Elements, Sampling units, Extent, Time) used to define a target population."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_04",
@@ -738,7 +776,8 @@
       "Correct — a sampling frame is a representation of the target population's elements, consisting of a list or directions for identifying them — exactly what a customer database provides here.",
       "Incorrect — the target population is the theoretical universe of interest, not the specific list/database used to access it.",
       "Incorrect — a cluster is a subgroup used specifically in cluster sampling, not a general list."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b2_05",
@@ -757,7 +796,8 @@
       "Correct — sampling frame error occurs specifically when the list does not contain all relevant elements or includes elements that do not belong — exactly this scenario.",
       "Incorrect — this has nothing to do with interviewer behaviour; the problem is the LIST itself, not how it was administered.",
       "Incorrect — 'Total error' is the broader combination of sampling and non-sampling error across the whole study, not this specific list-quality problem."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b2_06",
@@ -776,7 +816,8 @@
       "Correct — this is the exact definition of Total Error: the gap between the true population mean and the value obtained in the sample, made up of sampling error plus non-sampling error.",
       "Incorrect — precision level is the desired SIZE of the estimating interval chosen by the researcher, not a description of an error that occurred.",
       "Incorrect — confidence level is the PROBABILITY that a confidence interval contains the true parameter, a different Part B concept entirely."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b2_07",
@@ -795,7 +836,8 @@
       "Correct — sampling frame error is caused by a flawed sampling frame (list); random sampling error is caused by the sampling procedure itself, and can occur even with a perfect list, simply due to the luck of the draw.",
       "Incorrect — random sampling error can occur under ANY sampling procedure, probability or not, whenever a specific sample happens to differ from the population.",
       "Incorrect — sampling frame error is a Topic 5 concept about the sampling process itself, not something folded into the Topic 2 Total/Random/Non-Sampling error table."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_08",
@@ -814,7 +856,8 @@
       "Correct — this is exactly what the notes say: filter questions help with wrongly included elements, but can do nothing about people who were never on the list in the first place.",
       "Incorrect — the notes explicitly instruct researchers to always specify sampling frame limitations regardless of screening used.",
       "Incorrect — screening questions are unrelated to the probability/non-probability sampling distinction."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b2_09",
@@ -833,7 +876,8 @@
       "Correct — in the Bayesian approach, elements are selected sequentially and the cost/probability of a wrong decision can be calculated using known prior information about the population.",
       "Incorrect — the Traditional approach is described as the most commonly used in Marketing Research.",
       "Incorrect — Bayesian vs. Traditional is a separate decision axis from probability vs. non-probability sampling."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_10",
@@ -852,7 +896,8 @@
       "Correct — without replacement, the element is excluded from the frame once selected, so it can appear in the sample only once.",
       "Incorrect — the element's data is kept and used; only its eligibility for further selection is removed.",
       "Incorrect — this invents a rule about strata that isn't part of the with/without replacement distinction."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_11",
@@ -871,7 +916,8 @@
       "Incorrect — non-probability sampling is subjective and does NOT allow confidence intervals to be calculated.",
       "Incorrect — relying on judgement describes non-probability sampling.",
       "Incorrect — known, equal selection probability is the defining feature of probability sampling, not non-probability."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_12",
@@ -890,7 +936,8 @@
       "Correct — convenience sampling selects elements simply because they happen to be in the right place at the right time, exactly as described — the notes' own example is 'people on the street' interviews without qualifying participants.",
       "Incorrect — quota sampling requires pre-set control categories/quotas to be filled, not unrestricted convenience.",
       "Incorrect — systematic sampling selects every ith element from an ordered list, not passers-by."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b2_13",
@@ -909,7 +956,8 @@
       "Correct — judgemental sampling selects elements based on the researcher's judgement; expert witnesses in court is the notes' own example.",
       "Incorrect — snowball sampling relies on referrals from initial participants, not direct expert selection.",
       "Incorrect — simple random sampling gives every element an equal, known chance of selection, the opposite of deliberate judgement-based selection."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b2_14",
@@ -928,7 +976,8 @@
       "Correct — quota sampling's two stages are: developing control categories (quotas) of population elements, then selecting elements within each quota by convenience or judgement.",
       "Incorrect — that describes stratified sampling.",
       "Incorrect — that describes one-stage cluster sampling."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_15",
@@ -947,7 +996,8 @@
       "Incorrect — judgemental sampling relies on the researcher's own expert judgement, not participant referrals.",
       "Correct — snowball sampling selects an initial group, then relies on referrals from those participants to reach further members of a hard-to-find population.",
       "Incorrect — quota sampling uses pre-set demographic quotas, not a referral chain."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b2_16",
@@ -966,7 +1016,8 @@
       "Incorrect — that describes stratified sampling.",
       "Incorrect — that describes systematic sampling.",
       "Incorrect — that describes snowball sampling."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_17",
@@ -985,7 +1036,8 @@
       "Incorrect — 13 does not equal N/n for these values.",
       "Correct — i = N/n = 5,000/250 = 20.",
       "Incorrect — 50 does not equal N/n for these values."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b2_18",
@@ -1004,7 +1056,8 @@
       "Correct — the notes specifically warn that if the frame's ordering is cyclical, representativeness may decrease.",
       "Incorrect — without-replacement sampling is standard practice, not a risk factor here.",
       "Incorrect — calculating i = N/n is just the standard procedure, not a source of decreased representativeness."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_19",
@@ -1023,7 +1076,8 @@
       "Correct — within each stratum, elements should be as homogeneous as possible; across strata, they should be as heterogeneous as possible.",
       "Incorrect — if everything were homogeneous, there'd be no reason to stratify at all.",
       "Incorrect — that description fits cluster sampling more closely, not stratified sampling."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_20",
@@ -1042,7 +1096,8 @@
       "Correct — proportionate stratified sampling allocates sample size purely in proportion to stratum size in the population.",
       "Incorrect — cluster sampling divides the population into clusters and samples among them, not strata by size.",
       "Incorrect — systematic sampling has no concept of strata at all."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_21",
@@ -1061,7 +1116,8 @@
       "Correct — in cluster sampling, elements within a cluster should be heterogeneous, while clusters themselves should be homogeneous (each representative of the population) — the opposite of stratified sampling's rule.",
       "Incorrect — uniform homogeneity throughout would defeat the logic of clustering.",
       "Incorrect — uniform heterogeneity throughout would also defeat the logic of clustering."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_22",
@@ -1080,7 +1136,8 @@
       "Correct — in two-stage cluster sampling, only a SAMPLE of elements is drawn from each selected cluster, rather than including all of them.",
       "Incorrect — cluster sampling doesn't guarantee the same equal-probability property as SRS by default.",
       "Incorrect — clusters ARE randomly selected first, in both one-stage and two-stage cluster sampling."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_23",
@@ -1099,7 +1156,8 @@
       "Correct — in stratified sampling every stratum is represented in the final sample, while in cluster sampling only the randomly selected clusters are used (other clusters are excluded entirely).",
       "Incorrect — cluster sampling specifically does NOT include every cluster, only the selected ones.",
       "Incorrect — both stratified and cluster sampling are probability sampling techniques."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_24",
@@ -1118,7 +1176,8 @@
       "Correct — recruited online sampling includes panels such as opt-in panels, where members are recruited in advance.",
       "Incorrect — that is judgemental sampling, an offline non-probability technique unrelated to online sampling classification.",
       "Incorrect — random digit dialling is a telephone-based technique, not an online sampling method."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_25",
@@ -1137,7 +1196,8 @@
       "Correct — conclusive research, high population variability (heterogeneous), and favourable statistical/operational conditions are exactly the factors the notes list as favouring probability sampling.",
       "Incorrect — 'unfavourable statistical/operational conditions' favours non-probability, contradicting the rest of this option.",
       "Incorrect — 'exploratory research' favours non-probability sampling, not probability."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_26",
@@ -1156,7 +1216,8 @@
       "Incorrect — this IS one of the listed qualitative factors.",
       "Correct — this is not a real factor listed anywhere in the notes.",
       "Incorrect — this IS one of the listed qualitative factors."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_27",
@@ -1175,7 +1236,8 @@
       "Correct — a statistic summarises a characteristic of the SAMPLE (X̄); a parameter describes the true value in the POPULATION (μ), which the statistic estimates.",
       "Incorrect — 'sample' and 'census' describe data-collection approaches, not the statistical roles of X̄ and μ.",
       "Incorrect — this also confuses data-collection types with the parameter/statistic distinction."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b2_28",
@@ -1194,7 +1256,8 @@
       "Incorrect — there is no absolute sample-size threshold of 300 in the fpc rule; it's based on the 10% ratio.",
       "Correct — 150/1,200 = 12.5%, which is 10% or more of the population, so the fpc should be applied.",
       "Incorrect — the fpc applies based on the sample-to-population ratio, not simply on whether probability sampling was used."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b2_29",
@@ -1213,7 +1276,8 @@
       "Correct — precision level is the desired size of the estimating interval — the maximum permissible difference between the sample statistic and the population parameter.",
       "Incorrect — that describes the finite population correction (fpc).",
       "Incorrect — that describes the incidence rate."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b2_30",
@@ -1232,7 +1296,8 @@
       "Correct — SE = 45/√225 = 45/15 = 3; margin = 1.96 × 3 ≈ 5.88 ≈ €6, giving €120 ± €6.",
       "Incorrect — €45 is just σ itself, before dividing by √n.",
       "Incorrect — €88 does not follow from correctly applying the formula."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b2_31",
@@ -1251,7 +1316,8 @@
       "Incorrect — 100 doesn't follow from correctly applying the formula.",
       "Correct — n = (1.96 × 50 / 5)² = (19.6)² = 384.16, rounded up to 385.",
       "Incorrect — 400 is a rough over-estimate that doesn't match the precise calculation."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b2_32",
@@ -1270,7 +1336,8 @@
       "Incorrect — 210 doesn't match the calculation.",
       "Incorrect — 320 doesn't match the calculation.",
       "Correct — n = (1.96² × 0.30 × 0.70) / 0.04² = (3.8416 × 0.21) / 0.0016 ≈ 504.2, rounded up to 505."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b2_33",
@@ -1289,7 +1356,8 @@
       "Incorrect — 800 doesn't match the formula for these inputs.",
       "Incorrect — 1,000 doesn't match the formula for these inputs.",
       "Correct — Initial sample size = 400 / (0.40 × 0.80) = 400 / 0.32 = 1,250."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b2_34",
@@ -1308,7 +1376,8 @@
       "Correct — following the notes' formula (100/response rate), the low-income group's weight is 100/30 ≈ 3.33 — the largest weight, since it has the lowest response rate.",
       "Incorrect — 100/90 would be the weight for the HIGH-income group, not the low-income group.",
       "Incorrect — 90/100 doesn't match the 100/response-rate formula for any of these groups."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b2_35",
@@ -1327,7 +1396,8 @@
       "Incorrect — Substitution replaces non-participants with OTHER elements from the sampling frame expected to respond.",
       "Correct — Trend Analysis specifically discerns a trend between early and late participants and projects it onto non-participants.",
       "Incorrect — Subjective Estimates rely on the researcher's own experience/judgement, used only when improving response rate is no longer feasible."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_01",
@@ -1346,7 +1416,8 @@
       "Incorrect — telephone surveys are fast and cost-effective but have declining response rates, not the highest flexibility/quality.",
       "Correct — personal (in-home, mall intercept or CAPI) surveys offer the highest flexibility and response quality, at the cost of being expensive.",
       "Incorrect — online surveys are the dominant method today mainly for speed and low cost, not for having the HIGHEST flexibility/quality of all methods."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_02",
@@ -1365,7 +1436,8 @@
       "Incorrect — automatic validation/logic checks producing high data quality is listed as an advantage.",
       "Correct — difficulty ensuring representative sampling frames is explicitly listed as a disadvantage of online surveys.",
       "Incorrect — the absence of interviewer bias is listed as an advantage."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_03",
@@ -1384,7 +1456,8 @@
       "Incorrect — this IS listed as a reason for declining response rates.",
       "Correct — 'overuse of face-to-face interviews' is not mentioned; face-to-face is actually associated with the HIGHEST response quality, not declining rates.",
       "Incorrect — this IS listed as a reason for declining response rates."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_04",
@@ -1403,7 +1476,8 @@
       "Correct — perceived anonymity specifically asks whether respondents believe their identity is protected.",
       "Incorrect — control of field force refers to the supervision and consistency of interviewers.",
       "Incorrect — potential for interviewer bias asks whether the interviewer's presence could distort answers, a different concern."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_05",
@@ -1422,7 +1496,8 @@
       "Correct — the notes highlight a single unified database updated in real time, common core questions across modes, and the ability to switch interviews between modes mid-survey.",
       "Incorrect — mixed-mode is used specifically to MAXIMISE reach and data quality, not to lower it.",
       "Incorrect — a common core of questions across all modes is explicitly a key feature."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_06",
@@ -1441,7 +1516,8 @@
       "Correct — structured observation is defined as the researcher pre-specifying exactly what is to be observed and how it is recorded.",
       "Incorrect — disguised concerns whether participants know they're being watched, a separate distinction from structured/unstructured.",
       "Incorrect — contrived concerns whether the setting is artificial, a separate distinction."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_07",
@@ -1460,7 +1536,8 @@
       "Correct — disguised observation means participants are unaware they are being observed, using tools like two-way mirrors or hidden cameras — exactly this scenario.",
       "Incorrect — structured/unstructured concerns whether the recording method was pre-specified, a separate distinction from disguise.",
       "Incorrect — contrived concerns whether the SETTING is artificial, not whether participants know they're watched."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_08",
@@ -1479,7 +1556,8 @@
       "Correct — natural observation records behaviour in its real, natural environment — exactly an actual supermarket.",
       "Incorrect — disguised concerns whether participants know they're being watched, unrelated to whether the setting is real or built.",
       "Incorrect — structured concerns whether the recording method was pre-specified, a separate distinction from natural/contrived."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_09",
@@ -1498,7 +1576,8 @@
       "Correct — these are the notes' own examples of Electronic Observation WITHOUT participant involvement — devices that passively record behaviour without the participant actively engaging with the measurement.",
       "Incorrect — Electronic Observation WITH participant involvement uses devices like eye-trackers or pupilometers that require the participant to be wired up or actively monitored.",
       "Incorrect — Trace Analysis draws conclusions from physical evidence of PAST behaviour, not real-time electronic recording."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_10",
@@ -1517,7 +1596,8 @@
       "Incorrect — 'without participant involvement' describes passive devices like turnstiles or audimeters, not devices attached to or focused on the participant's physiological responses.",
       "Correct — these devices measure the participant's own physiological/emotional responses, which is exactly Electronic Observation WITH participant involvement.",
       "Incorrect — Trace Analysis draws conclusions from physical evidence of past behaviour, not real-time physiological measurement."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_11",
@@ -1536,7 +1616,8 @@
       "Incorrect — this scenario involves no device attached to or measuring a participant at all.",
       "Correct — Trace Analysis draws conclusions from physical evidence of PAST behaviour; tile erosion is the notes' own example.",
       "Incorrect — 'structured' concerns whether the recording method was pre-specified, a separate axis from the observation method itself."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_12",
@@ -1555,7 +1636,8 @@
       "Correct — concomitant variation is one of the three conditions: X and Y must vary together in the predicted direction.",
       "Incorrect — sampling frame quality is a separate concept, not one of the three causality conditions.",
       "Incorrect — response rate is not one of the three causality conditions."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_13",
@@ -1574,7 +1656,8 @@
       "Correct — the independent variable is manipulated by the researcher (price levels); the dependent variable measures the effect (sales volume).",
       "Incorrect — test units are the entities being tested (e.g. stores), not the price levels themselves.",
       "Incorrect — extraneous variables are OTHER variables besides the independent variable that could affect the outcome, not the price levels being manipulated."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b3_14",
@@ -1593,7 +1676,8 @@
       "Correct — internal validity asks whether the manipulation actually caused the observed change, which requires effective control of extraneous variables — exactly this concern.",
       "Incorrect — precision level is a sample-size concept unrelated to experimental control.",
       "Incorrect — confidence level is a sample-size/CI concept unrelated to experimental control."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_15",
@@ -1612,7 +1696,8 @@
       "Correct — History refers to an external event occurring during the experiment that affects the outcome — exactly this scenario.",
       "Incorrect — Instrumentation concerns changes in the measuring instrument or observers, not competitor actions.",
       "Incorrect — Selection Bias concerns non-random assignment of test units to groups, unrelated to external market events."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_16",
@@ -1631,7 +1716,8 @@
       "Correct — Maturation refers to changes in test units over time that are unrelated to the treatment, such as natural ageing.",
       "Incorrect — Mortality refers to test units dropping OUT of the study, not changing while remaining in it.",
       "Incorrect — Statistical Regression refers to extreme initial scores moving toward the average, a different phenomenon."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_17",
@@ -1650,7 +1736,8 @@
       "Incorrect — Selection Bias refers to non-random or improper assignment of test units to groups.",
       "Correct — Statistical Regression describes exactly this: extreme initial scores tend to move toward the average on re-measurement.",
       "Incorrect — Main Testing Effect refers to a prior measurement affecting a later measurement directly, not a statistical tendency of extreme scores."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_18",
@@ -1669,7 +1756,8 @@
       "Incorrect — Interactive Testing Effect is when a prior measurement changes how test units respond to the treatment, not observer drift.",
       "Incorrect — History refers to an external event unrelated to the observers themselves.",
       "Incorrect — Mortality refers to test units dropping out, unrelated to observer scoring changes."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_19",
@@ -1688,7 +1776,8 @@
       "Incorrect — History concerns an external event during the experiment.",
       "Correct — Selection Bias is caused by non-random or improper assignment of test units to groups — exactly this scenario.",
       "Incorrect — Mortality refers to test units dropping out, not how they were assigned."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_20",
@@ -1707,7 +1796,8 @@
       "Correct — matching involves comparing test units on key background variables before assigning them to treatment conditions.",
       "Incorrect — statistical control measures extraneous variables and adjusts for their effects mathematically (e.g. ANOVA), not through pre-assignment comparison.",
       "Incorrect — design control refers to using specific experimental designs that inherently control for known extraneous variables, a broader category."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b3_21",
@@ -1726,7 +1816,8 @@
       "Correct — competitor contamination — rivals deliberately interfering with field experiments — is explicitly listed as a limitation.",
       "Incorrect — experiments are commonly used to study price changes; this is not a limitation mentioned.",
       "Incorrect — control groups are typically part of what makes experiments costly and complex, not something experiments lack."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_22",
@@ -1745,7 +1836,8 @@
       "Correct — this combines two separate attributes (tasty AND refreshing) into one question, making the answer uninterpretable if a respondent agrees with one but not the other.",
       "Incorrect — this asks for a single piece of information.",
       "Incorrect — this is a straightforward single-attribute preference question."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_23",
@@ -1764,7 +1856,8 @@
       "Correct — the notes specifically recommend providing categories/ranges instead of demanding exact quantities, to work around imperfect memory.",
       "Incorrect — visual aids are recommended for helping participants ARTICULATE abstract experiences, a different inability.",
       "Incorrect — a 'don't know' option addresses whether the participant is INFORMED, a different inability."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_24",
@@ -1783,7 +1876,8 @@
       "Incorrect — this IS a recommended technique for unwillingness.",
       "Correct — demanding precise numeric estimates addresses neither unwillingness nor ability; the notes instead recommend providing categories, which is the opposite approach.",
       "Incorrect — this IS a recommended technique for sensitive questions specifically."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_25",
@@ -1802,7 +1896,8 @@
       "Correct — this is the notes' own example: it fails to define WHO should answer, WHAT counts as 'use', and WHEN, unlike the corrected version specifying 'personally used at home during the last month'.",
       "Incorrect — the funnel approach concerns the ORDER of questions, not the wording of a single question.",
       "Incorrect — the question does not steer respondents toward a particular answer."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_26",
@@ -1821,7 +1916,8 @@
       "Correct — words like 'usually', 'often' and 'occasionally' mean different things to different people; the notes recommend specific numeric ranges instead.",
       "Incorrect — an implicit assumption embeds an unstated consequence in the question, which isn't the issue here.",
       "Incorrect — this asks respondents to self-categorise using vague words, not to compute a total from components."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_27",
@@ -1840,7 +1936,8 @@
       "Incorrect — an implicit alternative is an unstated option the respondent might assume exists, not the same as steering toward a specific answer.",
       "Incorrect — this question uses no technical jargon; the issue is the biased phrasing.",
       "Incorrect — this is a single connected idea (service justifying price), not two unrelated attributes."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_28",
@@ -1859,7 +1956,8 @@
       "Incorrect — an implicit assumption embeds an unstated CONSEQUENCE the respondent must accept, a related but distinct error.",
       "Incorrect — nothing here steers the respondent toward a specific answer.",
       "Incorrect — the words used are clear; the issue is the missing options, not vague terminology."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_29",
@@ -1878,7 +1976,8 @@
       "Incorrect — the wording itself is clear; the problem is the false premise baked into the question.",
       "Incorrect — this asks about a single topic (the free gift), not two combined attributes.",
       "Incorrect — the funnel approach concerns question ORDER, unrelated to this wording problem."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_30",
@@ -1897,7 +1996,8 @@
       "Incorrect — sensitive questions should be placed LATE regardless, but that is a separate principle from the funnel approach itself.",
       "Correct — the funnel approach moves from general questions down to specific ones, like a funnel narrowing.",
       "Incorrect — classification/personal information should come LAST, and this doesn't describe the general-to-specific funnel logic."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_31",
@@ -1916,7 +2016,8 @@
       "Correct — Likert scales are treated as interval, assuming equal distances between points but with no true zero point.",
       "Incorrect — Likert scales have no true zero; 'Strongly Disagree' is not an absolute absence of the attribute in the way ratio scales require.",
       "Incorrect — nominal scales are pure labels with no order, which doesn't fit an agreement scale that clearly has directionality."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b3_32",
@@ -1935,7 +2036,8 @@
       "Correct — non-comparative (monadic) scales rate each object independently, with data assumed to be interval or ratio.",
       "Incorrect — paired comparison is a comparative technique where two objects are directly compared.",
       "Incorrect — rank order is also a comparative technique, producing ordinal data from simultaneous ranking."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b3_33",
@@ -1954,7 +2056,8 @@
       "Incorrect — rank order asks respondents to rank objects from most to least preferred, not distribute points.",
       "Correct — Constant Sum Scaling asks respondents to allocate a fixed number of points (e.g. 100) across attributes based on importance, providing ratio-like information.",
       "Incorrect — semantic differential is a non-comparative bipolar scale anchored by opposite adjectives, unrelated to point allocation."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b3_34",
@@ -1973,7 +2076,8 @@
       "Correct — Rank Order Scaling requires (n−1) decisions; with n = 6 brands, that is 6 − 1 = 5.",
       "Incorrect — 6 would simply be n, not the (n−1) decisions actually required.",
       "Incorrect — 15 is n(n−1)/2, the formula for Paired Comparison Scaling, not Rank Order Scaling."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b3_35",
@@ -1992,7 +2096,8 @@
       "Correct — odd numbers of scale points allow a neutral midpoint; even numbers remove that midpoint, forcing a directional (positive or negative) choice.",
       "Incorrect — comparing two objects directly describes comparative scaling, unrelated to odd/even scale points.",
       "Incorrect — the odd/even point decision does not by itself change the scale's level of measurement to ratio."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_01",
@@ -2011,7 +2116,8 @@
       "Incorrect — a cross-tabulation describes TWO OR MORE variables simultaneously, not a single variable.",
       "Incorrect — regression examines relationships between a dependent and independent variable, not a simple count table.",
       "Incorrect — a dendrogram is a hierarchy-of-clusters diagram, unrelated to frequency counts."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_02",
@@ -2030,7 +2136,8 @@
       "Correct — the median is the middle value when data are ordered, and is explicitly described as robust to outliers.",
       "Incorrect — using every data point is exactly why the mean IS distorted by the outlier, not why it's robust.",
       "Incorrect — the CV is a measure of relative variability (spread), not a measure of central tendency at all."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_03",
@@ -2049,7 +2156,8 @@
       "Incorrect — the median requires the data to be ordered; unordered logo preference has no meaningful order.",
       "Correct — the mode (the most frequently occurring value) is explicitly described as good for categorical variables like this.",
       "Incorrect — CV is a measure of variability for metric data, not applicable to a nominal preference variable."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_04",
@@ -2068,7 +2176,8 @@
       "Incorrect — standard deviation is also in the original units, making cross-unit comparison invalid.",
       "Correct — CV = S/X̄ × 100 is unitless, making it ideal for comparing relative variability across variables measured on different scales.",
       "Incorrect — variance is in SQUARED original units, also not comparable across different scales."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_05",
@@ -2087,7 +2196,8 @@
       "Correct — S² = 40 / (5−1) = 40/4 = 10.",
       "Incorrect — 40 is Σ(Xᵢ−X̄)² itself, before dividing by (n−1).",
       "Incorrect — 6.32 ≈ √10 is the standard deviation, not the variance."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b4_06",
@@ -2106,7 +2216,8 @@
       "Correct — Range = Xlargest − Xsmallest = 47 − 8 = 39.",
       "Incorrect — 47 is just the largest value.",
       "Incorrect — 55 is the SUM of the two values, not the difference."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b4_07",
@@ -2125,7 +2236,8 @@
       "Incorrect — neither is a measure of central tendency or variability directly; both describe the SHAPE of the distribution.",
       "Incorrect — they are distinct shape statistics measuring different things (asymmetry vs. peakedness).",
       "Incorrect — both require metric (interval/ratio) data to be meaningful; neither applies to nominal data."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b4_08",
@@ -2144,7 +2256,8 @@
       "Correct — H₀ and H₁ are complementary statements that together must cover all possible outcomes.",
       "Incorrect — this reverses it; BOTH H₀ and H₁ refer to a POPULATION parameter (μ, σ, π), not a sample statistic.",
       "Incorrect — H₁ is tested as an alternative TO H₀, not something used only after H₀ is proven — if H₀ is not rejected, no changes are made and H₁ is not adopted."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_09",
@@ -2163,7 +2276,8 @@
       "Incorrect — One Proportion tests a QUALITATIVE variable's proportion, not a quantitative variable's mean.",
       "Incorrect — Two Means compares a quantitative variable ACROSS TWO GROUPS, but this tests a single value against a fixed number, not two groups.",
       "Incorrect — Association tests whether two variables are related, not whether one variable equals a specific value."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_10",
@@ -2182,7 +2296,8 @@
       "Correct — One Proportion tests whether a qualitative variable has a specific proportion, exactly matching this scenario.",
       "Incorrect — Two Proportions compares a qualitative variable ACROSS TWO GROUPS, but this tests one proportion against a fixed value.",
       "Incorrect — this scenario is specifically a One Proportion test, a more precise classification than the general 'Difference Test' label."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_11",
@@ -2201,7 +2316,8 @@
       "Correct — comparing a QUANTITATIVE variable (spending) ACROSS TWO GROUPS (members vs. non-members) is exactly a Two Means test.",
       "Incorrect — Two Proportions applies to a QUALITATIVE variable across two groups, but spending is quantitative.",
       "Incorrect — Association tests whether two variables are related, not whether a mean differs between two groups."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_12",
@@ -2220,7 +2336,8 @@
       "Incorrect — Two Means compares a QUANTITATIVE variable across two groups; logo recognition is qualitative.",
       "Correct — Two Proportions compares a qualitative variable (recognition) across two groups (men vs. women).",
       "Incorrect — One Mean applies to a quantitative variable's mean, not a qualitative comparison across groups."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_13",
@@ -2239,7 +2356,8 @@
       "Correct — a cross-tabulation describes two or more variables simultaneously, presenting a summary table of their joint distribution.",
       "Incorrect — cross-tabulation is typically used with categorical/qualitative variables (that's why chi-square applies to it).",
       "Incorrect — that describes Factor Analysis, a different technique entirely."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_14",
@@ -2258,7 +2376,8 @@
       "Correct — df = (r−1)×(c−1) = (4−1)×(3−1) = 3×2 = 6.",
       "Incorrect — 7 would come from adding rows and columns, which is not the formula.",
       "Incorrect — 12 is r×c, not the degrees-of-freedom formula."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b4_15",
@@ -2277,7 +2396,8 @@
       "Correct — H₀ (no association) is rejected only when the calculated chi-square exceeds the critical chi-square value for the appropriate degrees of freedom.",
       "Incorrect — sample size thresholds are not the rejection rule for chi-square significance.",
       "Incorrect — a large p-value (like 0.50) would indicate we should NOT reject H₀, the opposite of what's being described."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_16",
@@ -2296,7 +2416,8 @@
       "Incorrect — chi-square tests association between two CATEGORICAL variables; income here is quantitative, not categorical.",
       "Incorrect — correlation requires TWO metric variables; job category (job type) is qualitative, not metric.",
       "Incorrect — Cluster Analysis groups similar cases together; it doesn't test whether a mean differs across defined categories."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_17",
@@ -2315,7 +2436,8 @@
       "Correct — r ranges from −1.0 (perfect negative relationship) to +1.0 (perfect positive relationship).",
       "Incorrect — this is not the scale used for r.",
       "Incorrect — this is not the scale used for r."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_18",
@@ -2334,7 +2456,8 @@
       "Correct — for a population, the correlation coefficient is denoted ρ (rho); the sample coefficient r estimates ρ.",
       "Incorrect — R² is a coefficient of determination concept, not the population correlation notation.",
       "Incorrect — Z is used in standardisation and confidence intervals, not correlation notation."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b4_19",
@@ -2353,7 +2476,8 @@
       "Incorrect — r = 1 would be an unusually specific and extreme null hypothesis, not the standard one used.",
       "Incorrect — that describes H₁ (the alternative), not H₀.",
       "Incorrect — sample size adequacy is a separate methodological concern, not the content of the null hypothesis."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_20",
@@ -2372,7 +2496,8 @@
       "Correct — 'a' is the intercept, representing the predicted value of Y when all independent variables equal zero.",
       "Incorrect — b₁ (not 'a') is the partial regression coefficient for X₁.",
       "Incorrect — the correlation coefficient is r or ρ, unrelated to the intercept term."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_21",
@@ -2391,7 +2516,8 @@
       "Incorrect — this IS one of the five things regression analysis can do.",
       "Correct — the notes explicitly state regression analysis describes association and does NOT imply causality; proving causation is not something it can do.",
       "Incorrect — this IS one of the five things regression analysis can do."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_22",
@@ -2410,7 +2536,8 @@
       "Incorrect — this reverses it; dependence models are DEFINED by having a dependent variable, unlike independence models.",
       "Incorrect — independence models (Cluster/Factor Analysis) explicitly do NOT distinguish dependent from independent variables.",
       "Incorrect — independence models like Factor Analysis are typically used with MANY variables simultaneously, not restricted to two."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b4_23",
@@ -2429,7 +2556,8 @@
       "Incorrect — Factor Analysis reduces variables into underlying factors; it doesn't directly create consumer groups (though it may precede clustering).",
       "Correct — Cluster Analysis classifies consumers into homogeneous groups (segments) based on similarity, the notes' explicit marketing application.",
       "Incorrect — chi-square tests association between two categorical variables; it does not create segments."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_24",
@@ -2448,7 +2576,8 @@
       "Correct — hierarchical methods build a dendrogram; Ward's procedure is a widely used example, good for exploring how many clusters to retain.",
       "Incorrect — Factor Analysis is a data-reduction technique, not a clustering method.",
       "Incorrect — ANOVA tests a quantitative variable against a qualitative one, unrelated to clustering."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_25",
@@ -2467,7 +2596,8 @@
       "Correct — non-hierarchical methods like k-means require pre-specifying the number of clusters in advance and are faster for large datasets.",
       "Incorrect — PCA is a factor analysis calculation method, not a clustering method.",
       "Incorrect — Common Factor Analysis is a factor analysis calculation method, not a clustering method."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b4_26",
@@ -2486,7 +2616,8 @@
       "Correct — Factor Analysis is primarily used for data reduction and summarisation, creating orthogonal (uncorrelated) combinations of the original variables.",
       "Incorrect — that describes ANOVA, a different technique.",
       "Incorrect — confidence intervals belong to quantitative sampling, unrelated to Factor Analysis."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_27",
@@ -2505,7 +2636,8 @@
       "Incorrect — Common Factor Analysis focuses on SHARED variance (communalities), not total variance.",
       "Incorrect — Cluster Analysis groups similar cases together; it is not a factor analysis calculation method.",
       "Incorrect — correlation analysis measures association between two metric variables, unrelated to factor extraction."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_28",
@@ -2524,7 +2656,8 @@
       "Correct — Common Factor Analysis focuses on shared variance (communalities) among the variables.",
       "Incorrect — hierarchical clustering groups cases into a dendrogram, unrelated to factor variance calculations.",
       "Incorrect — k-means clustering requires pre-specifying cluster count, unrelated to factor variance calculations."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b4_29",
@@ -2543,7 +2676,8 @@
       "Correct — standardisation always produces a distribution with mean 0 and standard deviation 1.",
       "Incorrect — that would mean no transformation happened at all, contradicting the purpose of standardising.",
       "Incorrect — the standard deviation of standardised data is 1, not 0."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_30",
@@ -2562,7 +2696,8 @@
       "Correct — multivariate techniques are specifically used when two or more measurements of each element are analysed simultaneously.",
       "Incorrect — descriptive statistics can be univariate or apply more broadly; 'simultaneous multiple measurements' specifically defines multivariate analysis.",
       "Incorrect — sampling design concerns HOW elements are selected, not how many variables are analysed together."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_31",
@@ -2581,7 +2716,8 @@
       "Correct — univariate techniques are used with a single measurement per element, or several measurements analysed in isolation from each other.",
       "Incorrect — dependence models are a category WITHIN multivariate analysis, not the univariate/multivariate distinction itself.",
       "Incorrect — independence models are also a category within multivariate analysis, not this distinction."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b4_32",
@@ -2600,7 +2736,8 @@
       "Correct — independence models (Cluster, Factor Analysis) have no implied a priori relationship, matching this scenario.",
       "Incorrect — One Mean is a hypothesis test classification, unrelated to this multivariate structure question.",
       "Incorrect — causal designs use experiments to establish cause-effect, not this kind of open-ended multivariate technique."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b4_33",
@@ -2619,7 +2756,8 @@
       "Correct — regression sets up an a priori dependent/independent structure; correlation simply measures association between two metric variables without that directional distinction.",
       "Incorrect — correlation specifically requires two METRIC variables, so this distinction does matter to it.",
       "Incorrect — the strength of the relationship (closeness of r to ±1) is exactly what correlation measures."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b4_34",
@@ -2638,7 +2776,8 @@
       "Correct — descriptive statistics should be the first data presented in any report, summarising the main variables before deeper analysis.",
       "Incorrect — descriptive statistics remain useful groundwork even when multivariate analysis follows.",
       "Incorrect — descriptive statistics apply to both quantitative and qualitative variables (e.g. mode for categorical data)."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b4_35",
@@ -2657,7 +2796,8 @@
       "Correct — the nature and scale of the variables is explicitly listed as a factor, directly determining whether chi-square (categorical) or regression (metric) is appropriate.",
       "Incorrect — personal preference is not one of the listed factors.",
       "Incorrect — software cost is not one of the listed factors."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_01",
@@ -2676,7 +2816,8 @@
       "Correct — Qualitative research is unstructured, exploratory, subjective, using small samples; Quantitative research applies structured measurement and statistical analysis to larger samples.",
       "Incorrect — sample sizes differ significantly (small vs. large) between the two approaches; it's not merely a software difference.",
       "Incorrect — the notes do not state a fixed universal ordering between qualitative and quantitative phases across all studies."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b5_02",
@@ -2695,7 +2836,8 @@
       "Correct — 'Holistic dimension' is explicitly defined as understanding the whole, not just parts.",
       "Incorrect — developing new theory is about generating theory, a distinct reason from holistic understanding.",
       "Incorrect — interpretation refers to making sense of PRIOR quantitative data, a different reason."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_03",
@@ -2714,7 +2856,8 @@
       "Correct — 'Interpretation' is explicitly listed as making sense of prior quantitative data.",
       "Incorrect — sensitive information refers to data difficult to obtain in a structured way, a different reason.",
       "Incorrect — subconscious feelings refers to uncovering unconscious motivations, a different reason."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_04",
@@ -2733,7 +2876,8 @@
       "Correct — the American school is pragmatic, results-oriented, uses larger groups, a more directive moderator, mainly for advertising/product testing.",
       "Incorrect — Positivist is a research paradigm about objectivity and general laws, not a focus-group school of thought.",
       "Incorrect — Critical is a research paradigm about power and social change, not a focus-group school of thought."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_05",
@@ -2752,7 +2896,8 @@
       "Correct — the European school favours smaller, exploratory groups, a facilitative/observational moderator, applied to strategy, branding and deeper insight.",
       "Incorrect — Interpretive is a broader research paradigm, not specifically the label for this focus-group school.",
       "Incorrect — Grounded Theory is a data-analysis methodology, unrelated to the focus-group schools distinction."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_06",
@@ -2771,7 +2916,8 @@
       "Incorrect — Interpretive/Constructivist emphasises understanding SUBJECTIVE meaning, the opposite emphasis.",
       "Incorrect — Critical focuses on power, social change and reflexivity, not general laws.",
       "Incorrect — Grounded Theory is a data-analysis methodology, not one of the three paradigms."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_07",
@@ -2790,7 +2936,8 @@
       "Incorrect — Interpretive/Constructivist emphasises subjective meaning, not power dynamics specifically.",
       "Correct — the Critical paradigm focuses on power, social change and reflexivity.",
       "Incorrect — Content Analysis is a data-analysis technique, not a research paradigm."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_08",
@@ -2809,7 +2956,8 @@
       "Correct — a focus group is a guided discussion with 6-10 participants, led by a skilled moderator, exploring attitudes, perceptions, motivations and opinions.",
       "Incorrect — a complete enumeration is a census, an unrelated sampling concept.",
       "Incorrect — that describes ZMET, a specific IDI technique, not a focus group."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_09",
@@ -2828,7 +2976,8 @@
       "Correct — probing is a motivational technique to induce participants to enlarge on, explain or clarify their answers, exactly as described.",
       "Incorrect — laddering is an in-depth interview technique linking attributes to consequences to values, not a general focus-group follow-up technique.",
       "Incorrect — 'triangulation' is not a term used in these notes for this concept."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_10",
@@ -2847,7 +2996,8 @@
       "Incorrect — being quick to conduct and flexible is listed as an advantage.",
       "Correct — lack of statistical representativeness and the risk of dominant participants biasing results are explicitly listed as limitations.",
       "Incorrect — relative cost isn't the specific advantage/limitation pairing highlighted in the notes for this comparison."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_11",
@@ -2866,7 +3016,8 @@
       "Correct — an IDI is an unstructured, direct, personal interview in which a single participant is questioned and probed to uncover underlying motivations, beliefs, attitudes and feelings.",
       "Incorrect — a complete enumeration is a census, unrelated to IDI.",
       "Incorrect — a structured online survey is a quantitative technique, the opposite of an unstructured IDI."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_12",
@@ -2885,7 +3036,8 @@
       "Correct — the notes recommend IDI over focus groups specifically for complex topics requiring expert knowledge (B2B) and when respondents are highly heterogeneous and wouldn't mix well in a group.",
       "Incorrect — projective techniques are a specific tool that can be used WITHIN an interview, not a standalone alternative method chosen based on sensitivity alone.",
       "Incorrect — Content Analysis analyses existing text/communications; it is not an interviewing method at all."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_13",
@@ -2904,7 +3056,8 @@
       "Incorrect — this IS one of the listed reasons to prefer IDI (context matters).",
       "Correct — homogeneous respondents who mix well are actually well-suited to FOCUS GROUPS, not a reason to prefer IDI instead.",
       "Incorrect — this IS one of the listed reasons to prefer IDI."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_14",
@@ -2923,7 +3076,8 @@
       "Correct — the Laddering Technique progressively uncovers the links between product attributes → consequences → personal values, exactly matching this progression.",
       "Incorrect — ZMET uses images/photos to uncover metaphors, not a sequence of 'why' questions.",
       "Incorrect — Friendship Pair interviews two friends together, unrelated to a progressive questioning technique."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_15",
@@ -2942,7 +3096,8 @@
       "Correct — the Repertory Grid Technique has participants compare and contrast elements to reveal underlying constructs and perceptual dimensions, exactly as described.",
       "Incorrect — ZMET uses images/photos brought by the participant, not verbal comparison of brands.",
       "Incorrect — Friendship Pair interviews two friends together, unrelated to comparing brands."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_16",
@@ -2961,7 +3116,8 @@
       "Incorrect — Laddering uses a sequence of 'why' questions, not images.",
       "Correct — ZMET specifically uses images/photos brought by participants to uncover deep, often unconscious metaphors driving consumer thinking and behaviour.",
       "Incorrect — Friendship Pair interviews two friends together, unrelated to image-based metaphor elicitation."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_17",
@@ -2980,7 +3136,8 @@
       "Incorrect — Laddering uses progressive 'why' questions, unrelated to interviewing pairs of friends.",
       "Incorrect — ZMET uses participant-supplied images, unrelated to interviewing friends together.",
       "Correct — the Friendship Pair technique interviews two friends together specifically to create a more relaxed, natural atmosphere."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_18",
@@ -2999,7 +3156,8 @@
       "Correct — projective techniques are unstructured, indirect forms of questioning used specifically when direct questioning cannot yield accurate information, encouraging participants to project their motivations onto a stimulus.",
       "Incorrect — projective techniques are qualitative, not aimed at statistically representative quantitative results.",
       "Incorrect — projective techniques typically use small samples, consistent with qualitative research generally."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_19",
@@ -3018,7 +3176,8 @@
       "Correct — Association Techniques involve word association, analysed by frequency, response time and non-response rate, exactly as described.",
       "Incorrect — Construction Technique requires building a full story, dialogue or description, not a single-word reaction.",
       "Incorrect — Expressive Technique involves role-play or cartoon tests, not word association."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_20",
@@ -3037,7 +3196,8 @@
       "Correct — this is a sentence completion task, a classic example of a Completion Technique.",
       "Incorrect — Construction techniques require building an entire story or dialogue, not filling in a blank.",
       "Incorrect — Expressive techniques involve role-play or cartoon-style expression, not sentence completion."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_21",
@@ -3056,7 +3216,8 @@
       "Incorrect — Completion Techniques ask participants to complete an incomplete sentence or story, not construct one from scratch.",
       "Correct — Construction Techniques require participants to construct a response in the form of a story, dialogue or description, exactly as described.",
       "Incorrect — Expressive Techniques involve role-play or cartoon tests where participants express a character's feelings, not construct a narrative."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_22",
@@ -3075,7 +3236,8 @@
       "Incorrect — Completion Techniques involve completing an incomplete sentence or story, not role-play.",
       "Incorrect — Association Techniques involve saying the first word that comes to mind, not role-play.",
       "Correct — Expressive Techniques involve role-playing or cartoon tests where participants express the feelings of a character, matching this scenario."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b5_23",
@@ -3094,7 +3256,8 @@
       "Correct — contextualism is explicitly listed as an aim of ethnographic research, alongside seeing through the eyes of others and studying process.",
       "Incorrect — Semiotics analyses signs and cultural codes, a related but distinct focus from ethnography's contextualism aim.",
       "Incorrect — focus groups are a data collection method, not defined by the aim of contextualism."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_24",
@@ -3113,7 +3276,8 @@
       "Correct — 'seeing through the eyes of others' is explicitly listed as an aim of ethnographic research, alongside contextualism, rich description and studying process.",
       "Incorrect — testing cause-and-effect is the goal of causal research/experiments, not ethnography.",
       "Incorrect — reducing dimensionality describes Factor/Cluster Analysis, unrelated to ethnography."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_25",
@@ -3132,7 +3296,8 @@
       "Correct — high-intensity situations requiring deep immersion, and cases where memory is inadequate for self-reporting, are explicitly listed as when to use ethnography.",
       "Incorrect — ethnography is a qualitative, small-sample technique, not aimed at statistical representativeness.",
       "Incorrect — ethnography is explicitly useful for topics involving shame or reluctance to discuss openly, the opposite of this option."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_26",
@@ -3151,7 +3316,8 @@
       "Correct — in Grounded Theory, the researcher collects and analyses data simultaneously, and theory 'emerges' from the data through constant comparison.",
       "Incorrect — Grounded Theory does not require a controlled experiment; it works with real-world qualitative data.",
       "Incorrect — the Plan-Act-Observe-Reflect cycle describes Action Research, not Grounded Theory."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_27",
@@ -3170,7 +3336,8 @@
       "Correct — Grounded Theory lets theory 'emerge' inductively through constant comparison; Action Research is a cyclical collaboration (Plan → Act → Observe → Reflect) between researcher and participants.",
       "Incorrect — Action Research is specifically participatory, directly involving participants.",
       "Incorrect — Grounded Theory does not require a controlled experiment; it studies real-world social processes."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b5_28",
@@ -3189,7 +3356,8 @@
       "Correct — the notes list challenging existing theories — based on how they were created — as one of the reasons Grounded Theory is used.",
       "Incorrect — calculating a proportion with a margin of error is a quantitative sample-size concept, unrelated to Grounded Theory.",
       "Incorrect — testing a null hypothesis about a mean is a quantitative hypothesis-testing concept, unrelated to Grounded Theory."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_29",
@@ -3208,7 +3376,8 @@
       "Correct — the notes state the primary objective of Content Analysis is to 'reduce' the data — simplifying and structuring it according to rules derived from existing theory.",
       "Incorrect — building rapport is a focus group moderator's role, unrelated to Content Analysis.",
       "Incorrect — confidence intervals belong to quantitative sampling, unrelated to Content Analysis."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_30",
@@ -3227,7 +3396,8 @@
       "Correct — the notes describe Content Analysis as an 'objective, systematic and quantitative description of manifest content', based on classifying and counting.",
       "Incorrect — Content Analysis analyses communications/text, not a method for sampling hard-to-find populations.",
       "Incorrect — Content Analysis is a data-analysis method, not an experimental design."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_31",
@@ -3246,7 +3416,8 @@
       "Correct — the signifier is the material sign — the physical object, word or image itself.",
       "Incorrect — that describes 'codes', a broader concept combining multiple signs.",
       "Incorrect — that describes a 'residual code', a specific type of code."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_32",
@@ -3265,7 +3436,8 @@
       "Correct — the signified is the conceptual meaning behind the sign — what it MEANS, as distinct from the signifier (what it physically IS).",
       "Incorrect — that describes 'codes', a broader concept combining multiple signs.",
       "Incorrect — that describes an 'emergent code', a specific type of code, not the signified."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b5_33",
@@ -3284,7 +3456,8 @@
       "Incorrect — residual codes are old-fashioned, low-energy codes, not everyday mainstream ones.",
       "Correct — dominant codes are defined as the everyday, mainstream codes within a cultural context.",
       "Incorrect — a signifier is the material sign itself, a different semiotic concept from codes."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b5_34",
@@ -3303,7 +3476,8 @@
       "Incorrect — residual codes are old-fashioned and low-energy, the opposite of leading-edge.",
       "Correct — emergent codes are defined as leading-edge, culturally dynamic codes.",
       "Incorrect — 'signified' is a different semiotic concept (the conceptual meaning of a sign), not a type of code."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b5_35",
@@ -3322,7 +3496,8 @@
       "Correct — semiotics views consumers as products of culture, with their needs reflecting surrounding cultural discourses rather than freely made individual choices.",
       "Incorrect — 'purely rational economic decision-maker' is not the semiotic framing described in the notes.",
       "Incorrect — that is a quantitative statistical concept, unrelated to semiotics."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_01",
@@ -3341,7 +3516,8 @@
       "Correct — informed consent specifically means respondents are made aware of how their data will be used.",
       "Incorrect — privacy protection is about safeguarding data, particularly online, a related but distinct principle.",
       "Incorrect — honesty and transparency concerns accurate reporting of findings, not informing respondents up front."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_02",
@@ -3360,7 +3536,8 @@
       "Correct — confidentiality specifically requires that individual responses not be shared without permission.",
       "Incorrect — avoidance of sugging concerns not selling under the guise of research, unrelated to sharing responses.",
       "Incorrect — honesty and transparency concerns accurate reporting of findings, a different principle."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_03",
@@ -3379,7 +3556,8 @@
       "Incorrect — confidentiality means individual responses are not shared without permission.",
       "Correct — honesty and transparency specifically requires findings to be reported accurately, without manipulation.",
       "Incorrect — privacy protection is specifically about safeguarding data, particularly online."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_04",
@@ -3398,7 +3576,8 @@
       "Incorrect — honesty and transparency concerns accurate reporting of findings, not data handling online.",
       "Correct — privacy protection is explicitly described as critical when dealing with online data and social media.",
       "Incorrect — avoidance of sugging concerns not selling under the guise of research, unrelated to online data specifically."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_05",
@@ -3417,7 +3596,8 @@
       "Correct — sugging is 'Selling Under the Guise' of research, an unethical practice that is strictly prohibited.",
       "Incorrect — that describes quota sampling, unrelated to sugging.",
       "Incorrect — that describes coding in data preparation, unrelated to sugging."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_06",
@@ -3436,7 +3616,8 @@
       "Correct — using the guise of a survey to actually sell something is exactly the definition of sugging, which is explicitly prohibited.",
       "Incorrect — problem-solving research addresses a genuine, already-identified marketing problem, not a sales pretext.",
       "Incorrect — quota sampling is a legitimate non-probability sampling technique, unrelated to this deceptive practice."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b6_07",
@@ -3455,7 +3636,8 @@
       "Correct — MRS is The Market Research Society (UK).",
       "Incorrect — AAPOR is the American Association for Public Opinion Research.",
       "Incorrect — CASRO is the Council of American Survey Research Organizations."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_08",
@@ -3474,7 +3656,8 @@
       "Incorrect — CASRO IS one of the listed associations.",
       "Correct — the World Trade Organization is not a marketing research association and is not mentioned in the notes.",
       "Incorrect — AAPOR IS one of the listed associations."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_09",
@@ -3493,7 +3676,8 @@
       "Correct — the correct sequence is: Checking → Editing → Coding → Transcribing → Cleaning → Adjusting → Strategy selection.",
       "Incorrect — cleaning happens much later, after coding and transcribing.",
       "Incorrect — this reverses almost the entire sequence."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_10",
@@ -3512,7 +3696,8 @@
       "Correct — the sequence is Checking → Editing → Coding, so Checking comes immediately before Editing.",
       "Incorrect — Transcribing comes much later, after Coding.",
       "Incorrect — Cleaning comes near the end of the sequence, long after Editing."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_11",
@@ -3531,7 +3716,8 @@
       "Correct — the sequence is Checking → Editing → Coding, so Coding comes immediately after Editing.",
       "Incorrect — Cleaning comes much later, after Coding and Transcribing.",
       "Incorrect — Adjusting is near the end of the sequence, several steps after Editing."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_12",
@@ -3550,7 +3736,8 @@
       "Correct — the sequence is Coding → Transcribing → Cleaning, so Transcribing comes immediately after Coding.",
       "Incorrect — Cleaning comes after Transcribing, two steps after Coding.",
       "Incorrect — Strategy selection is the final step, much later than the step immediately following Coding."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_13",
@@ -3569,7 +3756,8 @@
       "Correct — the sequence is ... Transcribing → Cleaning → Adjusting ..., so Cleaning comes right after Transcribing and right before statistically adjusting the data.",
       "Incorrect — Checking is the first step; Cleaning happens much later, near the end.",
       "Incorrect — 'Strategy selection' is the final step, coming AFTER Cleaning, not before it."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_14",
@@ -3588,7 +3776,8 @@
       "Correct — missing pages is explicitly listed among the reasons a questionnaire is unacceptable, identified during the CHECKING stage — the very first step of data preparation.",
       "Incorrect — missing pages specifically undermines the ability to code and analyse the questionnaire reliably, so it isn't simply waved through.",
       "Incorrect — this problem is caught much earlier, during Checking, not during the later Cleaning stage."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b6_15",
@@ -3607,7 +3796,8 @@
       "Incorrect — this IS a valid reason listed in the notes.",
       "Correct — arriving BEFORE the cut-off date is not a problem at all; only questionnaires received AFTER the cut-off are flagged as unacceptable.",
       "Incorrect — this IS a valid reason listed in the notes."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_16",
@@ -3626,7 +3816,8 @@
       "Incorrect — assigning missing values is used when returning to the field is not feasible, but the response can still be salvaged, unlike this scenario.",
       "Correct — discarding the respondent is the appropriate treatment when the response is too problematic to salvage, exactly matching this scenario.",
       "Incorrect — pairwise deletion is an ANALYSIS-stage technique for missing data, not an editing treatment for unsatisfactory questionnaire responses."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b6_17",
@@ -3645,7 +3836,8 @@
       "Correct — assigning missing values is exactly the treatment used when returning to the field isn't feasible, without discarding the whole respondent.",
       "Incorrect — discarding the respondent removes them entirely, a more drastic step than simply marking a value as missing.",
       "Incorrect — casewise deletion is an ANALYSIS-stage technique for missing data, not an editing treatment applied to questionnaires in the field."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b6_18",
@@ -3664,7 +3856,8 @@
       "Incorrect — this guideline applies specifically to OPEN-ENDED question coding.",
       "Correct — fixed field codes, ensuring the same data appear in the same column(s) for every participant, is a guideline specifically for STRUCTURED question coding.",
       "Incorrect — this guideline applies specifically to OPEN-ENDED question coding."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b6_19",
@@ -3683,7 +3876,8 @@
       "Incorrect — 25% is still too high according to the notes.",
       "Correct — the notes recommend that only about 10% or less of responses should fall into the 'other' category.",
       "Incorrect — there IS an explicit recommended limit (10%) mentioned in the notes."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_20",
@@ -3702,7 +3896,8 @@
       "Incorrect — variable name/number IS part of a codebook.",
       "Incorrect — coding instructions ARE part of a codebook.",
       "Correct — a codebook documents variables and coding instructions; it does not store respondents' personal contact information."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_21",
@@ -3721,7 +3916,8 @@
       "Correct — consistency checks specifically identify data that are out of range, logically inconsistent, or have extreme values, flagging them for closer examination.",
       "Incorrect — double-barrelled questions are a QUESTIONNAIRE DESIGN issue, caught (ideally) before fieldwork, not during data cleaning.",
       "Incorrect — the sampling frame is chosen during Topic 5's sampling design process, unrelated to data cleaning."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_22",
@@ -3740,7 +3936,8 @@
       "Incorrect — pairwise deletion is about which cases to include per calculation, not substituting a specific value.",
       "Correct — substituting a neutral value (typically the mean response) for the missing response is exactly this method.",
       "Incorrect — substituting an imputed response uses the SAME participant's pattern of answers to other questions, not the overall mean of other participants."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b6_23",
@@ -3759,7 +3956,8 @@
       "Correct — substituting an imputed response uses the participant's own pattern of responses to OTHER questions to estimate a suitable value for the missing one.",
       "Incorrect — casewise deletion discards the whole case rather than estimating a value.",
       "Incorrect — pairwise deletion is about which cases to include per calculation, not estimating a missing value from the participant's own answers."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b6_24",
@@ -3778,7 +3976,8 @@
       "Correct — casewise deletion discards any case with ANY missing response from the ENTIRE analysis, exactly as described.",
       "Incorrect — that substitutes a value rather than discarding the case.",
       "Incorrect — that also substitutes a value using the participant's own other answers, rather than discarding the case."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b6_25",
@@ -3797,7 +3996,8 @@
       "Correct — pairwise deletion uses only the cases with complete responses for each specific calculation, rather than discarding all cases with any missing value.",
       "Incorrect — that estimates a value using the participant's own other answers, not a rule about which cases to include per calculation.",
       "Incorrect — that replaces a missing response with the mean, unrelated to selectively including cases per calculation."
-    ]
+    ],
+    "type": "distincion"
   },
   {
     "id": "b6_26",
@@ -3816,7 +4016,8 @@
       "Correct — weighting is most widely used to make the sample more representative of the target population on specific characteristics, or to give more importance to certain participants.",
       "Incorrect — that describes variable respecification (dummy variables), a different data-adjustment technique.",
       "Incorrect — that describes correlation analysis, unrelated to weighting."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_27",
@@ -3835,7 +4036,8 @@
       "Correct — the general rule is K−1 dummy variables for a categorical variable with K categories: 6−1 = 5.",
       "Incorrect — 7 does not follow the K−1 rule.",
       "Incorrect — 12 does not follow the K−1 rule."
-    ]
+    ],
+    "type": "calculo"
   },
   {
     "id": "b6_28",
@@ -3854,7 +4056,8 @@
       "Correct — standardisation always produces a distribution with mean 0 and standard deviation 1.",
       "Incorrect — that would mean no transformation happened at all, contradicting the purpose of standardising.",
       "Incorrect — mean and SD are well-defined after standardisation (0 and 1 respectively), not undefined."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_29",
@@ -3873,7 +4076,8 @@
       "Correct — the nature and scale of the variables is explicitly listed as a factor, directly determining whether chi-square (categorical) or regression (metric) is appropriate.",
       "Incorrect — personal preference is not one of the factors listed in the notes.",
       "Incorrect — software licence cost is not one of the factors listed in the notes."
-    ]
+    ],
+    "type": "aplicacion"
   },
   {
     "id": "b6_30",
@@ -3892,7 +4096,8 @@
       "Correct — the correct sequence is Data assembly → Coding data → Data display → Data verification.",
       "Incorrect — this reverses almost the entire sequence; verification is the LAST stage, not the first.",
       "Incorrect — data must be assembled and coded before it can be meaningfully displayed."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_31",
@@ -3911,7 +4116,8 @@
       "Incorrect — casewise deletion is a QUANTITATIVE missing-data treatment, unrelated to qualitative data display.",
       "Incorrect — chi-square testing is a quantitative technique, unrelated to qualitative data display.",
       "Incorrect — weighting is a quantitative data-adjustment technique, unrelated to qualitative data display."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_32",
@@ -3930,7 +4136,8 @@
       "Incorrect — this IS one of the things the diary should record (emotional states affect interpretation).",
       "Correct — personal identifying information like a home address or national ID is not something the researcher's diary is meant to record; the diary is an analytical and reflective tool, not a participant registry.",
       "Incorrect — this IS one of the things the diary should record."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_33",
@@ -3949,7 +4156,8 @@
       "Incorrect — rigour in searching data is listed as an ADVANTAGE.",
       "Correct — 'loss of overview — harder to see the whole picture' is explicitly listed as a CONCERN of CAQDAS.",
       "Incorrect — aiding theoretical sampling is listed as an ADVANTAGE."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_34",
@@ -3968,7 +4176,8 @@
       "Correct — 'obsession with volume — privileging quantity over depth' is explicitly listed as a CONCERN of CAQDAS.",
       "Incorrect — aiding theoretical sampling is listed as an ADVANTAGE.",
       "Incorrect — rigour in searching data is listed as an ADVANTAGE."
-    ]
+    ],
+    "type": "definicion"
   },
   {
     "id": "b6_35",
@@ -3987,6 +4196,7 @@
       "Incorrect — this IS a key task of problem definition.",
       "Incorrect — this IS a key task of problem definition.",
       "Correct — running the final statistical significance test happens much later (step 6, data analysis), not during initial problem definition."
-    ]
+    ],
+    "type": "definicion"
   }
 ]
