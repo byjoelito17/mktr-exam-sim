@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "h1_01",
+    "examSet": 1,
+    "topic": 1,
+    "concept": "MDP vs MRP",
+    "question": "A telecom operator's leadership writes: 'Should we launch a discounted family bundle to slow customer churn?' Which classification does this statement belong to?",
+    "options": [
+      "Marketing Decision Problem (MDP)",
+      "Marketing Research Problem (MRP)",
+      "Marketing Research Brief",
+      "Marketing Research Proposal"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — this is action-oriented, asking what the decision-maker should DO, which is the defining trait of an MDP.",
+      "Incorrect — an MRP would be phrased as an information need, such as 'determine the price sensitivity of family bundle offers', not a decision to be made.",
+      "Incorrect — a Brief is the client's written statement of objectives and expectations, not a single decision statement itself.",
+      "Incorrect — a Proposal is the researcher's planned methodology document, not a decision statement."
+    ]
+  },
+  {
+    "id": "h1_02",
+    "examSet": 1,
+    "topic": 1,
+    "concept": "Problem-Identification vs Problem-Solving Research",
+    "question": "A cosmetics company commissions a study purely to track its market share and brand image trends over the past three years, with no specific complaint or failure driving the request. This is:",
+    "options": [
+      "Problem-Solving Research",
+      "Problem-Identification Research",
+      "Conclusive causal research",
+      "A Marketing Research Brief"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — problem-solving research responds to a specific problem already identified, which is not the case here.",
+      "Correct — market share and image tracking without a specific triggering problem are the notes' own examples of proactive, Problem-Identification research.",
+      "Incorrect — 'causal' describes a research design type from Topic 2, a different classification axis from problem-ID vs problem-solving.",
+      "Incorrect — a Brief is a client document stating objectives, not a category of research itself."
+    ]
+  },
+  {
+    "id": "h1_03",
+    "examSet": 1,
+    "topic": 2,
+    "concept": "Exploratory design vs Conclusive design",
+    "question": "A startup wants to understand vague, poorly articulated attitudes toward an entirely new subscription concept nobody has seen before. Which research design best fits, and why?",
+    "options": [
+      "Conclusive, because it uses large samples for statistically valid inference",
+      "Causal, because an experiment can isolate the effect of the new concept",
+      "Exploratory, because the phenomenon is not yet well understood and the approach must remain flexible",
+      "Descriptive, because it can quantify awareness precisely"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — conclusive design requires clearly defined, measurable phenomena, which a brand-new, poorly understood concept is not.",
+      "Incorrect — causal design tests cause-effect between defined variables, not open-ended concept exploration.",
+      "Correct — exploratory design is used precisely when little is known and the approach must evolve, matching this vague, unstructured situation.",
+      "Incorrect — descriptive design (a conclusive subtype) needs a well-defined phenomenon to quantify, which isn't available yet here."
+    ]
+  },
+  {
+    "id": "h1_04",
+    "examSet": 1,
+    "topic": 2,
+    "concept": "Causal research",
+    "question": "A grocery chain randomly assigns 40 of its stores to display a new snack at eye level and 40 stores to keep it on a lower shelf, then compares weekly sales between the two groups. This design is best classified as:",
+    "options": [
+      "Exploratory research",
+      "Marketing intelligence gathering",
+      "Problem-Identification research",
+      "Causal research"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — exploratory research is unstructured and used when little is known; this is a controlled, structured manipulation.",
+      "Incorrect — marketing intelligence refers to ongoing qualified observation of the environment, not a controlled experiment.",
+      "Incorrect — Problem-Identification is a research category from Topic 1, not a design type, and this scenario already targets a specific, defined question.",
+      "Correct — manipulating an independent variable (shelf position) across randomly assigned groups to measure an effect on sales is the definition of causal (experimental) research."
+    ]
+  },
+  {
+    "id": "h1_05",
+    "examSet": 1,
+    "topic": 2,
+    "concept": "Total Error",
+    "question": "After fieldwork, a research firm compares the true (but unknown) average income of the target population against the average income actually reported in its sample, attributing the gap to both flawed sampling procedure and interviewer mistakes combined. This gap is the:",
+    "options": [
+      "Total Error",
+      "Sampling frame error",
+      "Non-Sampling Error only",
+      "Precision level"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — Total Error is defined as the difference between the true population value and the value obtained in the sample, combining sampling and non-sampling error — exactly as described here.",
+      "Incorrect — sampling frame error is specifically about the LIST used to identify the population, not the overall gap between true and observed values.",
+      "Incorrect — the scenario explicitly combines TWO sources (procedure AND interviewer mistakes), whereas non-sampling error alone would exclude the sampling-procedure component.",
+      "Incorrect — precision level is the researcher's chosen maximum acceptable error before data collection, not an observed discrepancy after the fact."
+    ]
+  },
+  {
+    "id": "h1_06",
+    "examSet": 1,
+    "topic": 2,
+    "concept": "Primary data vs Secondary data",
+    "question": "Before commissioning an expensive nationwide survey, a beverage company first digs through Eurostat reports, industry association publications and its own past sales records. This sequencing reflects:",
+    "options": [
+      "The rule that marketing intelligence replaces the need for any data collection",
+      "The rule that secondary data should always be exhausted before primary data is collected",
+      "A causal research design",
+      "The finite population correction being applied"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — marketing intelligence is a distinct, complementary source; it does not replace data collection altogether.",
+      "Correct — the 'golden rule' states every project should start with secondary data, moving to costly primary data collection only once secondary sources prove insufficient.",
+      "Incorrect — nothing here manipulates a variable or measures a resulting effect, so this isn't causal research.",
+      "Incorrect — the finite population correction is a sample-size statistical adjustment, unrelated to choosing between data source types."
+    ]
+  },
+  {
+    "id": "h1_07",
+    "examSet": 1,
+    "topic": 2,
+    "concept": "Cross-sectional vs Longitudinal",
+    "question": "A retailer recruits the exact same panel of 800 households and measures their spending habits every month for two years running. Compared to surveying a fresh, different sample of 800 households once a year, this approach is:",
+    "options": [
+      "A single cross-sectional design, better suited to detecting change over time",
+      "A causal design, since the same households are randomly assigned to treatments",
+      "A longitudinal design, better at detecting change but with weaker sampling representativeness over time",
+      "A multiple cross-sectional design, since two different time periods are compared"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — a single cross-sectional design measures one sample only once; a repeated fixed panel is not that, and cross-sectional designs are the weaker option for detecting change.",
+      "Incorrect — no independent variable is being manipulated across randomly assigned groups here, so this isn't a causal experiment.",
+      "Correct — measuring a FIXED sample repeatedly is longitudinal; the notes' comparison table shows longitudinal is stronger at detecting change and accuracy but weaker on representative sampling and response bias over time.",
+      "Incorrect — multiple cross-sectional design would require DIFFERENT samples measured once each, not the same panel measured repeatedly."
+    ]
+  },
+  {
+    "id": "h1_08",
+    "examSet": 1,
+    "topic": 3,
+    "concept": "Rapport vs Probing",
+    "question": "During a focus group, the moderator mirrors participants' body language and maintains warm eye contact to build trust before the discussion deepens. Later, she asks 'Could you say a bit more about that?' to draw out a vague answer. These two actions correspond respectively to:",
+    "options": [
+      "Probing, then rapport",
+      "Probing, then triangulation",
+      "Triangulation, then laddering",
+      "Rapport, then probing"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — this reverses the order; matching body language and eye contact is rapport, not probing.",
+      "Incorrect — laddering is an in-depth interview technique linking attributes to values, unrelated to either action described.",
+      "Incorrect — 'triangulation' is not a term used for either of these moderator actions in the notes.",
+      "Correct — rapport is built through body language, eye contact and empathy; probing is the technique of inviting participants to enlarge on an answer, exactly matching the sequence described."
+    ]
+  },
+  {
+    "id": "h1_09",
+    "examSet": 1,
+    "topic": 3,
+    "concept": "IDI vs Focus Group",
+    "question": "A researcher needs to speak with hospital procurement directors about a highly technical, specialised equipment purchase, where each director has very different responsibilities and would be reluctant to discuss budgets candidly in front of competitors from other hospitals. Which method fits best, and why?",
+    "options": [
+      "In-Depth Interviews, because the topic is complex/B2B, respondents are heterogeneous, and group pressure would inhibit honest answers",
+      "Focus Groups, because group synergy produces richer data on technical topics",
+      "Content Analysis, because it is faster than any interview method",
+      "ZMET, because it always replaces the need for a group or individual interview"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — IDI is preferred exactly when the topic is complex/B2B, respondents are highly heterogeneous, and group pressure would inhibit honest responses — all three apply here.",
+      "Incorrect — focus groups work best with relatively homogeneous participants who are comfortable discussing openly in a group, the opposite of this scenario.",
+      "Incorrect — Content Analysis analyses existing text/communications; it is not an alternative interviewing method for gathering new opinions.",
+      "Incorrect — ZMET is a specific technique used WITHIN an in-depth interview, not a standalone replacement for choosing between interviews and groups."
+    ]
+  },
+  {
+    "id": "h1_10",
+    "examSet": 1,
+    "topic": 3,
+    "concept": "Laddering",
+    "question": "An interviewer asks a participant why she prefers a lightweight running shoe, then asks why that matters to her, then asks why THAT matters, until she reveals it connects to a personal sense of freedom and independence. This progressive questioning technique is:",
+    "options": [
+      "Repertory Grid Technique",
+      "Laddering Technique",
+      "Zaltman Metaphor Elicitation Technique",
+      "Friendship Pair"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Repertory Grid has participants compare and contrast several elements side by side, not answer a chain of progressive 'why' questions.",
+      "Correct — Laddering progressively uncovers links from product attributes to consequences to personal values, exactly matching this chain of 'why' questions ending in a value (freedom/independence).",
+      "Incorrect — ZMET relies on participant-supplied images/photos, not a verbal chain of questioning.",
+      "Incorrect — Friendship Pair involves interviewing two friends together, unrelated to this individual technique."
+    ]
+  },
+  {
+    "id": "h1_11",
+    "examSet": 1,
+    "topic": 3,
+    "concept": "Ethnography",
+    "question": "A researcher spends three weeks living alongside a rural farming community, observing how they make purchasing decisions in their natural daily routines rather than asking hypothetical survey questions. This approach is best described as:",
+    "options": [
+      "Content Analysis",
+      "Constant Sum Scaling",
+      "Ethnographic research",
+      "A causal experiment"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Content Analysis classifies and counts existing textual material; it does not involve living among a community.",
+      "Incorrect — Constant Sum Scaling is a quantitative scaling technique for allocating points across attributes, unrelated to immersive observation.",
+      "Correct — ethnography involves direct observation and participation within a group's natural setting over an extended period, exactly as described.",
+      "Incorrect — no variable is being manipulated across controlled groups, so this is not a causal experiment."
+    ]
+  },
+  {
+    "id": "h1_12",
+    "examSet": 1,
+    "topic": 3,
+    "concept": "Association technique",
+    "question": "A researcher says the word 'holiday' and immediately records the very first word each participant blurts out, later analysing patterns by frequency and hesitation time. This projective technique is:",
+    "options": [
+      "Completion Technique",
+      "Construction Technique",
+      "Expressive Technique",
+      "Association Technique"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — Completion Technique asks participants to finish an incomplete sentence or story, not react instantly to a single word.",
+      "Incorrect — Construction Technique requires building a full story, dialogue or description, not a one-word reaction.",
+      "Incorrect — Expressive Technique involves role-play or cartoon-style expression, not an instant word reaction.",
+      "Correct — Association Technique involves word association, analysed by frequency, response time and non-response rate — exactly as described."
+    ]
+  },
+  {
+    "id": "h1_13",
+    "examSet": 1,
+    "topic": 3,
+    "concept": "Grounded Theory",
+    "question": "A researcher studying workplace burnout collects interview data and analyses it simultaneously, letting patterns and an explanatory framework 'emerge' gradually through constant comparison, rather than testing a theory decided in advance. This methodology is:",
+    "options": [
+      "Grounded Theory",
+      "Action Research",
+      "Semiotics",
+      "Content Analysis"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — Grounded Theory develops theory inductively from data, with collection and analysis happening simultaneously and theory 'emerging' through constant comparison, exactly as described.",
+      "Incorrect — Action Research is a cyclical, participatory process (Plan-Act-Observe-Reflect) aimed at implementing change collaboratively, not letting theory emerge inductively.",
+      "Incorrect — Semiotics analyses signs and cultural codes, treating consumers as products of culture, a different framework entirely.",
+      "Incorrect — Content Analysis classifies and counts existing textual material according to pre-existing theory rather than letting new theory emerge."
+    ]
+  },
+  {
+    "id": "h1_14",
+    "examSet": 1,
+    "topic": 4,
+    "concept": "Wording errors: ambiguous, leading, implicit alternative, implicit assumption",
+    "question": "A questionnaire item reads: 'Given how much better our app's checkout process is, how would you rate your last purchase experience?' Which wording problem does this illustrate?",
+    "options": [
+      "Ambiguous wording",
+      "A leading (biased) question",
+      "An implicit alternative",
+      "An implicit assumption"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — ambiguous wording involves vague terms like 'usually' or 'often' that mean different things to different people; this question isn't vague, it's slanted.",
+      "Correct — embedding the claim 'how much better' before asking for a rating cues the respondent toward a favourable answer, which is exactly a leading/biased question.",
+      "Incorrect — an implicit alternative would leave an unstated option out of the question (e.g. omitting a real choice), which isn't the issue here.",
+      "Incorrect — an implicit assumption embeds an unstated (often false) premise the respondent must accept, which is a related but distinct flaw from actively steering the answer."
+    ]
+  },
+  {
+    "id": "h1_15",
+    "examSet": 1,
+    "topic": 4,
+    "concept": "Scales: nominal, ordinal, interval, ratio",
+    "question": "A researcher records each customer's preferred payment method (cash, card, mobile wallet) purely as a label with no inherent order. Which scale of measurement is being used?",
+    "options": [
+      "Ordinal scale",
+      "Interval scale",
+      "Nominal scale",
+      "Ratio scale"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — ordinal would require the categories to have a meaningful rank order, which payment method preference does not.",
+      "Incorrect — interval scales require equal distances between values (like a Likert scale), which doesn't apply to unordered labels.",
+      "Correct — nominal scales are pure labels with no order or distance, permitting only counting, frequency and mode — exactly matching payment method categories.",
+      "Incorrect — ratio scales require an absolute zero and support all statistical operations (like income or age), far beyond what an unordered label allows."
+    ]
+  },
+  {
+    "id": "h1_16",
+    "examSet": 1,
+    "topic": 4,
+    "concept": "Comparative vs Non-comparative scales",
+    "question": "Respondents rate a hotel's cleanliness on a 7-point scale entirely on its own, without ever being asked to weigh it against any other hotel. This rating approach is:",
+    "options": [
+      "A comparative scale, producing ordinal data",
+      "Rank Order Scaling",
+      "Paired Comparison Scaling",
+      "A non-comparative (monadic) scale, with data assumed interval or ratio"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — comparative scales require directly comparing stimulus objects against EACH OTHER, which isn't happening here.",
+      "Incorrect — Rank Order Scaling requires simultaneously ranking multiple objects, not rating one in isolation.",
+      "Incorrect — Paired Comparison Scaling presents two objects at a time for direct comparison, not a standalone rating.",
+      "Correct — rating a single object independently, without reference to others, is a non-comparative (monadic) scale, with the resulting data assumed to be interval or ratio."
+    ]
+  },
+  {
+    "id": "h1_17",
+    "examSet": 1,
+    "topic": 4,
+    "concept": "Survey methods",
+    "question": "A market research agency needs the highest possible flexibility to adapt questions on the fly and the best response quality for a complex new product concept test, and cost is not the primary constraint. Which survey method best fits?",
+    "options": [
+      "Personal (face-to-face) survey",
+      "Telephone survey",
+      "Mail/postal survey",
+      "Online/electronic survey"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — personal (face-to-face) surveys offer the highest flexibility and response quality, at the cost of being the most expensive — matching a scenario where cost isn't the primary constraint.",
+      "Incorrect — telephone surveys are fast and cost-effective but offer less flexibility and increasingly declining response rates.",
+      "Incorrect — mail surveys are low-cost but offer low flexibility, low response rates and slow turnaround, the opposite of what's needed here.",
+      "Incorrect — online surveys are fast and cheap but are not associated with the HIGHEST flexibility/quality among the methods."
+    ]
+  },
+  {
+    "id": "h1_18",
+    "examSet": 1,
+    "topic": 4,
+    "concept": "Quantitative observation",
+    "question": "A supermarket installs hidden ceiling cameras so shoppers are unaware they are being filmed, in their normal real store environment, while researchers had pre-specified exactly which aisle behaviours to record before the study began. This observation is:",
+    "options": [
+      "Undisguised, unstructured and contrived",
+      "Disguised, structured and natural",
+      "Disguised, unstructured and contrived",
+      "Undisguised, structured and natural"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — participants are unaware they are being filmed, which is disguised, not undisguised; and the recording plan was pre-specified, which is structured, not unstructured.",
+      "Correct — hidden cameras mean disguised observation; pre-specifying exactly what to record means structured; and the real store (not an artificial lab setting) means natural.",
+      "Incorrect — the recording plan being pre-specified before the study makes this structured, not unstructured.",
+      "Incorrect — participants being unaware of the cameras makes this disguised, not undisguised."
+    ]
+  },
+  {
+    "id": "h1_19",
+    "examSet": 1,
+    "topic": 5,
+    "concept": "Stratified sampling vs Cluster sampling",
+    "question": "A national health survey divides the country into regions expected to be internally diverse but similar to each other overall, then randomly selects only a handful of those regions and studies everyone within them. This procedure is:",
+    "options": [
+      "Stratified sampling, because all subgroups are represented in the final sample",
+      "Systematic sampling, because a fixed interval was used to choose respondents",
+      "Cluster sampling, because only the selected groups are included and they are meant to be internally heterogeneous but similar to one another",
+      "Quota sampling, because quotas were set for each region"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — stratified sampling includes ALL strata in the final sample and requires elements WITHIN each stratum to be homogeneous, the opposite pattern described here.",
+      "Incorrect — no fixed interval selection from an ordered list is described; regions were selected as whole groups, not individual elements at intervals.",
+      "Correct — cluster sampling selects only SOME clusters (regions), which should be internally heterogeneous yet similar/homogeneous to each other — exactly this scenario.",
+      "Incorrect — quota sampling sets control categories filled by convenience/judgement, not random selection of whole geographic clusters."
+    ]
+  },
+  {
+    "id": "h1_20",
+    "examSet": 1,
+    "topic": 5,
+    "concept": "Convenience sampling vs Judgemental sampling",
+    "question": "A researcher hands out surveys to whichever students happen to be sitting in the university cafeteria at lunchtime, with zero screening of who qualifies. A separate researcher instead deliberately selects five specific purchasing managers she considers the most knowledgeable experts on the topic. These are respectively:",
+    "options": [
+      "Judgemental sampling, then convenience sampling",
+      "Snowball sampling, then quota sampling",
+      "Quota sampling, then snowball sampling",
+      "Convenience sampling, then judgemental sampling"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — this reverses the two; picking whoever is easiest to reach without screening is convenience, not judgemental.",
+      "Incorrect — neither scenario involves an initial group referring further participants, which snowball sampling requires.",
+      "Incorrect — neither scenario involves pre-set demographic quotas, which quota sampling requires.",
+      "Correct — the cafeteria scenario is convenience sampling (elements selected simply because they're conveniently available); deliberately selecting experts based on the researcher's judgement is judgemental sampling."
+    ]
+  },
+  {
+    "id": "h1_21",
+    "examSet": 1,
+    "topic": 5,
+    "concept": "Quota sampling",
+    "question": "A pollster needs a sample that is 51% women and 49% men to mirror the population, but instead of randomly selecting people, interviewers simply approach whoever they find convenient until each gender quota is filled. This technique is:",
+    "options": [
+      "Quota Sampling",
+      "Stratified Sampling",
+      "Simple Random Sampling",
+      "Systematic Sampling"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — quota sampling's two stages are exactly this: set control quotas matching population characteristics, then fill them by convenience or judgement — a non-probability technique despite mirroring population proportions.",
+      "Incorrect — stratified sampling is a PROBABILITY technique with random selection within each stratum, not convenience-based quota filling.",
+      "Incorrect — SRS requires every element to have an equal, KNOWN probability of selection via random number generation, not convenience-filling of quotas.",
+      "Incorrect — systematic sampling selects every ith element from an ordered list at a fixed interval, not by filling demographic quotas."
+    ]
+  },
+  {
+    "id": "h1_22",
+    "examSet": 1,
+    "topic": 5,
+    "concept": "Simple Random Sampling",
+    "question": "A university assigns every one of its 12,000 students a unique number from 1 to 12,000, then uses a random number generator to select 300 numbers, including exactly those students in the sample. This procedure is:",
+    "options": [
+      "Systematic Sampling",
+      "Simple Random Sampling",
+      "Cluster Sampling",
+      "Convenience Sampling"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — systematic sampling would pick a random start point and then take every ith element at a fixed interval, not generate fully random numbers each time.",
+      "Correct — assigning numbers 1 to N and generating n random numbers to select elements is exactly the standard Simple Random Sampling procedure.",
+      "Incorrect — cluster sampling would randomly select whole GROUPS of students, not individual students directly.",
+      "Incorrect — convenience sampling would select whoever is easiest to reach, not use a formal random number procedure."
+    ]
+  },
+  {
+    "id": "h1_23",
+    "examSet": 1,
+    "topic": 5,
+    "concept": "Systematic sampling",
+    "question": "A quality inspector picks a random starting point on a production line and then pulls every 20th item for inspection thereafter. If the defect pattern on this line happens to repeat exactly every 20 items, what problem does the notes warn about?",
+    "options": [
+      "The finite population correction must be applied",
+      "This is now classified as cluster sampling instead",
+      "Representativeness may decrease because the sampling interval matches a cyclical pattern in the frame",
+      "Non-response error will automatically double"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — the finite population correction concerns the sample being 10%+ of the population, unrelated to cyclical ordering.",
+      "Incorrect — selecting every ith item from a line is still systematic sampling by definition, not cluster sampling.",
+      "Correct — the notes specifically warn that systematic sampling representativeness may decrease if the frame's ordering is cyclical and matches the sampling interval — exactly this scenario.",
+      "Incorrect — non-response error is a separate concept unrelated to a cyclical sampling interval coincidence."
+    ]
+  },
+  {
+    "id": "h1_24",
+    "examSet": 1,
+    "topic": 5,
+    "concept": "Trend Analysis (non-response method)",
+    "question": "After fieldwork closes, a researcher notices that respondents who answered in the first week reported much higher brand loyalty than those who answered in the final week, and projects that declining pattern forward to estimate what the non-respondents would likely have said. This non-response adjustment method is:",
+    "options": [
+      "Weighting",
+      "Subsampling of non-participants",
+      "Imputation",
+      "Trend Analysis"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — weighting assigns differential weights to subgroups based on their response RATES, not a trend between early and late responders.",
+      "Incorrect — subsampling of non-participants involves actually re-contacting a subset of non-respondents, not projecting a trend from existing respondents.",
+      "Incorrect — imputation assigns a value to non-participants based on similarity to participants on OTHER available variables, not an early-vs-late response trend.",
+      "Correct — Trend Analysis specifically discerns a pattern between early and late participants and projects it onto non-participants — exactly as described."
+    ]
+  },
+  {
+    "id": "h1_25",
+    "examSet": 1,
+    "topic": 6,
+    "concept": "Data Preparation order",
+    "question": "Which of the following correctly orders the Data Preparation Process?",
+    "options": [
+      "Checking → Editing → Coding → Transcribing → Cleaning → Adjusting",
+      "Editing → Checking → Coding → Cleaning → Transcribing → Adjusting",
+      "Coding → Checking → Editing → Adjusting → Cleaning → Transcribing",
+      "Checking → Coding → Editing → Transcribing → Adjusting → Cleaning"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — the sequence is Checking → Editing → Coding → Transcribing → Cleaning → Adjusting.",
+      "Incorrect — Checking must come before Editing, not after it.",
+      "Incorrect — Editing must come before Coding, and Adjusting is near the end, not the middle.",
+      "Incorrect — Editing must come immediately after Checking, before Coding, not after it."
+    ]
+  },
+  {
+    "id": "h1_26",
+    "examSet": 1,
+    "topic": 6,
+    "concept": "One Mean Test vs Two Means Test",
+    "question": "A researcher wants to know whether the average time customers spend on a website differs between a redesigned homepage group and the original homepage group. Which hypothesis test classification applies, and why not the alternative?",
+    "options": [
+      "One Mean Test, because only a single average is calculated",
+      "Two Means Test, because a quantitative variable (time spent) is compared across two distinct groups",
+      "One Proportion Test, because website visits are categorical",
+      "Chi-square Test, because two categorical variables are being compared"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — One Mean tests a single group's mean against a fixed value, not two groups compared against each other.",
+      "Correct — comparing a quantitative variable (time spent) across two groups (redesigned vs. original) is exactly a Two Means Test.",
+      "Incorrect — time spent on a website is quantitative, not a categorical proportion.",
+      "Incorrect — chi-square applies to two categorical variables in a cross-tabulation, but time spent is quantitative, not categorical."
+    ]
+  },
+  {
+    "id": "h1_27",
+    "examSet": 1,
+    "topic": 6,
+    "concept": "ANOVA vs Chi-square",
+    "question": "A researcher wants to test whether annual salary (in euros) varies depending on which of five departments an employee works in. Which technique applies?",
+    "options": [
+      "Chi-square test, because department is a categorical variable",
+      "Correlation, because both variables are metric",
+      "ANOVA, because a quantitative variable is tested against a qualitative variable with 3 or more categories",
+      "Two Means Test, because two groups are being compared"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — chi-square tests association between TWO categorical variables; salary here is quantitative, not categorical.",
+      "Incorrect — correlation requires BOTH variables to be metric; department is categorical, not metric.",
+      "Correct — ANOVA tests whether a quantitative variable (salary) differs across a qualitative variable with three or more categories (5 departments) — exactly this scenario.",
+      "Incorrect — Two Means Test is reserved for comparing exactly two groups, but there are five departments here."
+    ]
+  },
+  {
+    "id": "h1_28",
+    "examSet": 1,
+    "topic": 6,
+    "concept": "Correlation vs Regression",
+    "question": "A researcher simply wants to know the strength and direction of the linear relationship between advertising spend and sales, without setting up either variable as dependent or independent beforehand. Which technique is most appropriate?",
+    "options": [
+      "Regression Analysis, since it can predict future sales",
+      "Factor Analysis, since it reduces the number of variables",
+      "Cluster Analysis, since it groups similar campaigns together",
+      "Correlation Analysis, since it measures association without an a priori dependent/independent structure"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — regression establishes an a priori dependent/independent relationship, which the researcher specifically wants to avoid here.",
+      "Incorrect — Factor Analysis reduces many variables into underlying factors; it isn't designed to measure a two-variable linear relationship.",
+      "Incorrect — Cluster Analysis groups similar cases together; it doesn't measure a linear relationship between two specific variables.",
+      "Correct — correlation simply measures the strength and direction of a linear relationship between two metric variables, with no dependent/independent distinction required."
+    ]
+  },
+  {
+    "id": "h1_29",
+    "examSet": 1,
+    "topic": 6,
+    "concept": "Cluster Analysis vs Factor Analysis",
+    "question": "A market research team wants to group survey respondents into distinct, relatively homogeneous consumer segments based on their answers to 20 lifestyle questions. Which multivariate technique directly serves this goal?",
+    "options": [
+      "Cluster Analysis, because it classifies objects into relatively homogeneous groups",
+      "Factor Analysis, because it reduces variables into segments",
+      "Regression Analysis, because it establishes a dependent variable",
+      "ANOVA, because it compares means across groups"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — Cluster Analysis classifies objects (respondents) into relatively homogeneous groups — exactly the marketing segmentation application described in the notes.",
+      "Incorrect — Factor Analysis reduces correlated VARIABLES into underlying factors; it does not directly group respondents into segments.",
+      "Incorrect — Regression is a dependence model requiring a defined dependent variable, which doesn't fit an open-ended segmentation goal.",
+      "Incorrect — ANOVA compares a quantitative variable's mean across pre-defined groups; it doesn't create the groups themselves."
+    ]
+  },
+  {
+    "id": "h1_30",
+    "examSet": 1,
+    "topic": 6,
+    "concept": "Regression",
+    "question": "After running a regression predicting product sales from advertising spend and price, a junior analyst tells the marketing director: 'This proves that increasing advertising spend will directly cause a rise in sales.' What is wrong with this claim?",
+    "options": [
+      "Nothing — regression is designed specifically to prove causality",
+      "Regression only describes association between variables; it does not imply causality",
+      "The claim would only be wrong if the sample size were below 30",
+      "Regression cannot be used with more than one independent variable"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — this is exactly the misconception the notes warn against; regression cannot prove causality.",
+      "Correct — the notes explicitly state regression analysis describes association and does NOT imply causality, so the analyst's causal claim is unjustified.",
+      "Incorrect — sample size does not change the fundamental fact that regression cannot establish causation.",
+      "Incorrect — multiple regression with several independent variables (like advertising spend AND price) is standard and explicitly covered in the notes."
+    ]
+  },
+  {
+    "id": "h2_01",
+    "examSet": 2,
+    "topic": 1,
+    "concept": "MDP vs MRP",
+    "question": "A regional airline's board asks its research team: 'What is the price elasticity of demand for our economy-class tickets, and how would various fare changes affect load factor and revenue?' This statement is best classified as a:",
+    "options": [
+      "Marketing Research Problem (MRP)",
+      "Marketing Decision Problem (MDP)",
+      "Marketing Research Brief",
+      "7 C's framework"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — this is information-oriented, asking WHAT should be determined (elasticity and its effects), which is the defining trait of an MRP.",
+      "Incorrect — an MDP would be action-oriented, like 'should we raise economy fares by 8%?', not a request to determine elasticity.",
+      "Incorrect — a Brief is the client's overall written statement of objectives, not this specific information request itself.",
+      "Incorrect — the 7 C's describe qualities of the researcher-decision-maker relationship, unrelated to classifying this statement."
+    ]
+  },
+  {
+    "id": "h2_02",
+    "examSet": 2,
+    "topic": 1,
+    "concept": "Problem-Identification vs Problem-Solving Research",
+    "question": "After customer complaints spike about a specific delayed shipment policy, a logistics company commissions research to test three alternative policy fixes. This is:",
+    "options": [
+      "Problem-Identification Research",
+      "Problem-Solving Research",
+      "Exploratory design",
+      "A Marketing Research Brief only"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Problem-Identification research looks for problems not yet apparent; here the problem (delayed shipments) is already known and specific.",
+      "Correct — testing solutions to an already-identified, specific problem is exactly Problem-Solving (reactive) research.",
+      "Incorrect — 'exploratory' is a research design classification from Topic 2, a different axis from problem-ID vs problem-solving.",
+      "Incorrect — a Brief is a document stating objectives; the scenario describes an entire research effort, not just a document."
+    ]
+  },
+  {
+    "id": "h2_03",
+    "examSet": 2,
+    "topic": 2,
+    "concept": "Descriptive research",
+    "question": "A supermarket chain wants to describe, with precise numbers, the demographic profile of loyalty-card holders across its 200 stores. Which conclusive research subtype fits this goal?",
+    "options": [
+      "Causal design",
+      "Exploratory design",
+      "Descriptive design",
+      "Marketing intelligence"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — causal design tests cause-effect relationships through experiments, not simply describing a group's characteristics.",
+      "Incorrect — exploratory design is unstructured and used when little is known; describing a well-defined group precisely requires structure instead.",
+      "Correct — describing the characteristics of a well-defined group with precise measurement is exactly the purpose of descriptive (conclusive) research.",
+      "Incorrect — marketing intelligence refers to qualified ongoing observation of the environment, not a structured research design."
+    ]
+  },
+  {
+    "id": "h2_04",
+    "examSet": 2,
+    "topic": 2,
+    "concept": "Random Sampling Error vs Non-Sampling Error",
+    "question": "Two problems occur in the same study: (1) the specific 500 people randomly drawn simply happen, by chance, to be younger than the population average even though the draw procedure was sound; (2) several interviewers misrecorded answers due to fatigue. These are respectively examples of:",
+    "options": [
+      "Non-Sampling Error, then Random Sampling Error",
+      "Total Error, then sampling frame error",
+      "Sampling frame error, then Total Error",
+      "Random Sampling Error, then Non-Sampling Error"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — this reverses the two; a sound procedure producing an unlucky sample is random sampling error, not non-sampling error.",
+      "Incorrect — 'Total Error' is the combined overall gap, not a label for either individual cause on its own.",
+      "Incorrect — sampling frame error concerns a flawed LIST, not either of these two specific problems described.",
+      "Correct — problem (1) is random sampling error (the procedure was fine, but chance produced a skewed sample); problem (2) is non-sampling error (caused by interviewer mistakes, not the sampling procedure)."
+    ]
+  },
+  {
+    "id": "h2_05",
+    "examSet": 2,
+    "topic": 2,
+    "concept": "Exploratory design",
+    "question": "A perfume brand has no idea how consumers would even begin to describe the 'personality' of a completely novel scent category, and wants small, flexible discussions to start forming hypotheses before any large-scale study. This calls for:",
+    "options": [
+      "Exploratory research",
+      "Descriptive research",
+      "Causal research",
+      "A confidence interval calculation"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — exploratory research is specifically used to formulate hypotheses and explore concepts when nothing is known yet, using small, flexible samples — exactly this scenario.",
+      "Incorrect — descriptive research needs a well-defined phenomenon to measure precisely, which doesn't exist yet here.",
+      "Incorrect — causal research tests cause-effect between already-defined variables, premature at this stage.",
+      "Incorrect — a confidence interval is a Part B statistical calculation, unrelated to choosing a research design at this early stage."
+    ]
+  },
+  {
+    "id": "h2_06",
+    "examSet": 2,
+    "topic": 2,
+    "concept": "Secondary data",
+    "question": "Before designing a costly custom survey, an analyst pulls existing OECD reports and the firm's own five-year sales archive to sharpen the research problem and rough out an approach. Evaluating whether this data can be adapted to the current purpose, and how it was originally reported, falls under which evaluation criterion?",
+    "options": [
+      "Currency",
+      "Nature and Dependability",
+      "Objective",
+      "Error and Accuracy"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Currency concerns the TIME LAG between when data was collected and published, not adaptability or reporting source.",
+      "Correct — Nature and Dependability specifically asks whether the data can be adapted to the researcher's purpose and how/by whom it was reported.",
+      "Incorrect — Objective asks what the ORIGINAL PURPOSE of the source research was, a related but distinct question.",
+      "Incorrect — Error and Accuracy involves comparing multiple sources when available, not assessing adaptability or reporting origin."
+    ]
+  },
+  {
+    "id": "h2_07",
+    "examSet": 2,
+    "topic": 2,
+    "concept": "Longitudinal design",
+    "question": "A pharmaceutical company tracks the SAME 300 patients' symptom severity every week for a full year to detect subtle changes over time, accepting that keeping the same people engaged may introduce some response bias. This is a:",
+    "options": [
+      "Multiple cross-sectional design",
+      "Single cross-sectional design",
+      "Longitudinal design",
+      "Causal design with no control group"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — multiple cross-sectional would use DIFFERENT samples measured once each, not the same 300 patients repeatedly.",
+      "Incorrect — single cross-sectional measures ONE sample only once; this describes repeated weekly measurement instead.",
+      "Correct — a FIXED sample measured repeatedly over time, trading some representativeness/response-bias risk for stronger change-detection, is exactly a longitudinal design.",
+      "Incorrect — no independent variable is being deliberately manipulated across groups here, so this isn't a causal experiment."
+    ]
+  },
+  {
+    "id": "h2_08",
+    "examSet": 2,
+    "topic": 3,
+    "concept": "IDI vs Focus Group",
+    "question": "A snack brand wants quick, energetic group reactions to three new packaging concepts from everyday shoppers who are comfortable chatting openly about snacks with strangers. Which method fits best?",
+    "options": [
+      "In-Depth Interviews, because packaging is a complex B2B topic",
+      "Content Analysis, because packaging designs are physical objects",
+      "Ethnography, because it requires weeks of immersive observation",
+      "Focus Groups, because the topic is not sensitive and participants are comfortable discussing it in a group setting"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — packaging preference for shoppers is not a complex B2B topic, so IDI's main justification doesn't apply here.",
+      "Incorrect — Content Analysis classifies and counts existing text/communications; it doesn't gather live reactions to new concepts.",
+      "Incorrect — ethnography requires extended immersive observation, far more time than needed for quick packaging reactions.",
+      "Correct — for a non-sensitive topic where participants are comfortable discussing openly in a group, focus groups are well suited and offer quick, synergistic reactions."
+    ]
+  },
+  {
+    "id": "h2_09",
+    "examSet": 2,
+    "topic": 3,
+    "concept": "Grounded Theory vs Action Research",
+    "question": "A community health researcher works cyclically WITH residents — planning a change, implementing it, observing what happens, then reflecting together before planning the next cycle — to solve a shared local problem. This is:",
+    "options": [
+      "Action Research, because it is a cyclical, participatory Plan-Act-Observe-Reflect process done collaboratively",
+      "Grounded Theory, because theory emerges from the data",
+      "Semiotics, because it studies cultural codes",
+      "Content Analysis, because it studies communication artefacts"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — Action Research is exactly this cyclical, participatory process where researcher and participants collaborate to implement and evaluate change together.",
+      "Incorrect — Grounded Theory lets theory emerge inductively through data analysis; it isn't defined by a Plan-Act-Observe-Reflect collaboration cycle.",
+      "Incorrect — Semiotics analyses signifiers, signifieds and cultural codes; it isn't a cyclical collaborative change process.",
+      "Incorrect — Content Analysis classifies and counts existing communications; it doesn't involve cyclical collaborative action."
+    ]
+  },
+  {
+    "id": "h2_10",
+    "examSet": 2,
+    "topic": 3,
+    "concept": "Repertory Grid Technique",
+    "question": "A researcher shows a participant three competing insurance brands at a time and asks her to say which two are alike and how the third differs, repeating this with different brand triads to map out her underlying mental constructs. This IDI technique is:",
+    "options": [
+      "Zaltman Metaphor Elicitation Technique",
+      "Repertory Grid Technique",
+      "Friendship Pair",
+      "Laddering Technique"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — ZMET relies on participant-supplied images/photographs, not comparing brand triads verbally.",
+      "Correct — the Repertory Grid Technique has participants compare and contrast elements (here, brand triads) to reveal underlying constructs and perceptual dimensions, exactly as described.",
+      "Incorrect — Friendship Pair interviews two friends together; it doesn't involve comparing brand triads.",
+      "Incorrect — Laddering uses a chain of progressive 'why' questions from attributes to values, not triad comparisons."
+    ]
+  },
+  {
+    "id": "h2_11",
+    "examSet": 2,
+    "topic": 3,
+    "concept": "Completion technique",
+    "question": "Participants are handed the unfinished sentence 'People who never read online reviews before buying are ___' and asked to fill in the blank. This projective technique is:",
+    "options": [
+      "Association Technique",
+      "Construction Technique",
+      "Completion Technique",
+      "Expressive Technique"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Association Technique asks for the first word that comes to mind, not completing a written sentence.",
+      "Incorrect — Construction Technique requires building an entire story or dialogue, not filling a single blank.",
+      "Correct — Completion Technique involves sentence or story completion — exactly this fill-in-the-blank task.",
+      "Incorrect — Expressive Technique involves role-play or cartoon-style expression, not completing a sentence."
+    ]
+  },
+  {
+    "id": "h2_12",
+    "examSet": 2,
+    "topic": 3,
+    "concept": "Friendship Pair",
+    "question": "Rather than interviewing a teenager alone, a researcher interviews her together with her best friend, hoping the familiar company will make the conversation feel more natural and relaxed. This technique is:",
+    "options": [
+      "Repertory Grid Technique",
+      "ZMET",
+      "Laddering Technique",
+      "Friendship Pair"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — Repertory Grid involves comparing elements in triads or pairs of objects, not interviewing two friends together.",
+      "Incorrect — ZMET relies on participant-supplied images, unrelated to interviewing friends jointly.",
+      "Incorrect — Laddering uses a chain of progressive 'why' questions, unrelated to pairing friends for comfort.",
+      "Correct — the Friendship Pair technique interviews two friends together specifically to create a more relaxed, natural atmosphere, exactly as described."
+    ]
+  },
+  {
+    "id": "h2_13",
+    "examSet": 2,
+    "topic": 3,
+    "concept": "Expressive technique",
+    "question": "At a gym-membership research session, participants are asked to physically act out how a 'burnt-out office worker' would react upon finally reaching a fitness goal, rather than describe it in words. This projective technique is:",
+    "options": [
+      "Expressive Technique",
+      "Completion Technique",
+      "Association Technique",
+      "Repertory Grid Technique"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — Expressive Technique involves role-play or cartoon-style expression, where participants physically or dramatically express feelings — exactly this acted-out reaction.",
+      "Incorrect — Completion Technique involves finishing an incomplete sentence or story in writing, not physical role-play.",
+      "Incorrect — Association Technique involves an instant word reaction, not acting out a scenario.",
+      "Incorrect — Repertory Grid Technique involves verbally comparing and contrasting elements, not physical role-play."
+    ]
+  },
+  {
+    "id": "h2_14",
+    "examSet": 2,
+    "topic": 4,
+    "concept": "Wording errors: ambiguous, leading, implicit alternative, implicit assumption",
+    "question": "A questionnaire asks: 'Which of our two loyalty tiers, Silver or Gold, do you belong to?' without mentioning that a third 'Platinum' tier also exists. Which wording problem does this illustrate?",
+    "options": [
+      "An implicit assumption",
+      "An implicit alternative — a real option left unstated",
+      "Ambiguous wording",
+      "A leading question"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — an implicit assumption embeds an unstated premise the respondent must accept as true, which isn't quite what's happening here.",
+      "Correct — presenting only two tiers while a real third option (Platinum) exists but is left unstated is exactly an implicit alternative.",
+      "Incorrect — ambiguous wording involves vague terms open to different interpretations, not a specifically omitted option.",
+      "Incorrect — nothing in the wording pushes the respondent toward a particular answer, so it isn't a leading question."
+    ]
+  },
+  {
+    "id": "h2_15",
+    "examSet": 2,
+    "topic": 4,
+    "concept": "Scales: nominal, ordinal, interval, ratio",
+    "question": "A satisfaction survey asks respondents to rank their top 3 preferred delivery options from most to least preferred, without stating how much better the 1st choice is than the 2nd. This produces data on which scale?",
+    "options": [
+      "Nominal scale",
+      "Interval scale",
+      "Ordinal scale",
+      "Ratio scale"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — nominal would only allow labelling with no order, but a ranking clearly conveys order.",
+      "Incorrect — interval scales require equal, known distances between values, which a simple rank order does not provide.",
+      "Correct — ordinal scales show more/less (ranking) without indicating by how much, exactly matching this preference ranking.",
+      "Incorrect — ratio scales require an absolute zero and support all statistics, well beyond what a simple ranking provides."
+    ]
+  },
+  {
+    "id": "h2_16",
+    "examSet": 2,
+    "topic": 4,
+    "concept": "Internal validity vs External validity",
+    "question": "A lab experiment convincingly shows that a specific price discount caused a sales increase among the exact 40 student volunteers tested, but the researcher is unsure whether this effect would hold among the general adult population in real stores. This uncertainty concerns:",
+    "options": [
+      "Internal validity, because the manipulation itself may not have caused the effect",
+      "The finite population correction",
+      "The precision level of the confidence interval",
+      "External validity, because it questions whether the results generalise beyond this specific sample and setting"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — internal validity concerns whether the manipulation ITSELF caused the observed change within this study, which the scenario already accepts as convincing.",
+      "Incorrect — the finite population correction is a sampling calculation adjustment, unrelated to this validity concern.",
+      "Incorrect — precision level is a sample-size concept from Part B statistics, unrelated to generalisability of an experiment.",
+      "Correct — external validity asks whether results can be generalised beyond the specific experiment to other populations and settings — exactly the researcher's concern here."
+    ]
+  },
+  {
+    "id": "h2_17",
+    "examSet": 2,
+    "topic": 4,
+    "concept": "Pilot testing",
+    "question": "Before deploying a new customer satisfaction questionnaire nationwide, a research team first tests it on 20 people drawn from the same target population, to catch confusing wording and awkward routing logic. This step is:",
+    "options": [
+      "Pilot testing",
+      "Data cleaning",
+      "Weighting",
+      "Data transcribing"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — pilot testing on a small sample of 15-30 participants from the target population, before full deployment, is exactly this mandatory step.",
+      "Incorrect — data cleaning happens AFTER full fieldwork, checking for out-of-range or inconsistent responses, not before deployment.",
+      "Incorrect — weighting is a statistical adjustment applied to collected data, unrelated to pre-testing a questionnaire.",
+      "Incorrect — transcribing is a data preparation step for collected responses, not a pre-fieldwork check."
+    ]
+  },
+  {
+    "id": "h2_18",
+    "examSet": 2,
+    "topic": 4,
+    "concept": "Survey methods",
+    "question": "A company needs to survey a very specific, hard-to-reach niche of B2B buyers cheaply and quickly, and is willing to accept some risk of an unrepresentative sampling frame and possible bot responses. Which method best matches this trade-off?",
+    "options": [
+      "Personal (face-to-face) survey",
+      "Online/electronic survey",
+      "Mail/postal survey",
+      "Telephone survey using landlines only"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — face-to-face surveys are the most expensive and slow option, the opposite of a cheap, quick trade-off.",
+      "Correct — online surveys are fast and low-cost and can easily reach niche groups, at the cost of sampling frame representativeness and bot-response risk — exactly this trade-off.",
+      "Incorrect — mail surveys are slow with low response rates, not matching the 'quick' requirement.",
+      "Incorrect — telephone surveys have declining response rates and aren't specifically noted for easily reaching niche B2B groups cheaply."
+    ]
+  },
+  {
+    "id": "h2_19",
+    "examSet": 2,
+    "topic": 5,
+    "concept": "Substitution vs Replacement (non-response methods)",
+    "question": "To handle non-response, one researcher swaps in different customers from the SAME sampling frame who are expected to respond, dividing the frame into homogeneous response-likelihood subgroups first. A second researcher instead re-contacts non-respondents from an earlier, similar past survey. These methods are respectively:",
+    "options": [
+      "Replacement, then Substitution",
+      "Weighting, then Imputation",
+      "Substitution, then Replacement",
+      "Trend Analysis, then Subsampling"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — this reverses the two methods described.",
+      "Incorrect — neither scenario assigns differential weights or imputes a value based on similarity, so Weighting/Imputation don't fit.",
+      "Correct — swapping in other elements from the SAME current frame is Substitution; using non-participants from an earlier, similar survey is Replacement.",
+      "Incorrect — neither scenario projects an early-vs-late trend or re-contacts a subsample of the SAME survey's non-respondents."
+    ]
+  },
+  {
+    "id": "h2_20",
+    "examSet": 2,
+    "topic": 5,
+    "concept": "Weighting vs Imputation (non-response methods)",
+    "question": "In one non-response fix, low-response subgroups are assigned a larger multiplier (100/response rate) to correct their under-representation. In another, a non-respondent's likely brand usage is estimated by looking at similar participants who did respond, matched on demographics. These are respectively:",
+    "options": [
+      "Imputation, then Weighting",
+      "Subjective Estimates, then Subsampling",
+      "Substitution, then Trend Analysis",
+      "Weighting, then Imputation"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — this reverses the two methods described.",
+      "Incorrect — Subjective Estimates rely on the researcher's own judgement without this kind of formal calculation, and Subsampling means re-contacting non-respondents directly.",
+      "Incorrect — Substitution swaps in different sampling-frame elements, and Trend Analysis projects an early/late pattern — neither matches these descriptions.",
+      "Correct — assigning a multiplier based on response rate is Weighting; estimating a value from similar responding participants is Imputation."
+    ]
+  },
+  {
+    "id": "h2_21",
+    "examSet": 2,
+    "topic": 5,
+    "concept": "Quota sampling",
+    "question": "An interviewer is told to complete exactly 60 interviews with people aged 18-30 and 60 with people aged 31-50, and is free to approach whichever willing individuals she likes until each target is met. What sampling technique is this?",
+    "options": [
+      "Quota Sampling",
+      "Stratified Sampling",
+      "Systematic Sampling",
+      "Cluster Sampling"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — setting control quotas by age group and filling them through convenience/judgement is exactly the two-stage quota sampling procedure.",
+      "Incorrect — stratified sampling requires RANDOM selection within each stratum, not free choice of willing individuals.",
+      "Incorrect — systematic sampling selects every ith element from an ordered list at a fixed interval, not filling quotas freely.",
+      "Incorrect — cluster sampling randomly selects whole groups, not individual quota-based interviews."
+    ]
+  },
+  {
+    "id": "h2_22",
+    "examSet": 2,
+    "topic": 5,
+    "concept": "Subsampling of non-participants",
+    "question": "After a mail survey closes, the research team randomly selects 50 of the non-respondents and calls them by phone to complete a shortened version of the questionnaire. This non-response method is:",
+    "options": [
+      "Substitution",
+      "Subsampling of non-participants",
+      "Trend Analysis",
+      "Weighting"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Substitution swaps in DIFFERENT elements from the sampling frame, not re-contacting the actual non-respondents themselves.",
+      "Correct — Subsampling of non-participants involves contacting a subsample of the actual non-respondents, typically by telephone or personal interview, exactly as described.",
+      "Incorrect — Trend Analysis projects an early-vs-late response pattern rather than directly re-contacting non-respondents.",
+      "Incorrect — Weighting assigns differential weights to existing data rather than actively re-contacting non-respondents."
+    ]
+  },
+  {
+    "id": "h2_23",
+    "examSet": 2,
+    "topic": 5,
+    "concept": "Subjective Estimates (non-response method)",
+    "question": "After exhausting every practical method to raise response rate, a researcher with years of category experience simply uses her own judgement to estimate how the non-respondents' answers likely differ from respondents'. This is:",
+    "options": [
+      "Trend Analysis",
+      "Imputation",
+      "Subjective Estimates",
+      "Weighting"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Trend Analysis relies on a measurable early-vs-late response pattern, not personal judgement alone.",
+      "Incorrect — Imputation formally estimates a value based on similarity to OTHER responding participants' data, not the researcher's personal judgement.",
+      "Correct — Subjective Estimates are used precisely when improving response rate is no longer feasible, relying on the researcher's own experience and judgement to estimate non-response bias.",
+      "Incorrect — Weighting applies a calculated multiplier based on response rates, not subjective judgement."
+    ]
+  },
+  {
+    "id": "h2_24",
+    "examSet": 2,
+    "topic": 5,
+    "concept": "Stratified sampling",
+    "question": "A researcher divides a company's customers into three income bands, ensures each band is as internally similar as possible, and takes a sample proportional to each band's share of the customer base. This technique is:",
+    "options": [
+      "Cluster Sampling",
+      "Snowball Sampling",
+      "Convenience Sampling",
+      "Stratified Sampling"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — cluster sampling requires clusters to be internally heterogeneous and only a FEW clusters selected, the opposite pattern described here.",
+      "Incorrect — snowball sampling relies on referrals from an initial group, unrelated to income-band stratification.",
+      "Incorrect — convenience sampling has no formal stratification structure; it simply selects whoever is easiest to reach.",
+      "Correct — dividing the population into internally homogeneous strata and sampling proportionally from each is exactly stratified sampling."
+    ]
+  },
+  {
+    "id": "h2_25",
+    "examSet": 2,
+    "topic": 6,
+    "concept": "Data Preparation order",
+    "question": "A completed batch of questionnaires has just passed the Checking stage. What is the very next step in the Data Preparation Process?",
+    "options": [
+      "Editing",
+      "Coding",
+      "Cleaning",
+      "Transcribing"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — the sequence is Checking → Editing → Coding → Transcribing → Cleaning → Adjusting, so Editing comes immediately after Checking.",
+      "Incorrect — Coding comes AFTER Editing, not immediately after Checking.",
+      "Incorrect — Cleaning happens much later, near the end of the sequence.",
+      "Incorrect — Transcribing comes after both Editing and Coding, not immediately after Checking."
+    ]
+  },
+  {
+    "id": "h2_26",
+    "examSet": 2,
+    "topic": 6,
+    "concept": "One Mean Test vs Two Means Test",
+    "question": "A quality manager wants to test whether the average weight of cereal boxes coming off a single production line equals the advertised 500g, using one sample of boxes from that line. Which hypothesis test classification applies?",
+    "options": [
+      "Two Means Test, because weight is compared before and after",
+      "One Mean Test, because a single quantitative variable's mean is tested against one specific value",
+      "Chi-square Test, because the boxes are categorised as pass/fail",
+      "ANOVA, because more than two groups may exist"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — no second group or 'before/after' comparison is described; only one sample is tested against a fixed target value.",
+      "Correct — testing whether a quantitative variable (weight) equals a specific value (500g) using a single sample is exactly a One Mean Test.",
+      "Incorrect — nothing here involves categorising boxes into pass/fail groups for a chi-square association test.",
+      "Incorrect — ANOVA requires 3+ categorical groups being compared, but only a single production line and target value are involved here."
+    ]
+  },
+  {
+    "id": "h2_27",
+    "examSet": 2,
+    "topic": 6,
+    "concept": "ANOVA vs Chi-square",
+    "question": "A retailer wants to know whether customers' preferred payment method (cash/card/mobile) is associated with which of four store locations they shop at. Which technique applies, and why not the alternative?",
+    "options": [
+      "ANOVA, because payment method is the dependent variable",
+      "Correlation, because both variables can be ranked",
+      "Chi-square test, because both variables are categorical and a cross-tabulation of association is needed",
+      "Regression, because store location predicts payment method numerically"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — ANOVA requires a QUANTITATIVE dependent variable tested against a qualitative one; payment method here is categorical, not quantitative.",
+      "Incorrect — correlation requires two METRIC variables; neither payment method nor store location is metric here.",
+      "Correct — both payment method and store location are categorical variables, so testing their association via a cross-tabulation calls for the chi-square test.",
+      "Incorrect — regression needs a metric dependent variable; store location predicting a categorical outcome numerically doesn't fit standard regression."
+    ]
+  },
+  {
+    "id": "h2_28",
+    "examSet": 2,
+    "topic": 6,
+    "concept": "Correlation vs Regression",
+    "question": "A researcher wants to build an equation that predicts next quarter's sales figures from advertising spend, explicitly treating sales as the outcome to be explained. Which technique is most appropriate, and why not the alternative?",
+    "options": [
+      "Correlation, because it also involves two metric variables",
+      "Factor Analysis, because prediction requires reducing dimensionality first",
+      "Cluster Analysis, because prediction requires grouping similar cases",
+      "Regression, because it establishes a dependent/independent relationship and can predict values, unlike correlation"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — while correlation does involve two metric variables, it does NOT set up a dependent/independent structure or predict values, which this goal requires.",
+      "Incorrect — Factor Analysis reduces variables into underlying factors; it is not designed to predict one variable from another directly.",
+      "Incorrect — Cluster Analysis groups similar cases together; it does not build a predictive equation between two specific variables.",
+      "Correct — regression establishes an a priori dependent (sales) and independent (advertising spend) relationship and can predict the dependent variable's values, exactly matching this goal."
+    ]
+  },
+  {
+    "id": "h2_29",
+    "examSet": 2,
+    "topic": 6,
+    "concept": "Cluster Analysis vs Factor Analysis",
+    "question": "A researcher has 25 correlated attitude-survey items and wants to reduce them into a smaller number of underlying, uncorrelated dimensions before running further analysis. Which multivariate technique fits, and why not the alternative?",
+    "options": [
+      "Factor Analysis, because it reduces correlated variables into a smaller set of underlying, uncorrelated factors",
+      "Cluster Analysis, because it groups the 25 items together",
+      "Regression Analysis, because a dependent variable must be predicted",
+      "ANOVA, because more than two items are being compared"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — Factor Analysis is specifically used for data reduction, creating a smaller set of orthogonal (uncorrelated) factors from correlated variables — exactly this goal.",
+      "Incorrect — Cluster Analysis groups similar OBJECTS/CASES (like respondents), not correlated survey ITEMS/variables into underlying dimensions.",
+      "Incorrect — no dependent variable is defined here; this is an independence-model task, not a regression task.",
+      "Incorrect — ANOVA compares a quantitative variable across pre-defined categorical groups; it doesn't reduce correlated variables into factors."
+    ]
+  },
+  {
+    "id": "h2_30",
+    "examSet": 2,
+    "topic": 6,
+    "concept": "Chi-square test",
+    "question": "A researcher cross-tabulates 'preferred news source' (TV/online/print/radio) against 'age group' (4 categories) and calculates a chi-square statistic to test for association. If the calculated chi-square value is SMALLER than the critical value for the appropriate degrees of freedom, what should the researcher conclude?",
+    "options": [
+      "Reject H₀ — a significant association exists between news source and age group",
+      "Do not reject H₀ — there is insufficient evidence of an association",
+      "The degrees of freedom must be recalculated using a different formula",
+      "Switch to a One Mean Test instead"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — H₀ (no association) is only rejected when the calculated chi-square EXCEEDS the critical value, not when it's smaller.",
+      "Correct — when the calculated chi-square is smaller than the critical value, there is insufficient evidence to reject H₀, meaning no significant association is detected.",
+      "Incorrect — degrees of freedom are calculated once via df=(r-1)(c-1); the outcome of the test doesn't require recalculating them differently.",
+      "Incorrect — switching to a One Mean Test would abandon testing the actual research question about association between two categorical variables."
+    ]
+  },
+  {
+    "id": "h3_01",
+    "examSet": 3,
+    "topic": 1,
+    "concept": "MDP vs MRP",
+    "question": "A university's admissions office states: 'We need to know which factors most influence a prospective student's choice between our campus and our three main rivals.' This statement is a:",
+    "options": [
+      "Marketing Research Problem (MRP)",
+      "Marketing Decision Problem (MDP)",
+      "Marketing Research Proposal",
+      "A confidence interval"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — this asks WHAT information is needed (the influencing factors), which is exactly the information-oriented MRP.",
+      "Incorrect — an MDP would state an action to decide, like 'should we open a new campus abroad?', not an information need.",
+      "Incorrect — a Proposal is the researcher's document laying out HOW the study will be conducted, not the client's information request itself.",
+      "Incorrect — a confidence interval is a Part B statistical calculation, unrelated to classifying this statement."
+    ]
+  },
+  {
+    "id": "h3_02",
+    "examSet": 3,
+    "topic": 1,
+    "concept": "Problem-Identification vs Problem-Solving Research",
+    "question": "A software company, with no current complaints or known issues, commissions ongoing research purely to forecast how its market share might evolve over the next three years. This is:",
+    "options": [
+      "Problem-Solving Research",
+      "Problem-Identification Research",
+      "Causal design",
+      "A Marketing Decision Problem"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — problem-solving research addresses a specific, already-identified issue, which doesn't exist in this scenario.",
+      "Correct — forecasting and market share tracking without a triggering complaint are the notes' own examples of proactive, Problem-Identification research.",
+      "Incorrect — 'causal' is a research design classification from Topic 2, a different axis entirely.",
+      "Incorrect — an MDP is an action-oriented decision statement, not a category of research like this."
+    ]
+  },
+  {
+    "id": "h3_03",
+    "examSet": 3,
+    "topic": 2,
+    "concept": "Conclusive design",
+    "question": "A insurer wants to estimate, with statistical confidence, the exact proportion of policyholders likely to switch providers next year, based on a representative sample. Which design classification is required?",
+    "options": [
+      "Exploratory design",
+      "Marketing intelligence gathering",
+      "Conclusive design",
+      "A Marketing Research Brief"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — exploratory design cannot support statistically valid population inferences; it's for forming hypotheses in unstructured, small-sample settings.",
+      "Incorrect — marketing intelligence is an ongoing qualified-observation source, not a formal design capable of statistical inference.",
+      "Correct — specifying proportions within a population and making statistically valid inferences from a sample are explicitly listed uses of conclusive design.",
+      "Incorrect — a Brief is the client's document of objectives, not a research design classification."
+    ]
+  },
+  {
+    "id": "h3_04",
+    "examSet": 3,
+    "topic": 2,
+    "concept": "Cross-sectional design",
+    "question": "A political pollster surveys 1,000 voters in March and a completely different 1,000 voters in September, comparing results between the two separate samples to see if opinion shifted. This is an example of:",
+    "options": [
+      "A longitudinal design",
+      "Cohort-only sampling",
+      "A causal design",
+      "A multiple cross-sectional design"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — a longitudinal design requires the SAME fixed sample measured repeatedly, not two entirely different samples.",
+      "Incorrect — 'cohort-only sampling' isn't a term used in the notes for this scenario.",
+      "Incorrect — no independent variable is deliberately manipulated across randomly assigned groups here, so this isn't causal.",
+      "Correct — using two or more DIFFERENT samples, each measured only once, at different points in time is exactly a multiple cross-sectional design."
+    ]
+  },
+  {
+    "id": "h3_05",
+    "examSet": 3,
+    "topic": 2,
+    "concept": "Non-Sampling Error",
+    "question": "A survey achieves a technically sound random sample, but 30% of selected respondents refuse to participate, and several who do respond misunderstand a poorly worded question. Which type of error does this best illustrate?",
+    "options": [
+      "Non-Sampling Error",
+      "Random Sampling Error",
+      "Sampling frame error",
+      "The finite population correction"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — non-response and question-wording confusion are both explicitly non-sampling error causes, independent of the sampling procedure.",
+      "Incorrect — random sampling error stems from the sampling PROCEDURE itself producing an unrepresentative sample, not from refusals or wording confusion.",
+      "Incorrect — sampling frame error concerns a flawed LIST used to identify the population, not non-response or wording issues.",
+      "Incorrect — the finite population correction is a statistical adjustment for sample-to-population ratio, unrelated to these issues."
+    ]
+  },
+  {
+    "id": "h3_06",
+    "examSet": 3,
+    "topic": 2,
+    "concept": "Primary data",
+    "question": "After exhausting all relevant government statistics, industry reports and its own internal records without finding an answer to a very specific new question, a firm finally commissions its own custom survey. This survey generates:",
+    "options": [
+      "Secondary data",
+      "Primary data",
+      "Marketing intelligence",
+      "A sampling frame"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — secondary data was already collected for another purpose; a custom survey commissioned specifically for this problem is not that.",
+      "Correct — data originated by the researcher specifically to address this particular problem, only after secondary sources proved insufficient, is exactly primary data.",
+      "Incorrect — marketing intelligence refers to ongoing qualified observation of the environment, not a commissioned custom survey.",
+      "Incorrect — a sampling frame is a list for identifying a population, not the data collected itself."
+    ]
+  },
+  {
+    "id": "h3_07",
+    "examSet": 3,
+    "topic": 2,
+    "concept": "Descriptive design vs Causal design",
+    "question": "One study simply reports the average monthly spend and demographic profile of a bank's premium account holders. A second study randomly assigns customers to receive either a fee waiver or not, then compares resulting account closures. These are respectively:",
+    "options": [
+      "Causal, then Descriptive",
+      "Exploratory, then Conclusive",
+      "Descriptive, then Causal",
+      "Longitudinal, then Cross-sectional"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — this reverses the two; simply reporting characteristics is descriptive, not causal.",
+      "Incorrect — both studies are structured with defined variables, so neither is the unstructured 'exploratory' design; 'conclusive' is a broader category that includes both descriptive and causal, not a distinct third design here.",
+      "Correct — the first study describes characteristics of a well-defined group (descriptive); the second randomly manipulates a treatment and measures its effect (causal).",
+      "Incorrect — neither study is described as tracking the SAME sample repeatedly (longitudinal) or comparing DIFFERENT samples across time (cross-sectional) in that specific sense."
+    ]
+  },
+  {
+    "id": "h3_08",
+    "examSet": 3,
+    "topic": 3,
+    "concept": "Laddering vs Repertory Grid",
+    "question": "One interviewer keeps asking a participant 'why does that matter to you?' until reaching a core personal value. A second interviewer instead shows the participant three brands at once and asks which two are similar and why the third is different. These techniques are respectively:",
+    "options": [
+      "Repertory Grid, then Laddering",
+      "Friendship Pair, then ZMET",
+      "ZMET, then Friendship Pair",
+      "Laddering, then Repertory Grid"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — this reverses the two; a chain of progressive 'why' questions is Laddering, not Repertory Grid.",
+      "Incorrect — this also misapplies ZMET and Friendship Pair, neither of which matches either scenario described.",
+      "Incorrect — neither scenario involves participant-supplied images (ZMET) or interviewing two friends together (Friendship Pair).",
+      "Correct — progressively asking 'why' toward a personal value is Laddering; comparing triads of elements to reveal constructs is the Repertory Grid Technique."
+    ]
+  },
+  {
+    "id": "h3_09",
+    "examSet": 3,
+    "topic": 3,
+    "concept": "ZMET vs Friendship Pair",
+    "question": "One researcher asks a participant to bring in magazine photos that capture how she feels about sustainable fashion, then discusses the hidden meanings behind her choices. A second researcher interviews two co-workers together to ease tension around a sensitive workplace topic. These are respectively:",
+    "options": [
+      "ZMET, then Friendship Pair",
+      "Friendship Pair, then ZMET",
+      "Laddering, then Repertory Grid",
+      "Repertory Grid, then Laddering"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — using images/photos to uncover deep, often unconscious metaphors is ZMET; interviewing two people together to ease tension is the Friendship Pair technique.",
+      "Incorrect — this reverses the two; using participant-supplied photos to uncover hidden meaning is ZMET, not Friendship Pair.",
+      "Incorrect — neither scenario involves a chain of progressive 'why' questions (Laddering) or comparing element triads (Repertory Grid).",
+      "Incorrect — this also misapplies Repertory Grid and Laddering, neither of which matches either scenario described."
+    ]
+  },
+  {
+    "id": "h3_10",
+    "examSet": 3,
+    "topic": 3,
+    "concept": "Probing",
+    "question": "A moderator notices a participant gave a one-word answer and asks the whole group, 'Does anyone else have something to add on that point?' This technique is:",
+    "options": [
+      "Rapport-building",
+      "Probing",
+      "Laddering",
+      "Content Analysis"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — rapport-building refers to establishing trust through body language and empathy, not inviting further elaboration.",
+      "Correct — probing is a motivational technique to induce participants to enlarge on their answers, including group probes like 'who else has something?' — exactly as described.",
+      "Incorrect — laddering is a specific individual-interview technique using a chain of 'why' questions, not a group follow-up prompt.",
+      "Incorrect — Content Analysis classifies and counts existing textual material; it is unrelated to live moderator prompts."
+    ]
+  },
+  {
+    "id": "h3_11",
+    "examSet": 3,
+    "topic": 3,
+    "concept": "Construction technique",
+    "question": "Shown a photo of a shopper hesitating at a checkout, participants are asked to invent a full backstory explaining her hesitation, including dialogue with the cashier. This projective technique is:",
+    "options": [
+      "Association Technique",
+      "Completion Technique",
+      "Construction Technique",
+      "Expressive Technique"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Association Technique asks for the first word that comes to mind, not an invented backstory with dialogue.",
+      "Incorrect — Completion Technique asks participants to finish an incomplete sentence or story, not construct one from a blank photo prompt.",
+      "Correct — Construction Technique requires participants to construct a response in the form of a story, dialogue or description — exactly matching this invented backstory.",
+      "Incorrect — Expressive Technique involves role-play or cartoon-style expression, not writing an invented backstory."
+    ]
+  },
+  {
+    "id": "h3_12",
+    "examSet": 3,
+    "topic": 3,
+    "concept": "Ethnography",
+    "question": "A researcher moves into a shared student dorm for a month, quietly observing how residents actually decide what groceries to buy together, rather than asking them to describe their habits afterward. This method is chosen mainly because:",
+    "options": [
+      "It guarantees a statistically representative, large sample",
+      "It eliminates the need for a researcher's diary or field notes",
+      "It is the fastest and cheapest data collection option available",
+      "Self-reporting would be unreliable, and immersion reveals real behaviour in its natural context"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — ethnography uses small, non-representative samples; it isn't chosen for statistical representativeness.",
+      "Incorrect — the researcher's diary and field notes are integral tools used throughout ethnographic and other qualitative fieldwork, not eliminated by it.",
+      "Incorrect — ethnography requires extended immersion, making it slower and more resource-intensive than most methods, not the fastest/cheapest.",
+      "Correct — ethnography is used when self-reporting would be unreliable and rich, contextual description of natural behaviour is needed — exactly this scenario's justification."
+    ]
+  },
+  {
+    "id": "h3_13",
+    "examSet": 3,
+    "topic": 3,
+    "concept": "Action Research",
+    "question": "A group of teachers and researchers work together over several months: they plan a new classroom routine, implement it, observe the results, reflect together, then adjust and repeat. Which methodology is this?",
+    "options": [
+      "Action Research",
+      "Grounded Theory",
+      "Content Analysis",
+      "Semiotics"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — this cyclical Plan → Act → Observe → Reflect process, done collaboratively with participants to implement change, is exactly Action Research.",
+      "Incorrect — Grounded Theory lets theory emerge inductively from data analysis; it isn't defined by a cyclical, collaborative implementation process.",
+      "Incorrect — Content Analysis classifies and counts existing communications; it doesn't involve cyclical collaborative implementation.",
+      "Incorrect — Semiotics analyses cultural signs and codes; it is unrelated to this cyclical change process."
+    ]
+  },
+  {
+    "id": "h3_14",
+    "examSet": 3,
+    "topic": 4,
+    "concept": "Comparative vs Non-comparative scales",
+    "question": "Respondents are shown two competing detergent brands side by side and asked to pick which one they find more effective, repeated across several brand pairs. Compared to simply rating each detergent alone on a 7-point scale, this paired approach produces:",
+    "options": [
+      "Interval data, just like the standalone rating approach",
+      "Ordinal data, since it is a comparative technique good at detecting small differences",
+      "Ratio data, since points are being allocated",
+      "Nominal data, since brands are just being labelled"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — the standalone rating (non-comparative) is assumed interval; the paired comparison is a different, comparative technique producing a different data type.",
+      "Correct — comparative scaling techniques like paired comparisons produce ordinal data and are particularly good at detecting small differences between objects.",
+      "Incorrect — no fixed sum of points is being allocated across attributes here, so this isn't ratio-like Constant Sum Scaling.",
+      "Incorrect — choosing a preferred option between two brands conveys more than a bare label; it reflects an ordered preference, not pure nominal categorisation."
+    ]
+  },
+  {
+    "id": "h3_15",
+    "examSet": 3,
+    "topic": 4,
+    "concept": "Survey methods",
+    "question": "A researcher needs to reach thousands of geographically dispersed respondents within 48 hours on a tight budget, and is willing to accept that not every segment of the population uses the internet equally. Which method is the clear choice?",
+    "options": [
+      "Personal (face-to-face) survey",
+      "Mail/postal survey",
+      "Online/electronic survey",
+      "In-home interviews only"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — face-to-face surveys cannot realistically reach thousands of dispersed respondents within 48 hours at low cost.",
+      "Incorrect — mail surveys are notoriously slow, incompatible with a 48-hour turnaround requirement.",
+      "Correct — online surveys are fast, low-cost and globally scalable, at the accepted trade-off of uneven internet access across the population — exactly matching this scenario.",
+      "Incorrect — in-home interviews are a form of the slow, expensive personal survey method, not suited to a 48-hour, low-budget requirement."
+    ]
+  },
+  {
+    "id": "h3_16",
+    "examSet": 3,
+    "topic": 4,
+    "concept": "Quantitative observation",
+    "question": "A university library uses barcode scanners at self-checkout to automatically record which books are borrowed, when, and by which member category, with no researcher present and no manipulation of the situation. This is an example of:",
+    "options": [
+      "Personal Observation",
+      "Trace Analysis",
+      "Electronic Observation with participant involvement",
+      "Electronic Observation without participant involvement"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — Personal Observation requires a human researcher directly watching and recording behaviour, not an automated scanner.",
+      "Incorrect — Trace Analysis draws conclusions from physical evidence of PAST behaviour (like wear patterns), not real-time automated recording.",
+      "Incorrect — 'with participant involvement' requires devices like eye-trackers that engage the participant's own physiological responses, not a passive barcode scan.",
+      "Correct — automated devices like scanners that passively record behaviour without requiring the participant's active engagement are Electronic Observation without participant involvement, matching the notes' own optical-scanner example."
+    ]
+  },
+  {
+    "id": "h3_17",
+    "examSet": 3,
+    "topic": 4,
+    "concept": "Internal validity vs External validity",
+    "question": "A researcher runs a tightly controlled lab experiment and is fully confident the price manipulation caused the sales change observed among the tested group, but worries the artificial lab setting means real supermarket shoppers might react differently. The researcher's confidence concerns ______; the worry concerns ______.",
+    "options": [
+      "Internal validity; external validity",
+      "External validity; internal validity",
+      "Precision level; confidence level",
+      "Confidence level; precision level"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — confidence that the manipulation caused the observed effect within the study is internal validity; concern about generalising to real shoppers in other settings is external validity.",
+      "Incorrect — this reverses the two; being confident the manipulation caused the effect within the study is internal validity, not external.",
+      "Incorrect — precision level and confidence level are Part B sample-size/CI concepts, unrelated to this experimental validity distinction.",
+      "Incorrect — this also misapplies precision and confidence level, neither of which describes validity concerns in an experiment."
+    ]
+  },
+  {
+    "id": "h3_18",
+    "examSet": 3,
+    "topic": 4,
+    "concept": "Pilot testing",
+    "question": "A research team revises a questionnaire heavily after testing it on 20 participants, then decides to test the REVISED version on a fresh group of 20 different participants before going live. According to the notes, this is:",
+    "options": [
+      "Unnecessary, since one pilot round is always sufficient",
+      "The recommended practice — conducting a second pilot with a new sample after significant revisions",
+      "A form of casewise deletion",
+      "The same as data cleaning"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — the notes explicitly recommend a second pilot with a new sample after significant revisions, not stopping at one round.",
+      "Correct — after significant revisions, the notes recommend piloting again with a new sample, exactly matching this team's practice.",
+      "Incorrect — casewise deletion is a missing-data treatment applied during analysis, unrelated to pilot testing rounds.",
+      "Incorrect — data cleaning happens after full fieldwork on the final dataset, not during pre-launch pilot testing."
+    ]
+  },
+  {
+    "id": "h3_19",
+    "examSet": 3,
+    "topic": 5,
+    "concept": "Cluster sampling",
+    "question": "A national retailer wants to audit customer service quality but cannot visit all 900 stores, so it randomly selects 30 stores (expected to each be a fair microcosm of the whole chain) and evaluates every transaction within those 30 stores only. This is:",
+    "options": [
+      "Stratified Sampling",
+      "Simple Random Sampling",
+      "Cluster Sampling",
+      "Quota Sampling"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — stratified sampling would include elements from EVERY stratum, not exclude 870 stores entirely.",
+      "Incorrect — SRS selects individual elements directly via random numbers, not whole groups of stores.",
+      "Correct — randomly selecting a subset of whole groups (stores), each expected to be a representative microcosm of the population, and studying everyone within the selected groups, is exactly cluster sampling.",
+      "Incorrect — quota sampling fills pre-set demographic categories by convenience, not random selection of whole store clusters."
+    ]
+  },
+  {
+    "id": "h3_20",
+    "examSet": 3,
+    "topic": 5,
+    "concept": "Convenience sampling",
+    "question": "A student researcher, pressed for time before a deadline, surveys only her classmates sitting nearby in the lecture hall because they are readily available, without any attempt to ensure they represent a broader population. This is:",
+    "options": [
+      "Judgemental Sampling",
+      "Cluster Sampling",
+      "Quota Sampling",
+      "Convenience Sampling"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — judgemental sampling involves deliberately selecting elements based on the researcher's expert judgement, not simply whoever is nearby.",
+      "Incorrect — cluster sampling requires randomly selecting whole geographic or organisational groups, not simply nearby classmates.",
+      "Incorrect — quota sampling requires pre-set control categories to be filled, which isn't described here.",
+      "Correct — selecting elements purely because they happen to be conveniently available, with no qualification or representativeness effort, is exactly convenience sampling."
+    ]
+  },
+  {
+    "id": "h3_21",
+    "examSet": 3,
+    "topic": 5,
+    "concept": "Judgemental sampling",
+    "question": "To evaluate a new industrial adhesive, a manufacturer deliberately selects five senior engineers it considers the most qualified experts in the field, rather than sampling engineers at random. This is:",
+    "options": [
+      "Judgemental Sampling",
+      "Convenience Sampling",
+      "Systematic Sampling",
+      "Snowball Sampling"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — deliberately selecting elements based on the researcher's judgement about who is most qualified is exactly judgemental sampling; expert selection is the notes' own example.",
+      "Incorrect — convenience sampling picks whoever is easiest to reach, without deliberate expert selection.",
+      "Incorrect — systematic sampling selects every ith element from an ordered list at a fixed interval, not hand-picked experts.",
+      "Incorrect — snowball sampling relies on referrals from an initial group, not direct expert selection by the researcher."
+    ]
+  },
+  {
+    "id": "h3_22",
+    "examSet": 3,
+    "topic": 5,
+    "concept": "Simple Random Sampling",
+    "question": "A lottery-style draw gives every one of 50,000 registered voters an identical, known chance of being selected for a civic survey, using a computer-generated random number list. This is:",
+    "options": [
+      "Systematic Sampling",
+      "Simple Random Sampling",
+      "Cluster Sampling",
+      "Quota Sampling"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — systematic sampling uses a fixed interval from a chosen starting point, not a fully random number draw for every selection.",
+      "Correct — giving every element a known, equal probability of selection through random number generation is exactly Simple Random Sampling.",
+      "Incorrect — cluster sampling selects whole groups randomly, not individual voters directly via random numbers.",
+      "Incorrect — quota sampling fills pre-set categories by convenience or judgement, not equal-probability random draws."
+    ]
+  },
+  {
+    "id": "h3_23",
+    "examSet": 3,
+    "topic": 5,
+    "concept": "Systematic sampling",
+    "question": "An auditor picks a random starting invoice, then reviews every 25th invoice thereafter from a chronologically ordered ledger with 5,000 entries. This procedure is:",
+    "options": [
+      "Simple Random Sampling",
+      "Stratified Sampling",
+      "Systematic Sampling",
+      "Cluster Sampling"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — SRS would require generating a fresh random number for each selection, not a fixed interval from one starting point.",
+      "Incorrect — stratified sampling requires dividing the ledger into homogeneous strata first, which isn't described here.",
+      "Correct — choosing a random starting point and then selecting every ith element in succession is exactly systematic sampling.",
+      "Incorrect — cluster sampling would randomly select whole GROUPS of invoices, not individual invoices at a fixed interval."
+    ]
+  },
+  {
+    "id": "h3_24",
+    "examSet": 3,
+    "topic": 5,
+    "concept": "Subsampling of non-participants",
+    "question": "A researcher deliberately contacts a random 15% of the people who did not respond to the original mail survey, this time via personal interview, to better understand and adjust for non-response bias. This method is:",
+    "options": [
+      "Trend Analysis",
+      "Substitution",
+      "Weighting",
+      "Subsampling of non-participants"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — Trend Analysis projects an early-vs-late RESPONSE pattern onto non-participants; it does not involve directly re-contacting them.",
+      "Incorrect — Substitution swaps in DIFFERENT sampling-frame elements expected to respond, not the actual non-respondents themselves.",
+      "Incorrect — Weighting assigns differential multipliers to existing data based on response rates, not direct re-contact.",
+      "Correct — Subsampling of non-participants involves contacting a subsample of the actual non-respondents, typically by telephone or personal interview, exactly as described."
+    ]
+  },
+  {
+    "id": "h3_25",
+    "examSet": 3,
+    "topic": 6,
+    "concept": "Data Preparation order",
+    "question": "A dataset has just finished the Editing stage. What is the very next step in the Data Preparation Process?",
+    "options": [
+      "Coding",
+      "Checking",
+      "Cleaning",
+      "Adjusting"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — the sequence is Checking → Editing → Coding → Transcribing → Cleaning → Adjusting, so Coding comes immediately after Editing.",
+      "Incorrect — Checking is the step that comes BEFORE Editing, not after.",
+      "Incorrect — Cleaning comes much later, after both Coding and Transcribing.",
+      "Incorrect — Adjusting is near the end of the sequence, several steps after Editing."
+    ]
+  },
+  {
+    "id": "h3_26",
+    "examSet": 3,
+    "topic": 6,
+    "concept": "Data Preparation order",
+    "question": "A dataset has just finished the Coding stage. What is the very next step in the Data Preparation Process?",
+    "options": [
+      "Editing",
+      "Transcribing",
+      "Cleaning",
+      "Adjusting"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Editing comes BEFORE Coding, not after it.",
+      "Correct — the sequence is Checking → Editing → Coding → Transcribing → Cleaning → Adjusting, so Transcribing comes immediately after Coding.",
+      "Incorrect — Cleaning comes after Transcribing, not immediately after Coding.",
+      "Incorrect — Adjusting is the final step, several steps after Coding."
+    ]
+  },
+  {
+    "id": "h3_27",
+    "examSet": 3,
+    "topic": 6,
+    "concept": "One Mean Test",
+    "question": "A gym chain wants to test whether the average number of monthly visits per member equals a target of 8, using data from one representative sample of members. Which hypothesis test classification applies?",
+    "options": [
+      "Two Means Test",
+      "Chi-square Test",
+      "One Mean Test",
+      "ANOVA"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Two Means requires comparing a quantitative variable across TWO separate groups, but only one sample and one fixed target value are involved here.",
+      "Incorrect — chi-square tests association between two categorical variables; visit counts are quantitative, not categorical.",
+      "Correct — testing whether a quantitative variable (visits) equals a specific value (8) using one sample is exactly a One Mean Test.",
+      "Incorrect — ANOVA requires 3+ categorical groups to compare a quantitative variable across; there's only one group and a fixed target here."
+    ]
+  },
+  {
+    "id": "h3_28",
+    "examSet": 3,
+    "topic": 6,
+    "concept": "Two Means Test",
+    "question": "A cosmetics brand wants to know if average basket size differs between customers who received a personalised email offer and those who did not. Which hypothesis test classification applies?",
+    "options": [
+      "One Mean Test",
+      "Factor Analysis",
+      "Chi-square Test",
+      "Two Means Test"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — One Mean compares a single group's mean to a fixed value, not two distinct groups against each other.",
+      "Incorrect — Factor Analysis reduces correlated variables into underlying factors; it doesn't compare a mean across two groups.",
+      "Incorrect — chi-square applies to two categorical variables in a cross-tabulation, but basket size is quantitative.",
+      "Correct — comparing a quantitative variable (basket size) across two groups (received offer vs. did not) is exactly a Two Means Test."
+    ]
+  },
+  {
+    "id": "h3_29",
+    "examSet": 3,
+    "topic": 6,
+    "concept": "ANOVA",
+    "question": "A car manufacturer wants to test whether average customer satisfaction scores differ across four different dealership regions. Which technique is appropriate?",
+    "options": [
+      "ANOVA",
+      "Chi-square test",
+      "Correlation",
+      "One Proportion Test"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — ANOVA tests a quantitative variable (satisfaction score) against a qualitative variable with three or more categories (4 regions) — exactly this scenario.",
+      "Incorrect — chi-square requires TWO categorical variables; satisfaction score here is quantitative.",
+      "Incorrect — correlation requires BOTH variables to be metric; dealership region is categorical, not metric.",
+      "Incorrect — One Proportion tests a single qualitative variable's proportion against a fixed value, not a mean across multiple groups."
+    ]
+  },
+  {
+    "id": "h3_30",
+    "examSet": 3,
+    "topic": 6,
+    "concept": "Correlation",
+    "question": "A researcher wants to measure the strength and direction of the linear relationship between hours of weekly exercise and self-reported stress level, treating both simply as two metric variables with no assumed cause-effect direction. Which technique fits?",
+    "options": [
+      "Regression Analysis",
+      "Correlation Analysis",
+      "Cluster Analysis",
+      "ANOVA"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — regression requires setting up an a priori dependent/independent structure, which the researcher explicitly wants to avoid here.",
+      "Correct — correlation measures the strength and direction of a linear relationship between two metric variables without assuming a dependent/independent structure — exactly this goal.",
+      "Incorrect — Cluster Analysis groups similar cases together; it doesn't measure a linear relationship between two specific variables.",
+      "Incorrect — ANOVA compares a quantitative variable across qualitative categories; both variables here are quantitative, not one qualitative."
+    ]
+  },
+  {
+    "id": "h4_01",
+    "examSet": 4,
+    "topic": 1,
+    "concept": "MDP vs MRP",
+    "question": "A hotel chain's CEO asks: 'Should we convert our loyalty programme to a paid subscription model?' This statement is a:",
+    "options": [
+      "Marketing Decision Problem (MDP)",
+      "Marketing Research Problem (MRP)",
+      "A codebook entry",
+      "A confidence interval"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — this asks what the decision-maker SHOULD DO, which is exactly the action-oriented MDP.",
+      "Incorrect — an MRP would be information-oriented, like 'determine willingness to pay for a subscription loyalty model', not a decision itself.",
+      "Incorrect — a codebook documents coding instructions for collected data, unrelated to classifying a decision statement.",
+      "Incorrect — a confidence interval is a statistical calculation, unrelated to classifying this statement."
+    ]
+  },
+  {
+    "id": "h4_02",
+    "examSet": 4,
+    "topic": 1,
+    "concept": "Problem-Identification vs Problem-Solving Research",
+    "question": "After a sudden 15% drop in repeat purchases traced to a recent packaging redesign, a beverage company commissions research to test three alternative packaging fixes. This is:",
+    "options": [
+      "Problem-Identification Research",
+      "Problem-Solving Research",
+      "An exploratory design only",
+      "A Marketing Research Brief"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Problem-Identification research looks for problems not yet apparent; here the cause (packaging redesign) is already identified.",
+      "Correct — testing solutions to an already-identified, specific problem (the packaging-driven drop) is exactly Problem-Solving (reactive) research.",
+      "Incorrect — 'exploratory' is a research design classification from Topic 2, a different axis from problem-ID vs problem-solving.",
+      "Incorrect — a Brief is a document stating objectives, not a category describing this entire research effort."
+    ]
+  },
+  {
+    "id": "h4_03",
+    "examSet": 4,
+    "topic": 2,
+    "concept": "Total Error vs Random Sampling Error",
+    "question": "A firm's report says: 'Even though our random sampling procedure was sound, the specific 200 people selected happened to under-represent high earners purely by chance.' A second report instead states the overall gap between the true population income and the sample's reported income, combining every source of inaccuracy. These are respectively:",
+    "options": [
+      "Total Error, then Random Sampling Error",
+      "Non-Sampling Error, then sampling frame error",
+      "Random Sampling Error, then Total Error",
+      "Sampling frame error, then Non-Sampling Error"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — this reverses the two; a sound procedure yielding an unlucky sample by chance is random sampling error, not the overall combined Total Error.",
+      "Incorrect — neither report matches non-sampling error alone or sampling frame error, since the first explicitly attributes the issue to chance despite a sound procedure, and the second is the OVERALL combined gap.",
+      "Correct — an unlucky sample from a sound procedure is Random Sampling Error; the overall combined gap across every source is Total Error.",
+      "Incorrect — this also misapplies sampling frame error and non-sampling error, neither of which matches either report described."
+    ]
+  },
+  {
+    "id": "h4_04",
+    "examSet": 4,
+    "topic": 2,
+    "concept": "Exploratory design",
+    "question": "A wellness app has no existing research on how users would even conceptualise a totally novel 'digital detox' feature, and management wants a handful of unstructured, open-ended discussions before committing resources to a full study. This calls for:",
+    "options": [
+      "A cross-tabulation analysis",
+      "Conclusive descriptive research",
+      "Causal research with control groups",
+      "Exploratory research"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — a cross-tabulation is a data ANALYSIS technique applied to already-collected structured data, not a research design choice.",
+      "Incorrect — conclusive descriptive research requires a well-defined, measurable phenomenon, which doesn't exist yet for this novel, unexplored feature.",
+      "Incorrect — causal research with control groups requires clearly defined variables to manipulate, premature at this exploratory stage.",
+      "Correct — exploratory research is used precisely when little is known and an unstructured, flexible, small-sample approach is needed to start forming hypotheses — exactly this scenario."
+    ]
+  },
+  {
+    "id": "h4_05",
+    "examSet": 4,
+    "topic": 2,
+    "concept": "Secondary data",
+    "question": "A think tank publishes a report on national commuting patterns for its own policy purposes. Two years later, a ride-sharing startup uses that same report to help design its own market entry strategy. From the startup's perspective, this report is:",
+    "options": [
+      "Secondary data",
+      "Primary data",
+      "Marketing intelligence",
+      "A sampling frame"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — data already collected for a purpose OTHER than the current problem — here, the think tank's own policy purposes — is exactly secondary data from the startup's perspective.",
+      "Incorrect — primary data is originated specifically for the current problem; the startup did not commission this report itself.",
+      "Incorrect — marketing intelligence refers to ongoing qualified observation of the environment, not a specific published report being reused.",
+      "Incorrect — a sampling frame is a list for identifying a population, not a data source being reused for insights."
+    ]
+  },
+  {
+    "id": "h4_06",
+    "examSet": 4,
+    "topic": 2,
+    "concept": "Causal research",
+    "question": "An airline wants definitive proof that adding extra legroom, rather than any other factor, is what caused higher customer satisfaction scores on select flights compared to standard flights. Which design is required to make that causal claim credibly?",
+    "options": [
+      "Exploratory design, since it is the most flexible",
+      "Causal design, using controlled manipulation of the legroom variable with other factors held constant",
+      "Descriptive design, since it can measure satisfaction precisely",
+      "Marketing intelligence, since it observes the environment continuously"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — exploratory design cannot establish which specific factor caused an effect; it's for forming hypotheses, not testing them rigorously.",
+      "Correct — causal design requires manipulating the independent variable (legroom) while controlling other factors, which is the only way to credibly support a causal claim.",
+      "Incorrect — descriptive design can measure satisfaction levels but cannot, by itself, isolate legroom as the CAUSE of the difference.",
+      "Incorrect — marketing intelligence is passive ongoing observation; it cannot isolate a specific cause through controlled manipulation."
+    ]
+  },
+  {
+    "id": "h4_07",
+    "examSet": 4,
+    "topic": 2,
+    "concept": "Longitudinal design",
+    "question": "A fitness brand wants to track whether individual customers' habits genuinely CHANGE over a year, and is willing to accept the risk that repeatedly surveying the same people might make them behave differently than typical customers. Which design best fits this trade-off?",
+    "options": [
+      "Multiple cross-sectional design",
+      "Causal design without a control group",
+      "Longitudinal design",
+      "Exploratory design"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — multiple cross-sectional design uses DIFFERENT samples each time, which cannot track individual-level change over time the way this scenario requires.",
+      "Incorrect — no independent variable is being deliberately manipulated across randomly assigned groups, so this isn't a causal experiment.",
+      "Correct — a longitudinal design measures the SAME fixed sample repeatedly, offering the strongest ability to detect real change, at the accepted cost of possible response bias — exactly this trade-off.",
+      "Incorrect — exploratory design is for unstructured, early-stage hypothesis formation, not tracking measured change over a defined period."
+    ]
+  },
+  {
+    "id": "h4_08",
+    "examSet": 4,
+    "topic": 3,
+    "concept": "Association vs Completion technique",
+    "question": "In one exercise, a participant hears the word 'budget' and instantly says the first word that pops into her head. In another, she is given 'People who clip coupons are usually ___' and asked to finish the sentence. These are respectively:",
+    "options": [
+      "Completion Technique, then Association Technique",
+      "Expressive Technique, then Construction Technique",
+      "Construction Technique, then Expressive Technique",
+      "Association Technique, then Completion Technique"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — this reverses the two; reacting instantly with the first word is Association, not Completion.",
+      "Incorrect — this also misapplies Expressive and Construction, neither of which matches either scenario described.",
+      "Incorrect — neither scenario involves constructing a full story/dialogue (Construction) or role-play/cartoon expression (Expressive).",
+      "Correct — reacting with the first word that comes to mind is the Association Technique; finishing an incomplete sentence is the Completion Technique."
+    ]
+  },
+  {
+    "id": "h4_09",
+    "examSet": 4,
+    "topic": 3,
+    "concept": "Construction vs Expressive technique",
+    "question": "One participant is shown a blank comic-strip panel of two shoppers and asked to write in what each is thinking and saying to each other. Another participant is asked to physically act out how she imagines an 'extreme couponer' would behave in a supermarket. These are respectively:",
+    "options": [
+      "Construction Technique, then Expressive Technique",
+      "Expressive Technique, then Construction Technique",
+      "Association Technique, then Completion Technique",
+      "Completion Technique, then Association Technique"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — writing in thoughts/dialogue to construct a scene is the Construction Technique; physically acting out a character's behaviour is the Expressive Technique.",
+      "Incorrect — this reverses the two; writing dialogue into a scene is Construction, not Expressive.",
+      "Incorrect — neither scenario involves an instant word reaction (Association) or completing a written sentence (Completion).",
+      "Incorrect — this also misapplies Completion and Association, neither of which matches either scenario described."
+    ]
+  },
+  {
+    "id": "h4_10",
+    "examSet": 4,
+    "topic": 3,
+    "concept": "ZMET",
+    "question": "Before her interview, a participant is asked to collect several images from magazines or her phone that capture how owning an electric car makes her feel, which the interviewer then uses to explore hidden, unconscious associations. This technique is:",
+    "options": [
+      "Repertory Grid Technique",
+      "Zaltman Metaphor Elicitation Technique (ZMET)",
+      "Friendship Pair",
+      "Laddering Technique"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Repertory Grid has participants compare and contrast several elements verbally, not bring in personal images.",
+      "Correct — ZMET specifically uses images/photos brought by the participant to uncover deep, often unconscious metaphors driving their thinking, exactly as described.",
+      "Incorrect — Friendship Pair involves interviewing two friends together, unrelated to using personal images.",
+      "Incorrect — Laddering uses a chain of progressive 'why' questions, not participant-supplied images."
+    ]
+  },
+  {
+    "id": "h4_11",
+    "examSet": 4,
+    "topic": 3,
+    "concept": "Expressive technique",
+    "question": "Participants are shown a cartoon of two characters at a car dealership with empty speech bubbles and asked to write in what one character says to convince the other to buy add-on insurance. This is:",
+    "options": [
+      "Association Technique",
+      "Completion Technique",
+      "Expressive Technique",
+      "Grounded Theory"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Association Technique involves an instant word reaction, not filling in cartoon dialogue.",
+      "Incorrect — Completion Technique involves finishing a written sentence or story, not a cartoon-style role scenario.",
+      "Correct — cartoon tests where participants express a character's thoughts or persuasive dialogue are a classic form of the Expressive Technique.",
+      "Incorrect — Grounded Theory is a data-analysis methodology for developing theory from data, not a projective technique."
+    ]
+  },
+  {
+    "id": "h4_12",
+    "examSet": 4,
+    "topic": 3,
+    "concept": "Rapport",
+    "question": "Before a sensitive focus group on financial stress, the moderator deliberately mirrors participants' relaxed posture, smiles warmly, and maintains steady eye contact to help them feel comfortable opening up. This is an example of building:",
+    "options": [
+      "Probing",
+      "Content Analysis coding",
+      "A Repertory Grid",
+      "Rapport"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — probing is the technique of inviting participants to enlarge on an answer already given, not the initial trust-building itself.",
+      "Incorrect — Content Analysis coding is a data-analysis step applied to existing text, unrelated to live moderator rapport-building.",
+      "Incorrect — a Repertory Grid is a comparison exercise between elements, unrelated to building initial trust.",
+      "Correct — rapport is built through matching body language, eye contact and empathy to establish trust before deeper discussion, exactly as described."
+    ]
+  },
+  {
+    "id": "h4_13",
+    "examSet": 4,
+    "topic": 3,
+    "concept": "IDI",
+    "question": "A researcher needs deep, candid insight into a single senior executive's highly personal views on a confidential merger, requiring a private, unstructured, probing conversation rather than a group setting. This method is:",
+    "options": [
+      "In-Depth Interview (IDI)",
+      "Focus Group",
+      "Content Analysis",
+      "Semiotics"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — an IDI is an unstructured, direct, personal interview with a single participant, probed by an experienced interviewer — exactly matching this private, candid scenario.",
+      "Incorrect — a focus group involves 6-10 participants discussing together, unsuitable for a single confidential, private conversation.",
+      "Incorrect — Content Analysis classifies and counts existing text/communications; it doesn't gather new candid opinions through conversation.",
+      "Incorrect — Semiotics analyses cultural signs and codes, unrelated to conducting a private interview."
+    ]
+  },
+  {
+    "id": "h4_14",
+    "examSet": 4,
+    "topic": 4,
+    "concept": "Pilot testing",
+    "question": "A market research firm insists that no questionnaire should ever go into full fieldwork without first being tested on a small group from the target population, regardless of how experienced the questionnaire designer is. According to the notes, this small-group test should typically involve:",
+    "options": [
+      "1-5 participants",
+      "15-30 participants per wave",
+      "100-150 participants",
+      "The entire target population"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — 1-5 participants is too small to reveal meaningful comprehension or routing issues.",
+      "Correct — the notes specify pilot-testing on 15-30 participants from the target population per wave, before full deployment.",
+      "Incorrect — 100-150 participants is far larger than needed for a pilot test, which is meant to be small-scale.",
+      "Incorrect — testing the entire target population would defeat the purpose of a small-scale pilot test before full fieldwork."
+    ]
+  },
+  {
+    "id": "h4_15",
+    "examSet": 4,
+    "topic": 4,
+    "concept": "Wording errors: ambiguous, leading, implicit alternative, implicit assumption",
+    "question": "A questionnaire asks: 'What time do you usually finish using our meal-kit subscription each week?' — despite the fact that the product has no defined weekly 'finish' point and many customers don't use it weekly at all. Which wording problem does this illustrate?",
+    "options": [
+      "A leading question",
+      "Ambiguous wording",
+      "An implicit assumption — an unstated, false premise baked into the question",
+      "An implicit alternative"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — nothing in the wording pushes respondents toward a particular favourable or unfavourable answer, so it isn't a leading question.",
+      "Incorrect — ambiguous wording involves vague terms like 'usually' being interpreted differently, but the core problem here is a false premise, not vague vocabulary.",
+      "Correct — the question assumes weekly use and a defined 'finish' point that may not exist for many respondents — exactly an implicit (and here, false) assumption baked into the question.",
+      "Incorrect — an implicit alternative would mean a real, unstated OPTION was left out, not a false premise about behaviour patterns."
+    ]
+  },
+  {
+    "id": "h4_16",
+    "examSet": 4,
+    "topic": 4,
+    "concept": "Scales: nominal, ordinal, interval, ratio",
+    "question": "A fitness tracker records each user's exact number of steps taken per day, where zero steps genuinely means zero activity and 10,000 steps is precisely twice as much activity as 5,000. This is measured on a:",
+    "options": [
+      "Nominal scale",
+      "Ordinal scale",
+      "Interval scale",
+      "Ratio scale"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — nominal scales are pure labels with no numeric meaning, which doesn't fit a precise step count.",
+      "Incorrect — ordinal would only show ranking without meaningful numeric distances, but step counts carry exact, meaningful quantities.",
+      "Incorrect — interval scales lack a true zero (like temperature in °C); here, zero genuinely means the absence of steps, and ratios (twice as much) are meaningful.",
+      "Correct — a true zero point plus meaningful ratios between values (10,000 is exactly twice 5,000) is exactly a ratio scale, which supports all statistical operations."
+    ]
+  },
+  {
+    "id": "h4_17",
+    "examSet": 4,
+    "topic": 4,
+    "concept": "Quantitative observation",
+    "question": "A researcher measures how long a shopper's pupils dilate while looking at different product displays, using a specialised device attached during the session. This method is:",
+    "options": [
+      "Electronic Observation with participant involvement",
+      "Electronic Observation without participant involvement",
+      "Personal Observation",
+      "Trace Analysis"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — pupilometers measuring a participant's own physiological responses are exactly Electronic Observation WITH participant involvement.",
+      "Incorrect — 'without participant involvement' describes passive devices like turnstiles or scanners that don't require the participant to be wired up.",
+      "Incorrect — Personal Observation involves a human researcher directly watching behaviour, not a physiological measuring device.",
+      "Incorrect — Trace Analysis draws conclusions from physical evidence of PAST behaviour, not real-time physiological measurement during the session."
+    ]
+  },
+  {
+    "id": "h4_18",
+    "examSet": 4,
+    "topic": 4,
+    "concept": "Survey methods",
+    "question": "A researcher combines an online questionnaire with follow-up telephone calls for non-respondents, using the same core questions in both modes and consolidating all responses into a single, continuously updated database. This approach is:",
+    "options": [
+      "A single cross-sectional design",
+      "A mixed-mode survey",
+      "Trace Analysis",
+      "Constant Sum Scaling"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — single cross-sectional design describes measuring one sample once, a Topic 2 concept unrelated to combining survey delivery methods.",
+      "Correct — combining two or more survey methods with a common core of questions and a single unified, real-time database is exactly the definition of a mixed-mode survey.",
+      "Incorrect — Trace Analysis draws conclusions from physical evidence of past behaviour, unrelated to combining survey delivery channels.",
+      "Incorrect — Constant Sum Scaling is a quantitative rating technique for allocating points across attributes, unrelated to survey delivery methods."
+    ]
+  },
+  {
+    "id": "h4_19",
+    "examSet": 4,
+    "topic": 5,
+    "concept": "Substitution (non-response method)",
+    "question": "To handle a chunk of non-responding customers, an analyst first splits the sampling frame into subgroups that are internally similar in likely characteristics but vary in expected response rate, then replaces each non-respondent with another element from the SAME frame's matching subgroup. This method is:",
+    "options": [
+      "Replacement",
+      "Trend Analysis",
+      "Substitution",
+      "Subsampling of non-participants"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Replacement uses non-participants from an EARLIER, similar past survey, not other elements from the current, same sampling frame.",
+      "Incorrect — Trend Analysis projects an early-vs-late response pattern rather than swapping in replacement elements from the frame.",
+      "Correct — Substitution replaces non-participants with OTHER elements from the SAME sampling frame, after dividing it into internally homogeneous subgroups — exactly as described.",
+      "Incorrect — Subsampling of non-participants involves re-contacting the actual non-respondents themselves, not substituting other frame elements."
+    ]
+  },
+  {
+    "id": "h4_20",
+    "examSet": 4,
+    "topic": 5,
+    "concept": "Replacement (non-response method)",
+    "question": "A researcher struggling with non-response on this year's customer survey instead pulls in results from non-participants of last year's similar survey, attempting to re-contact and administer the CURRENT questionnaire to them, sometimes offering an incentive. This method is:",
+    "options": [
+      "Substitution",
+      "Imputation",
+      "Weighting",
+      "Replacement"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — Substitution uses OTHER elements from the SAME current sampling frame, not non-participants from a PAST survey.",
+      "Incorrect — Imputation estimates a value based on similarity to responding participants, not recruiting new respondents from a past survey.",
+      "Incorrect — Weighting assigns differential multipliers to existing responses based on response rates, not recruiting from a past survey's non-respondents.",
+      "Correct — Replacement specifically uses non-participants from an earlier, similar survey, attempting to administer the current questionnaire to them — exactly as described."
+    ]
+  },
+  {
+    "id": "h4_21",
+    "examSet": 4,
+    "topic": 5,
+    "concept": "Weighting (non-response method)",
+    "question": "A survey achieves 95% response among executives but only 45% among frontline staff. To correct for this imbalance in the final dataset, the analyst assigns frontline staff responses a proportionally larger multiplier than executive responses. This adjustment method is:",
+    "options": [
+      "Weighting",
+      "Imputation",
+      "Trend Analysis",
+      "Subjective Estimates"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — assigning a larger multiplier (100/response rate) to lower-response subgroups to correct for their under-representation is exactly Weighting.",
+      "Incorrect — Imputation estimates a value for missing responses based on similarity to other participants, not applying a response-rate-based multiplier to existing data.",
+      "Incorrect — Trend Analysis projects an early-vs-late response pattern, not a response-rate-based multiplier.",
+      "Incorrect — Subjective Estimates rely on the researcher's personal judgement rather than a calculated multiplier."
+    ]
+  },
+  {
+    "id": "h4_22",
+    "examSet": 4,
+    "topic": 5,
+    "concept": "Imputation (non-response method)",
+    "question": "A survey has a gap where a non-respondent's brand usage is unknown, so the researcher assigns her the brand usage pattern of other respondents who share her age, income and location profile. This method is:",
+    "options": [
+      "Substitution",
+      "Imputation",
+      "Weighting",
+      "Subsampling of non-participants"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Substitution swaps in a DIFFERENT sampling-frame element to be surveyed, not estimating a value for an existing non-respondent's missing data.",
+      "Correct — Imputation assigns the characteristic of interest to a non-participant based on similarity to responding participants on other available variables — exactly as described.",
+      "Incorrect — Weighting applies a response-rate-based multiplier to existing data, not estimating a missing value from similar participants.",
+      "Incorrect — Subsampling of non-participants involves directly re-contacting non-respondents, not estimating their likely answers from similar participants."
+    ]
+  },
+  {
+    "id": "h4_23",
+    "examSet": 4,
+    "topic": 5,
+    "concept": "Trend Analysis (non-response method)",
+    "question": "A telecom survey finds that people who responded in the first three days reported much higher satisfaction than those who responded in the final week before the deadline. The researcher extrapolates this declining pattern to estimate how non-respondents would likely have answered. This method is:",
+    "options": [
+      "Substitution",
+      "Weighting",
+      "Trend Analysis",
+      "Replacement"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Substitution swaps in other elements from the same frame, not extrapolating a response-timing trend.",
+      "Incorrect — Weighting assigns a response-rate-based multiplier to existing data; it doesn't extrapolate an early-vs-late trend.",
+      "Correct — Trend Analysis specifically discerns a trend between early and late participants and projects it onto non-participants — exactly this scenario.",
+      "Incorrect — Replacement recruits non-participants from an earlier, similar survey, not extrapolating from this survey's own early/late pattern."
+    ]
+  },
+  {
+    "id": "h4_24",
+    "examSet": 4,
+    "topic": 5,
+    "concept": "Subjective Estimates (non-response method)",
+    "question": "After trying every practical technique to boost response rate with no success, a veteran researcher relies on her own extensive experience with similar studies to judge how much the non-response is likely biasing the results. This method is:",
+    "options": [
+      "Trend Analysis",
+      "Imputation",
+      "Weighting",
+      "Subjective Estimates"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — Trend Analysis relies on a measurable early-vs-late response pattern in the data, not personal judgement alone.",
+      "Incorrect — Imputation formally estimates a value using OTHER participants' similar data, not the researcher's personal experience.",
+      "Incorrect — Weighting applies a calculated multiplier based on response rates, not the researcher's personal judgement.",
+      "Correct — Subjective Estimates are used precisely when improving response rate is no longer feasible, relying on the researcher's own experience and judgement — exactly as described."
+    ]
+  },
+  {
+    "id": "h4_25",
+    "examSet": 4,
+    "topic": 6,
+    "concept": "Data Preparation order",
+    "question": "A dataset has just finished the Transcribing stage. What is the very next step in the Data Preparation Process?",
+    "options": [
+      "Cleaning",
+      "Coding",
+      "Editing",
+      "Adjusting"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — the sequence is Checking → Editing → Coding → Transcribing → Cleaning → Adjusting, so Cleaning comes immediately after Transcribing.",
+      "Incorrect — Coding comes BEFORE Transcribing, not after it.",
+      "Incorrect — Editing comes near the beginning of the sequence, long before Transcribing.",
+      "Incorrect — Adjusting comes after Cleaning, not immediately after Transcribing."
+    ]
+  },
+  {
+    "id": "h4_26",
+    "examSet": 4,
+    "topic": 6,
+    "concept": "Data Preparation order",
+    "question": "A dataset has just finished the Cleaning stage. What is the very next step in the Data Preparation Process?",
+    "options": [
+      "Transcribing",
+      "Adjusting",
+      "Coding",
+      "Checking"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — Transcribing comes BEFORE Cleaning, not after it.",
+      "Correct — the sequence is Checking → Editing → Coding → Transcribing → Cleaning → Adjusting, so Adjusting comes immediately after Cleaning.",
+      "Incorrect — Coding comes near the beginning of the sequence, long before Cleaning.",
+      "Incorrect — Checking is the very first step of the entire process, not something that follows Cleaning."
+    ]
+  },
+  {
+    "id": "h4_27",
+    "examSet": 4,
+    "topic": 6,
+    "concept": "Cluster Analysis",
+    "question": "A telecom provider wants to sort its 50,000 customers into a handful of relatively homogeneous behavioural segments based on call patterns, data usage and roaming habits, with no dependent variable defined in advance. Which technique fits?",
+    "options": [
+      "Regression Analysis",
+      "ANOVA",
+      "Cluster Analysis",
+      "Chi-square test"
+    ],
+    "correctIndex": 2,
+    "explanations": [
+      "Incorrect — Regression requires an a priori dependent variable to predict, which isn't defined here.",
+      "Incorrect — ANOVA compares a quantitative variable's mean across pre-defined categorical groups; the groups don't exist yet here, they need to be CREATED.",
+      "Correct — Cluster Analysis classifies objects (customers) into relatively homogeneous groups with no dependent variable required — exactly this segmentation goal.",
+      "Incorrect — chi-square tests association between two already-defined categorical variables, not open-ended segmentation."
+    ]
+  },
+  {
+    "id": "h4_28",
+    "examSet": 4,
+    "topic": 6,
+    "concept": "Factor Analysis",
+    "question": "A researcher has 30 correlated questionnaire items measuring various aspects of brand trust and wants to identify a smaller number of underlying dimensions that explain the correlations among them, before running further analysis. Which technique is appropriate?",
+    "options": [
+      "Cluster Analysis, because it also works with survey items",
+      "Chi-square test, because trust can be categorised",
+      "Two Means Test, because two groups can be compared",
+      "Factor Analysis, because it identifies underlying dimensions explaining correlations among variables"
+    ],
+    "correctIndex": 3,
+    "explanations": [
+      "Incorrect — Cluster Analysis groups similar CASES/objects (like respondents), not correlated survey ITEMS into underlying dimensions.",
+      "Incorrect — chi-square requires two already-categorical variables in a cross-tabulation, not reducing 30 correlated metric items.",
+      "Incorrect — no two groups are being compared here; this is a data-reduction task among correlated ITEMS, not a group-mean comparison.",
+      "Correct — Factor Analysis is used specifically to identify underlying dimensions (factors) that explain the correlations among a set of variables — exactly this goal."
+    ]
+  },
+  {
+    "id": "h4_29",
+    "examSet": 4,
+    "topic": 6,
+    "concept": "Regression",
+    "question": "A real estate firm wants an equation that estimates a house's sale price based on its square footage and number of bedrooms, explicitly treating price as the outcome being explained by the other two. Which technique is required?",
+    "options": [
+      "Regression Analysis",
+      "Correlation Analysis",
+      "Cluster Analysis",
+      "Factor Analysis"
+    ],
+    "correctIndex": 0,
+    "explanations": [
+      "Correct — regression establishes an a priori dependent variable (price) explained by independent variables (square footage, bedrooms) and can produce a predictive equation — exactly this goal.",
+      "Incorrect — correlation measures association between two metric variables without an a priori dependent/independent structure or prediction goal.",
+      "Incorrect — Cluster Analysis groups similar houses together; it doesn't produce a predictive price equation.",
+      "Incorrect — Factor Analysis reduces correlated variables into underlying factors; it isn't designed to predict price from specific predictors."
+    ]
+  },
+  {
+    "id": "h4_30",
+    "examSet": 4,
+    "topic": 6,
+    "concept": "Chi-square test",
+    "question": "A cross-tabulation of 'membership tier' (3 categories) against 'preferred contact channel' (5 categories) is built to test whether the two are associated. What are the degrees of freedom for this chi-square test?",
+    "options": [
+      "15",
+      "8",
+      "7",
+      "2"
+    ],
+    "correctIndex": 1,
+    "explanations": [
+      "Incorrect — 15 is rows × columns (3×5), not the degrees-of-freedom formula.",
+      "Correct — df = (r−1)×(c−1) = (3−1)×(5−1) = 2×4 = 8.",
+      "Incorrect — 7 would come from simply adding rows and columns minus one, which is not the formula.",
+      "Incorrect — 2 is just (r−1) alone, without accounting for the columns."
+    ]
+  }
+]
