@@ -552,6 +552,29 @@
       <p class="lede">4 exámenes fijos de 30 preguntas cada uno, mucho más difíciles que el modo simulacro. Las preguntas de cada examen son siempre las mismas — solo se baraja el orden de las 4 opciones en cada intento. Puntuación +1 / −0.25 / 0, igual que el simulacro.</p>
     </div>
     <div class="hard-exam-grid" id="hard-exam-grid"></div>
+
+    <div id="hard-dashboard-section" style="display:none;">
+      <div class="section-title">Tu dashboard de Hard Exams</div>
+      <div class="dash-stats-grid" id="hard-dash-stats-grid"></div>
+
+      <div class="section-title">Rendimiento por tema</div>
+      <div class="card">
+        <p id="hard-dash-weak-caption" class="dash-weak-caption"></p>
+        <div id="hard-dash-block-bars"></div>
+      </div>
+
+      <div class="section-title">Evolución de tus notas</div>
+      <div class="card">
+        <div class="evo-chart" id="hard-evo-chart"></div>
+      </div>
+
+      <div class="section-title">Historial de intentos</div>
+      <div class="history-list" id="hard-history-list"></div>
+      <div class="clear-history-row">
+        <button id="btn-clear-hard-history">Borrar historial de Hard Exams</button>
+      </div>
+    </div>
+
     <div class="btn-row">
       <button class="btn ghost" id="btn-hard-back">Volver al inicio</button>
     </div>
@@ -7448,7 +7471,97 @@
         '<button class="btn hard-btn" data-examset="' + n + '">' + (stats ? 'Repetir →' : 'Empezar →') + '</button>';
       grid.appendChild(card);
     });
+    renderHardDashboard();
   }
+
+  function renderHardDashboard(){
+    var history = loadHardHistory();
+    var section = $('#hard-dashboard-section');
+    if (!history.length){
+      section.style.display = 'none';
+      return;
+    }
+    section.style.display = 'block';
+
+    var blockAgg = blockAggregatesFromHistory(history);
+
+    var scores = history.map(function(a){ return a.score; });
+    var avg = scores.reduce(function(s,v){ return s+v; }, 0) / scores.length;
+    var best = Math.max.apply(null, scores);
+    var last = history[0].score;
+    var examsTried = {};
+    history.forEach(function(a){ examsTried[a.examSet] = true; });
+
+    function card(n, l, cls){
+      return '<div class="dash-stat-card ' + (cls || '') + '"><div class="n">' + n + '</div><div class="l">' + l + '</div></div>';
+    }
+    $('#hard-dash-stats-grid').innerHTML =
+      card(history.length, 'Intentos') +
+      card(Object.keys(examsTried).length + '/4', 'Exámenes probados') +
+      card(avg.toFixed(2), 'Nota media') +
+      card(best.toFixed(2), 'Mejor nota', best >= PASS_SCORE ? 'hi-strong' : '') +
+      card(last.toFixed(2), 'Último intento', last >= PASS_SCORE ? 'hi-strong' : 'hi-weak');
+
+    var weakest = blockAgg.length ? blockAgg.slice().sort(function(a,b){ return a.pct - b.pct; })[0] : null;
+    var caption = $('#hard-dash-weak-caption');
+    if (weakest){
+      caption.innerHTML = 'Tema a reforzar: <span class="block-name">' + weakest.blockName + '</span> (' + Math.round(weakest.pct) + '% de aciertos acumulados)';
+    } else {
+      caption.textContent = '';
+    }
+
+    var wrap = $('#hard-dash-block-bars');
+    wrap.innerHTML = '';
+    blockAgg.forEach(function(b){
+      var row = document.createElement('div');
+      row.className = 'dash-block-row';
+      var weakClass = b.pct < 50 ? ' weak' : '';
+      row.innerHTML =
+        '<div class="bname">' + b.blockName + '</div>' +
+        '<div class="bar-track"><div class="bar-fill' + weakClass + '" style="width:' + b.pct + '%"></div></div>' +
+        '<div class="pct">' + Math.round(b.pct) + '%</div>';
+      wrap.appendChild(row);
+    });
+
+    var chartData = history.slice(0, 12).slice().reverse();
+    var chart = $('#hard-evo-chart');
+    chart.innerHTML = '';
+    chartData.forEach(function(a){
+      var pct = Math.max(4, Math.min(100, (a.score / TOTAL_Q) * 100));
+      var bar = document.createElement('div');
+      bar.className = 'evo-bar' + (a.score < PASS_SCORE ? ' fail' : '');
+      bar.style.height = pct + '%';
+      var tip = document.createElement('div');
+      tip.className = 'tip';
+      tip.textContent = a.score.toFixed(2);
+      bar.appendChild(tip);
+      chart.appendChild(bar);
+    });
+
+    var list = $('#hard-history-list');
+    list.innerHTML = '';
+    history.forEach(function(a){
+      var row = document.createElement('div');
+      row.className = 'history-row';
+      var d = new Date(a.date);
+      var dateStr = d.toLocaleDateString('es-ES', {day:'2-digit', month:'short'}) + ' ' + d.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'});
+      var pct = Math.max(0, Math.min(100, (a.score / TOTAL_Q) * 100));
+      var pass = a.score >= PASS_SCORE;
+      row.innerHTML =
+        '<div class="date">Hard Exam ' + a.examSet + ' · ' + dateStr + '</div>' +
+        '<div class="bar"><div class="bar-fill' + (pass ? '' : ' fail') + '" style="width:' + pct + '%"></div></div>' +
+        '<div class="score" style="color:' + (pass ? 'var(--good)' : 'var(--bad)') + '">' + a.score.toFixed(2) + '/30</div>' +
+        '<div class="blanks">' + a.blankCount + ' en blanco</div>';
+      list.appendChild(row);
+    });
+  }
+
+  $('#btn-clear-hard-history').addEventListener('click', function(){
+    if (confirm('¿Seguro que quieres borrar todo el historial de Hard Exams? Esta acción no se puede deshacer.')){
+      localStorage.removeItem(HARD_STORAGE_KEY);
+      renderHardExamList();
+    }
+  });
 
   $('#hard-exam-grid').addEventListener('click', function(e){
     var btn = e.target.closest('button[data-examset]');
