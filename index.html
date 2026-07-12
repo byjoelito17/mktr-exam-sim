@@ -420,7 +420,7 @@
         <div class="format-item minus"><div class="num">−0.25</div><div class="lbl">Fallo</div></div>
         <div class="format-item zero"><div class="num">0</div><div class="lbl">En blanco</div></div>
       </div>
-      <p style="font-size:.82rem; margin-top:14px;">Aprobado ≈ 15/30 (50%). Cada intento baraja tanto las preguntas elegidas como el orden de sus 4 opciones.</p>
+      <p style="font-size:.82rem; margin-top:14px;">Aprobado ≈ 5/10 (50%). Cada intento baraja tanto las preguntas elegidas como el orden de sus 4 opciones.</p>
       <div class="btn-row">
         <button class="btn" id="btn-start-exam">Modo simulacro →</button>
         <button class="btn secondary" id="btn-start-help">Modo ayuda →</button>
@@ -586,11 +586,11 @@
       <div class="hard-mode-badge" id="result-mode-badge" style="display:none;"></div>
       <div class="out-of">TU NOTA</div>
       <div class="big-score" id="result-score">0.00</div>
-      <div class="out-of">sobre 30</div>
+      <div class="out-of">sobre 10</div>
       <div class="verdict" id="result-verdict">—</div>
 
       <div class="ci-wrap">
-        <div class="ci-label-row"><span>-7.5</span><span>0</span><span>15</span><span>30</span></div>
+        <div class="ci-label-row"><span>-2.5</span><span>0</span><span>5</span><span>10</span></div>
         <div class="ci-track" id="ci-track">
           <div class="ci-axis"></div>
           <div class="ci-band" id="ci-band"></div>
@@ -7322,8 +7322,16 @@
     return m + ':' + (s < 10 ? '0' : '') + s;
   }
 
+  function toGrade10(score){
+    return score / TOTAL_Q * 10;
+  }
+
   function fmtScore(n){
-    return (n >= 0 ? '' : '') + n.toFixed(2);
+    return toGrade10(n).toFixed(2);
+  }
+
+  function fmtGrade10(n){
+    return toGrade10(n).toFixed(2);
   }
 
   function letters(){ return ['A','B','C','D']; }
@@ -7463,7 +7471,7 @@
       var card = document.createElement('div');
       card.className = 'card hard-exam-card';
       var statsHtml = stats
-        ? '<div class="hec-stats"><span class="best">Mejor nota: ' + stats.best.toFixed(2) + '/30</span><span>' + stats.attempts + ' intento' + (stats.attempts === 1 ? '' : 's') + '</span></div>'
+        ? '<div class="hec-stats"><span class="best">Mejor nota: ' + fmtGrade10(stats.best) + '/10</span><span>' + stats.attempts + ' intento' + (stats.attempts === 1 ? '' : 's') + '</span></div>'
         : '<div class="hec-empty">Todavía no lo has intentado</div>';
       card.innerHTML =
         '<h3>Hard Exam ' + n + '</h3>' +
@@ -7498,9 +7506,9 @@
     $('#hard-dash-stats-grid').innerHTML =
       card(history.length, 'Intentos') +
       card(Object.keys(examsTried).length + '/4', 'Exámenes probados') +
-      card(avg.toFixed(2), 'Nota media') +
-      card(best.toFixed(2), 'Mejor nota', best >= PASS_SCORE ? 'hi-strong' : '') +
-      card(last.toFixed(2), 'Último intento', last >= PASS_SCORE ? 'hi-strong' : 'hi-weak');
+      card(fmtGrade10(avg), 'Nota media') +
+      card(fmtGrade10(best), 'Mejor nota', best >= PASS_SCORE ? 'hi-strong' : '') +
+      card(fmtGrade10(last), 'Último intento', last >= PASS_SCORE ? 'hi-strong' : 'hi-weak');
 
     var weakest = blockAgg.length ? blockAgg.slice().sort(function(a,b){ return a.pct - b.pct; })[0] : null;
     var caption = $('#hard-dash-weak-caption');
@@ -7533,7 +7541,7 @@
       bar.style.height = pct + '%';
       var tip = document.createElement('div');
       tip.className = 'tip';
-      tip.textContent = a.score.toFixed(2);
+      tip.textContent = fmtGrade10(a.score);
       bar.appendChild(tip);
       chart.appendChild(bar);
     });
@@ -7550,7 +7558,7 @@
       row.innerHTML =
         '<div class="date">Hard Exam ' + a.examSet + ' · ' + dateStr + '</div>' +
         '<div class="bar"><div class="bar-fill' + (pass ? '' : ' fail') + '" style="width:' + pct + '%"></div></div>' +
-        '<div class="score" style="color:' + (pass ? 'var(--good)' : 'var(--bad)') + '">' + a.score.toFixed(2) + '/30</div>' +
+        '<div class="score" style="color:' + (pass ? 'var(--good)' : 'var(--bad)') + '">' + fmtGrade10(a.score) + '/10</div>' +
         '<div class="blanks">' + a.blankCount + ' en blanco</div>';
       list.appendChild(row);
     });
@@ -7606,9 +7614,9 @@
 
     var html =
       card(history.length, 'Intentos') +
-      card(avg.toFixed(2), 'Nota media') +
-      card(best.toFixed(2), 'Mejor nota', best >= PASS_SCORE ? 'hi-strong' : '') +
-      card(last.toFixed(2), 'Último intento', last >= PASS_SCORE ? 'hi-strong' : 'hi-weak');
+      card(fmtGrade10(avg), 'Nota media') +
+      card(fmtGrade10(best), 'Mejor nota', best >= PASS_SCORE ? 'hi-strong' : '') +
+      card(fmtGrade10(last), 'Último intento', last >= PASS_SCORE ? 'hi-strong' : 'hi-weak');
     $('#dash-stats-grid').innerHTML = html;
 
     var weakest = blockAgg.length ? blockAgg.slice().sort(function(a,b){ return a.pct - b.pct; })[0] : null;
@@ -7660,7 +7668,7 @@
       bar.style.height = pct + '%';
       var tip = document.createElement('div');
       tip.className = 'tip';
-      tip.textContent = a.score.toFixed(2);
+      tip.textContent = fmtGrade10(a.score);
       bar.appendChild(tip);
       chart.appendChild(bar);
     });
@@ -7678,7 +7686,7 @@
       row.innerHTML =
         '<div class="date">' + dateStr + '</div>' +
         '<div class="bar"><div class="bar-fill' + (pass ? '' : ' fail') + '" style="width:' + pct + '%"></div></div>' +
-        '<div class="score" style="color:' + (pass ? 'var(--good)' : 'var(--bad)') + '">' + a.score.toFixed(2) + '/30</div>' +
+        '<div class="score" style="color:' + (pass ? 'var(--good)' : 'var(--bad)') + '">' + fmtGrade10(a.score) + '/10</div>' +
         '<div class="blanks">' + a.blankCount + ' en blanco</div>';
       list.appendChild(row);
     });
@@ -8209,7 +8217,7 @@
 
     var caption = $('#ci-caption');
     if (result.blankCount > 0){
-      caption.innerHTML = 'Si hubieras arriesgado en las ' + result.blankCount + ' preguntas en blanco, tu nota podría haber ido de <strong>' + scoreMin.toFixed(2) + '</strong> a <strong>' + scoreMax.toFixed(2) + '</strong>.';
+      caption.innerHTML = 'Si hubieras arriesgado en las ' + result.blankCount + ' preguntas en blanco, tu nota podría haber ido de <strong>' + fmtGrade10(scoreMin) + '</strong> a <strong>' + fmtGrade10(scoreMax) + '</strong>.';
     } else {
       caption.innerHTML = 'No dejaste ninguna pregunta en blanco — tu nota es un valor fijo, sin margen de incertidumbre.';
     }
